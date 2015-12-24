@@ -1,0 +1,14 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg">
+<metadata>Copyright (C) 2015 by original authors @ fontello.com</metadata>
+<defs>
+<font id="fontello" horiz-adv-x="1000" >
+<font-face font-family="fontello" font-weight="400" font-stretch="normal" units-per-em="1000" ascent="850" descent="-150" />
+<missing-glyph horiz-adv-x="1000" />
+<glyph glyph-name="file-code" unicode="&#xe800;" d="m819 638q16-16 27-42t11-50v-642q0-23-15-38t-38-16h-750q-23 0-38 16t-16 38v892q0 23 16 38t38 16h500q22 0 49-11t42-27z m-248 136v-210h210q-5 16-12 23l-175 175q-6 7-23 12z m215-853v572h-232q-23 0-38 15t-16 38v233h-429v-858h715z m-518 500q4 7 12 7t13-3l28-21q7-5 7-12t-3-14l-102-135 102-136q4-6 3-13t-7-12l-28-21q-6-4-13-4t-12 7l-126 168q-8 11 0 21z m447-168q8-10 0-21l-126-168q-4-6-11-7t-14 4l-28 21q-6 5-7 12t3 13l102 136-102 135q-4 7-3 14t7 12l28 21q6 4 14 3t11-7z m-346-257q-7 1-11 7t-3 14l77 464q1 7 7 11t14 3l35-5q7-2 11-8t3-13l-77-464q-1-7-7-11t-13-3z" horiz-adv-x="857.1" />
+<glyph glyph-name="tags" unicode="&#xe801;" d="m250 600q0 30-21 51t-50 20-51-20-21-51 21-50 51-21 50 21 21 50z m595-321q0-30-20-51l-274-274q-22-21-51-21-30 0-50 21l-399 399q-21 21-36 57t-15 65v232q0 29 21 50t50 22h233q29 0 65-15t57-36l399-399q20-21 20-50z m215 0q0-30-21-51l-274-274q-22-21-51-21-20 0-33 8t-29 25l262 262q21 21 21 51 0 29-21 50l-399 399q-21 21-57 36t-65 15h125q29 0 65-15t57-36l399-399q21-21 21-50z" horiz-adv-x="1071.4" />
+<glyph glyph-name="file-word" unicode="&#xe802;" d="m819 638q16-16 27-42t11-50v-642q0-23-15-38t-38-16h-750q-23 0-38 16t-16 38v892q0 23 16 38t38 16h500q22 0 49-11t42-27z m-248 136v-210h210q-5 16-12 23l-175 175q-6 7-23 12z m215-853v572h-232q-23 0-38 15t-16 38v233h-429v-858h715z m-656 500v-59h39l92-369h88l72 271q4 11 5 25 1 9 1 14h3l1-14q1-1 2-11t3-14l72-271h89l91 369h39v59h-167v-59h50l-55-245q-3-11-4-25l-1-12h-3l-1 12q-1 2-2 11t-3 14l-81 304h-63l-81-304q-1-5-2-13t-2-12l-2-12h-2l-2 12q-1 14-4 25l-55 245h50v59h-167z" horiz-adv-x="857.1" />
+</font>
+</defs>
+</svg>

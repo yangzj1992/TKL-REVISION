@@ -1,0 +1,26 @@
+<% permalink = config.url + config.root + post.path %>
+<section id="intro">
+    <div class="container about-content">
+        <div class="col-md-8 col-md-offset-2">
+            <h2 style="text-align:center;"><%- post.title %></h2>
+        </div>
+        <div class="col-md-8 col-md-offset-2">
+            <% if (!post.notoc){ %>
+                <div id="toc" class="toc-article">
+                    <strong class="toc-title">目录</strong>
+                    <%- toc(post.content) %>
+                </div>
+            <% } %>
+          <%- post.content %>
+            <div class="clearfix"></div>
+        </div>
+        <%- partial('post/navigation') %>
+        <div class="duoshuo"><%- partial('post/duoshuo') %></div>
+    </div>
+</section>
+<script>
+$(function() {
+    $(".element-img").css('display','none');
+    $(".about-content").css('min-height',$(window).height()-$("footer").height()-$("#navigation").height()-30);
+});
+</script>

@@ -1,0 +1,61 @@
+# config
+title:  青春样 | yangzj1992's blog
+subtitle:
+author: yangzj1992
+language: zh-Hans
+email: yangzj1992@qq.com #联系邮箱
+url: http://qcyoung.com
+
+cover: /img/bg_img.jpg
+logo: http://7bv937.com1.z0.glb.clouddn.com/qcyoung/TKL/logo.png
+logoc: http://7bv937.com1.z0.glb.clouddn.com/qcyoung/TKL/oursbrun.png
+top_saying:
+- title: GLAD TO SEE U, WELCOME TO YANGZJ1992 &#39;S BLOG.  
+- content: 每一个不曾起舞的日子都是对生命的辜负 —— 尼采 《查拉图斯特拉如是说》
+bottom_saying:  奇迹每天都在发生 (Miracles happen every day) —— 《阿甘正传》
+# Content
+excerpt_link: Read More
+
+rss: /atom.xml
+
+highlightjs: vs
+
+#Works
+works:
+# - works_name: AAA
+#   works_url: /
+# - works_name: BBB
+#   works_url: /atom.xml
+
+#duoshuo name
+duoshuo_shortname: yangzj1992
+
+# Disqus
+disqus_shortname: yangzj1992
+
+# Miscellaneous
+GitHub: https://github.com/yangzj1992
+Twitter: https://twitter.com/yangzj1992
+Weibo: http://weibo.com/yangzj1992
+ZhiHu: http://www.zhihu.com/people/yangzj1992
+Shanbay: http://www.shanbay.com/bdc/review/progress/954313
+Segmentfault: http://segmentfault.com/u/yangzj1992
+Google: https://profiles.google.com/103095542128057560598
+Baidu: http://www.baidu.com/p/yangzj1992
+
+#Links
+links:
+- name: USTB
+  link: http://www.ustb.edu.cn/
+- name: 美菜网
+  link: http://meicai.cn/
+- name: Kieran
+  link: http://go.kieran.top/
+
+#Analytics
+cnzz: true  
+cnzzaccount: 1000263347
+
+img_server: 
+
+

@@ -1,0 +1,83 @@
+<% permalink = config.url + config.root + post.path %>
+<section id="intro">
+    <div class="container">
+        <div class="post-content">
+            <div class="col-md-8 col-md-offset-2">
+                <div>
+                    <h1><%- post.title %></h1>
+                    <time datetime="<%= date_xml(post.date) %>" itemprop="datePublished" style="color:#969696;display: block;font-size: 13px;font-weight: 400;width: 100%;height: 30px;text-align: center;">
+                        <%= date(post.date,'YYYY 年 MM 月 DD 日') %>
+                    </time>
+                </div>
+            </div>
+            <div class="col-md-8 col-md-offset-2">
+                <% if (!post.toc){ %>
+                    <div id="toc" class="toc-article">
+                        <strong class="toc-title">目录</strong>
+                        <%- toc(post.content) %>
+                    </div>
+                <% } %>
+                <%- post.content %>
+            </div>
+            <div class="clearfix"></div>
+            <hr class="nogutter">
+            <div class="summary">
+                <!--<i class="demo-icon icon-file-code">&#xe800;</i> <span class="i-name"></span>-->
+                <i class="demo-icon icon-file-word">&#xe802;</i><span class="i-name"><%-wordcount(post.content)%>字</span>
+                <i class="demo-icon icon-tags">&#xe801;</i> <span class="i-name"></span>
+                <span class="post-meta">
+                    <% if (post.tags && post.tags.length){ %>
+                        <% count = post.tags.length %>
+                        <% post.tags.forEach(function(tag, index) { %>
+                            <a class='post-tags' href='<%= config.root + tag.path %>'><%= tag.name %></a><% if (count !== index+1) { %><% } %>
+                        <% }); %>
+                    <% } %>
+                </span>
+               <span id="share" style="float: right;position: relative;">
+                    <div class="qrcode" id="qrcode" style="display: none;"></div>
+                    <a id="wechat" class="share-icon" title="分享到微信" data-wechat-url="<%=  site.url %><% page.url %>" href="javascript:void(0);"><i class="icon-CN_tencent_wechat"></i></a>
+                    <a id="weibo" class="share-icon" target="_blank" title="分享到微博" href="http://service.weibo.com/share/share.php?title=<%= page.title %> | <%= theme.title %> &amp;url=<%= theme.url %><%= url_for(path) %>&amp;type=3&amp;searchPic=false"><i class="icon-CN_sina_weibo"></i></a>
+                    <a id="qzone" class="share-icon" target="_blank" title="分享到 QQ 空间" href="http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=<%= theme.url %><%= url_for(path) %>&amp;title=<%= page.title %> | <%= theme.title %>"><i class="icon-CN_tencent_qzone"></i></a>
+                    <a id="twitter" class="share-icon" target="_blank" title="Share to Twitter" href="https://twitter.com/intent/tweet?url=<%= theme.url %><%= url_for(path) %>&amp;text=<%= page.title %>;via=<%= theme.author %>| <%= theme.title %>"><i class="icon-Popular_Twitter"></i></a>
+                    <a id="facebook" class="share-icon" target="_blank" title="Share to Facebook" href="http://www.facebook.com/sharer.php?u=<%=  site.url %><% page.url %>&amp;t=<%= page.title %> | <%= theme.title %>"><i class="icon-Popular_Facebook"></i></a>
+                    <a id="gplus" class="share-icon" target="_blank" title="Share to Google+" href="https://plus.google.com/share?url=<%= theme.url %><%= url_for(path) %>"><i class="icon-Popular_G"></i></a>
+                </span>
+            </div>
+        </div>
+        <%- partial('post/navigation') %>
+        <div class="duoshuo"><%- partial('post/duoshuo') %></div>
+    </div>
+</section>
+<script src="/js/jquery.qrcode.min.js"></script>
+<script>
+    $("#wechat").hover(function() {
+        $("#qrcode").css('display','inline-block');
+        jQuery("#qrcode").qrcode({
+            text:utf16to8("<%= theme.url %><%= url_for(path) %>"),
+            width:96,
+            height:96
+        });
+    },function(){
+        $("#qrcode").css('display','none');
+        jQuery("#qrcode").html('');
+    });
+    function utf16to8(str) {
+        var out, i, len, c;
+        out = "";
+        len = str.length;
+        for (i = 0; i < len; i++) {
+            c = str.charCodeAt(i);
+            if ((c >= 0x0001) && (c <= 0x007F)) {
+                out += str.charAt(i);
+            } else if (c > 0x07FF) {
+                out += String.fromCharCode(0xE0 | ((c >> 12) & 0x0F));
+                out += String.fromCharCode(0x80 | ((c >> 6) & 0x3F));
+                out += String.fromCharCode(0x80 | ((c >> 0) & 0x3F));
+            } else {
+                out += String.fromCharCode(0xC0 | ((c >> 6) & 0x1F));
+                out += String.fromCharCode(0x80 | ((c >> 0) & 0x3F));
+            }
+        }
+        return out;
+    }
+</script>

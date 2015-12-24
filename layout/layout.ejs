@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<!--[if lte IE 8 ]>
+<html class="ie" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
+<![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<!--                                             
+ ___ _______ _____  __ _____  ___ _      _______  __ _ 
+/ _ `/ __/ // / _ \/ // / _ \/ _ `/ _   / __/ _ \/  ' \
+\_, /\__/\_, /\___/\_,_/_//_/\_, / (_)  \__/\___/_/_/_/
+ /_/    /___/               /___/                                                                         
+-->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
+<!--<![endif]-->
+<%- partial('casper/head') %>
+<!--<% if (typeof page.title == 'undefined') { %>
+<body class="home-template">
+<% } else { %>
+<body class="post-template">
+<% } %>-->
+<body id="index" class="lightnav animsition">
+
+      <%- partial('casper/header') %>
+      <%- body %>
+      <%- partial('casper/footer') %>
+      <%- partial('casper/after_all') %>
+
+</body>
+</html>

@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+  <style>
+  body {
+  margin: 0;
+  }
+  
+  .wrap {
+    position: absolute;
+    margin: auto;
+    background-color: #eee;
+  }
+
+  .shard-wrap .shard {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-transition: all .6s;
+            transition: all .6s;
+  }
+  
+  .shard-wrap:nth-child(1) .shard {
+    -webkit-clip-path: polygon(36.725% 28%, 35.875% 35.166%, 40.5% 33.333%, 40.5% 33.333%);
+    background-color: #3C3642;
+    -webkit-transition-delay: 0.06s;
+            transition-delay: 0.06s;
+  }
+
+  .shard-wrap:nth-child(2) .shard {
+    -webkit-clip-path: polygon(62.125% 28%, 64.125% 35.166%, 58.35% 33.333%,58.35% 33.333%);
+    background-color: #3C3642;
+    -webkit-transition-delay: 0.08s;
+            transition-delay: 0.08s;
+  }
+
+  .shard-wrap:nth-child(3) .shard {
+    -webkit-clip-path: polygon(33.875% 34.833%, 45% 34.333%, 50% 28%, 50% 28%);
+    background-color: #37343E;
+    -webkit-transition-delay: 0.1s;
+            transition-delay: 0.1s;
+  }
+
+  .shard-wrap:nth-child(4) .shard {
+    -webkit-clip-path: polygon(66.125% 34.833%, 55% 34.333%, 50% 28%, 50% 28%);
+    background-color: #17171A;
+    -webkit-transition-delay: 0.12s;
+            transition-delay: 0.12s;
+  }
+
+  .shard-wrap:nth-child(5) .shard {
+    -webkit-clip-path: polygon(33.875% 34.833%, 31.5% 46%, 33.75% 55%);
+    background-color: #262327;
+    -webkit-transition-delay: 0.14s;
+            transition-delay: 0.14s;
+  }
+
+  .shard-wrap:nth-child(6) .shard {
+    -webkit-clip-path: polygon(66.125% 34.833%, 68.5% 46%, 66.25% 55%);
+    background-color: #1B1B1E;
+    -webkit-transition-delay: 0.16s;
+            transition-delay: 0.16s;
+  }
+
+  .shard-wrap:nth-child(7) .shard {
+    -webkit-clip-path: polygon(33.875% 34.833%, 45% 34.333%, 33.775% 44%);
+    background-color: #131215;
+    -webkit-transition-delay: 0.18s;
+            transition-delay: 0.18s;
+  }
+
+  .shard-wrap:nth-child(8) .shard {
+    -webkit-clip-path: polygon(66.125% 34.833%, 55% 34.333%, 66.225% 44%, 66.225% 44%);
+    background-color: #262327;
+    -webkit-transition-delay: 0.2s;
+            transition-delay: 0.2s;
+  }
+
+  .shard-wrap:nth-child(9) .shard {
+    -webkit-clip-path: polygon(33.775% 44%, 33.75% 55%, 43.75% 59.166%);
+    background-color: #2F2B36;
+    -webkit-transition-delay: 0.22s;
+            transition-delay: 0.22s;
+  }
+
+  .shard-wrap:nth-child(10) .shard {
+    -webkit-clip-path: polygon(66.225% 44%, 66.25% 55%, 56.25% 59.166%, 56.25% 59.166%);
+    background-color: #262529;
+    -webkit-transition-delay: 0.24s;
+            transition-delay: 0.24s;
+  }
+
+  .shard-wrap:nth-child(11) .shard {
+    -webkit-clip-path: polygon(45% 34.333%, 33.775% 44%, 43.75% 59.166%);
+    background-color: #171619;
+    -webkit-transition-delay: 0.26s;
+            transition-delay: 0.26s;
+  }
+
+  .shard-wrap:nth-child(12) .shard {
+    -webkit-clip-path: polygon(55% 34.333%, 66.225% 44%, 56.25% 59.166%, 56.25% 59.166%);
+    background-color: #29282C;
+    -webkit-transition-delay: 0.28s;
+            transition-delay: 0.28s;
+  }
+  
+  .shard-wrap:nth-child(13) .shard {
+    -webkit-clip-path: polygon(45% 34.333%, 50% 44%, 43.75% 59.166%);
+    background-color: #131215;
+    -webkit-transition-delay: 0.3s;
+            transition-delay: 0.3s;
+  }
+
+  .shard-wrap:nth-child(14) .shard {
+    -webkit-clip-path: polygon(55% 34.333%, 50% 44%, 56.25% 59.166%);
+    background-color: #040808;
+    -webkit-transition-delay: 0.32s;
+            transition-delay: 0.32s;
+  }
+
+  .shard-wrap:nth-child(15) .shard {
+    -webkit-clip-path: polygon(45% 34.333%, 50% 44%, 55% 34.333%, 50% 28%);
+    background-color: #262327;
+    -webkit-transition-delay: 0.34s;
+            transition-delay: 0.34s;
+  }
+
+  .shard-wrap:nth-child(16) .shard {
+    -webkit-clip-path: polygon(50% 44%, 43.75% 59.166%, 56.25% 59.166%, 56.25% 59.166%);
+    background-color: #040808;
+    -webkit-transition-delay: 0.36s;
+            transition-delay: 0.36s;
+  }
+
+  .shard-wrap:nth-child(17) .shard {
+    -webkit-clip-path: polygon(46.75% 59.198%, 53.25% 59.198%, 55.25% 65.166%, 44.75% 65.166%);
+    background-color: #131215;
+    -webkit-transition-delay: 0.38s;
+            transition-delay: 0.38s;
+  }
+
+  .shard-wrap:nth-child(18) .shard {
+    -webkit-clip-path: polygon(50% 65.18%, 44.75% 65.18%, 40% 85%, 40% 85%);
+    background-color: #262327;
+    -webkit-transition-delay: 0.4s;
+            transition-delay: 0.4s;
+  }
+
+  .shard-wrap:nth-child(19) .shard {
+    -webkit-clip-path: polygon(50% 65.18%, 55.25% 65.18%, 60% 85%, 60% 85%);
+    background-color: #262327;
+    -webkit-transition-delay: 0.42s;
+            transition-delay: 0.42s;
+  }
+
+  .shard-wrap:nth-child(20) .shard {
+    -webkit-clip-path: polygon(50% 65.18%, 50% 87%, 60% 85%, 60% 85%);
+    background-color: #112820;
+    -webkit-transition-delay: 0.44s;
+            transition-delay: 0.44s;
+  }
+
+  .shard-wrap:nth-child(28) .shard {
+    -webkit-clip-path: polygon(50% 65.18%, 50% 87%, 40% 85%,40% 85%);
+    background-color: #112820;
+    -webkit-transition-delay: 0.46s;
+            transition-delay: 0.46s;
+  }
+
+  .shard-wrap:nth-child(21) .shard {
+    -webkit-clip-path: polygon(50% 65.18%, 50% 87%, 60% 85%);
+    background-color: #112820;
+    -webkit-transition-delay: 0.36s;
+            transition-delay: 0.36s;
+  }
+
+  .shard-wrap:nth-child(22) .shard {
+    -webkit-clip-path: polygon(42% 77%, 43% 75%, 36% 75%,34.7% 76%);
+    background-color: #292000;
+    -webkit-transition-delay: 0.36s;
+            transition-delay: 0.36s;
+  }
+  
+  .shard-wrap:nth-child(23) .shard {
+    -webkit-clip-path: polygon(36% 75%,34.7% 76%,31% 69%,31.5% 69.5%);
+    background-color: #292000;
+    -webkit-transition-delay: 0.36s;
+            transition-delay: 0.36s;
+  }
+  
+  .shard-wrap:nth-child(24) .shard {
+    -webkit-clip-path: polygon(34% 41%, 30% 40%,26% 39%,34% 40.8%);
+    background-color: #292000;
+    -webkit-transition-delay: 0.36s;
+            transition-delay: 0.36s;
+  }
+
+  .shard-wrap:nth-child(25) .shard {
+    -webkit-clip-path: polygon(34% 44%, 30% 45%,26% 46%,34% 44.2%);
+    background-color: #292000;
+    -webkit-transition-delay: 0.36s;
+            transition-delay: 0.36s;
+  }
+
+  .shard-wrap:nth-child(26) .shard {
+    -webkit-clip-path: polygon(66% 41%, 70% 40%,74% 39%,66% 40.8%);
+    background-color: #292000;
+    -webkit-transition-delay: 0.36s;
+            transition-delay: 0.36s;
+  }
+
+  .shard-wrap:nth-child(27) .shard {
+    -webkit-clip-path: polygon(66% 44%, 70% 45%,74% 46%,66% 44.2%);
+    background-color: #292000;
+    -webkit-transition-delay: 0.36s;
+            transition-delay: 0.36s;
+  }
+
+  /*y*/
+  body:hover .shard-wrap:nth-child(1) .shard {
+    -webkit-clip-path: polygon(4% 15%, 7.5% 15%,12% 35%,11.25% 36.25%);
+    background-color: #87847d;
+  }
+
+  body:hover .shard-wrap:nth-child(2) .shard {
+    -webkit-clip-path: polygon(12% 35%,16.5% 15%,20% 15%,12.75% 36.25%);
+    background-color: #191919;
+  }
+
+  body:hover .shard-wrap:nth-child(3) .shard {
+    -webkit-clip-path: polygon(12% 35%,11.25% 36.25%,10.75% 65%,12% 65%);
+    background-color: #222627;
+  }
+
+  body:hover .shard-wrap:nth-child(4) .shard {
+    -webkit-clip-path: polygon(12% 35%,12.75% 36.25%,13.25% 65%,12% 65%);
+    background-color: #151515;
+  }
+  
+  /*a*/
+
+  body:hover .shard-wrap:nth-child(5) .shard {
+    -webkit-clip-path: polygon(24% 65%, 26% 65%, 31% 35%);
+    background-color: #87847d;
+  }
+
+  body:hover .shard-wrap:nth-child(6) .shard {
+    -webkit-clip-path: polygon(38% 65%, 36% 65%, 31% 35%);
+    background-color: #222627;
+  }
+
+  body:hover .shard-wrap:nth-child(7) .shard {
+    -webkit-clip-path: polygon(29.3% 45%, 33% 45%, 28.6% 48%);
+    background-color: #363837;
+  }
+
+  /*n*/
+
+  body:hover .shard-wrap:nth-child(8) .shard {
+    -webkit-clip-path: polygon(47% 35%, 49% 35%, 49.5% 65%, 47% 65%);
+    background-color: #1e1e1e;
+  }
+
+  body:hover .shard-wrap:nth-child(9) .shard {
+    -webkit-clip-path: polygon(49.2% 41%, 49.2% 45%, 55% 35%);
+    background-color: #0c0d08;
+  }
+
+  body:hover .shard-wrap:nth-child(10) .shard {
+    -webkit-clip-path: polygon(65% 42%, 53% 38%, 55% 35%, 55% 35%);
+    background-color: #060606;
+  }
+
+  body:hover .shard-wrap:nth-child(11) .shard {
+    -webkit-clip-path: polygon(65% 42%, 63% 42%, 62.5% 65%);
+    background-color: #17140d;
+  }
+
+  body:hover .shard-wrap:nth-child(12) .shard {
+    -webkit-clip-path: polygon(65% 45%, 65.3% 65%, 62.6% 65%, 62.6% 65%);
+    background-color: #c4c0b7;
+  }
+  
+  /*g*/
+
+  body:hover .shard-wrap:nth-child(13) .shard {
+    -webkit-clip-path: polygon(71.2% 41%, 71.5% 45%, 78% 35%);
+    background-color: #0c0d08;
+  }
+
+  body:hover .shard-wrap:nth-child(14) .shard {
+    -webkit-clip-path: polygon(88% 42%, 76% 38%, 78% 35%);
+    background-color: #060606;
+  }
+
+  body:hover .shard-wrap:nth-child(15) .shard {
+    -webkit-clip-path: polygon(71.2% 41%, 72.3% 53%, 70.2% 52%, 70.2% 52%);
+    background-color: #060606;
+  }
+  
+  body:hover .shard-wrap:nth-child(16) .shard {
+    -webkit-clip-path: polygon(70.2% 52%,72.3% 53%,73.2% 60%,72.5% 61%);
+    background-color: #060606;
+  }
+
+  body:hover .shard-wrap:nth-child(17) .shard {
+    -webkit-clip-path: polygon(72.5% 61%,87% 58.5%,87% 58%,72.5% 59%);
+    background-color: #060606;
+  }
+
+  body:hover .shard-wrap:nth-child(18) .shard {
+    -webkit-clip-path: polygon(88% 42%,86.8% 78%,86.2% 77.4%,86.2% 40.7%);
+    background-color: #060606;
+  }
+
+  body:hover .shard-wrap:nth-child(19) .shard {
+    -webkit-clip-path: polygon(86.8% 78%,86.8% 76.5%,75.8% 75.5%,76% 76.4%);
+    background-color: #060606;
+  }
+
+  body:hover .shard-wrap:nth-child(20) .shard {
+    -webkit-clip-path: polygon(76% 76.4%,76.5% 75.7%,73% 74.5%,73.5% 74.8%);
+    background-color: #060606;
+  }
+
+  body:hover .shard-wrap:nth-child(21) .shard {
+    -webkit-clip-path: polygon(99% 99%, 99% 99%, 99% 99%);
+    background-color: #eee;
+  }
+
+  body:hover .shard-wrap:nth-child(22) .shard {
+    -webkit-clip-path: polygon(99% 99%, 99% 99%, 99% 99%,99% 99%);
+    background-color: #eee;
+  }
+  
+  body:hover .shard-wrap:nth-child(23) .shard {
+    -webkit-clip-path: polygon(99% 99%,99% 99%,99% 99%,99% 99%);
+    background-color: #eee;
+  }
+  
+  body:hover .shard-wrap:nth-child(24) .shard {
+    -webkit-clip-path: polygon(99% 99%, 99% 99%,99% 99%,99% 99%);
+    background-color: #eee;
+  }
+
+  body:hover .shard-wrap:nth-child(25) .shard {
+    -webkit-clip-path: polygon(99% 99%, 99% 99%,99% 99%,99% 99%);
+    background-color: #eee;
+  }
+
+  body:hover .shard-wrap:nth-child(26) .shard {
+    -webkit-clip-path: polygon(99% 99%, 99% 99%,99% 99%,99% 99%);
+    background-color: #eee;
+  }
+
+  body:hover .shard-wrap:nth-child(27) .shard {
+    -webkit-clip-path: polygon(99% 99%, 99% 99%,99% 99%,99% 99%);
+    background-color: #eee;
+  }
+
+  body:hover .shard-wrap:nth-child(28) .shard {
+    -webkit-clip-path: polygon(99% 99%, 99% 99%,99% 99%,99% 99%);
+    background-color: #eee;
+  }
+  </style>
+</head>
+<body>
+<div class="wrap">
+
+<div class="shard-wrap">
+  <div class="shard"></div>
+</div>
+<div class="shard-wrap">
+  <div class="shard"></div>
+</div>
+<div class="shard-wrap">
+  <div class="shard"></div>
+</div>
+<div class="shard-wrap">
+  <div class="shard"></div>
+</div>
+<div class="shard-wrap">
+  <div class="shard"></div>
+</div>
+<div class="shard-wrap">
+  <div class="shard"></div>
+</div>
+<div class="shard-wrap">
+  <div class="shard"></div>
+</div>
+<div class="shard-wrap">
+  <div class="shard"></div>
+</div>
+<div class="shard-wrap">
+  <div class="shard"></div>
+</div>
+<div class="shard-wrap">
+  <div class="shard"></div>
+</div>
+<div class="shard-wrap">
+  <div class="shard"></div>
+</div>
+<div class="shard-wrap">
+  <div class="shard"></div>
+</div>
+<div class="shard-wrap">
+  <div class="shard"></div>
+</div>
+<div class="shard-wrap">
+  <div class="shard"></div>
+</div>
+<div class="shard-wrap">
+  <div class="shard"></div>
+</div>
+<div class="shard-wrap">
+  <div class="shard"></div>
+</div>
+<div class="shard-wrap">
+  <div class="shard"></div>
+</div>
+<div class="shard-wrap">
+  <div class="shard"></div>
+</div>
+<div class="shard-wrap">
+  <div class="shard"></div>
+</div>
+<div class="shard-wrap">
+  <div class="shard"></div>
+</div>
+<div class="shard-wrap">
+  <div class="shard"></div>
+</div>
+<div class="shard-wrap">
+  <div class="shard"></div>
+</div>
+<div class="shard-wrap">
+  <div class="shard"></div>
+</div>
+<div class="shard-wrap">
+  <div class="shard"></div>
+</div>
+<div class="shard-wrap">
+  <div class="shard"></div>
+</div>
+<div class="shard-wrap">
+  <div class="shard"></div>
+</div>
+<div class="shard-wrap">
+  <div class="shard"></div>
+</div>
+<div class="shard-wrap">
+  <div class="shard"></div>
+</div>
+<div class="shard-wrap">
+  <div class="shard"></div>
+</div>
+<div class="shard-wrap">
+  <div class="shard"></div>
+</div>
+<div class="shard-wrap">
+  <div class="shard"></div>
+</div>
+<div class="shard-wrap">
+  <div class="shard"></div>
+</div>
+<div class="shard-wrap">
+  <div class="shard"></div>
+</div>
+<div class="shard-wrap">
+  <div class="shard"></div>
+</div>
+<div class="shard-wrap">
+  <div class="shard"></div>
+</div>
+</div>
+<script>
+  var wrap = document.querySelector('.wrap');
+  wrap.style.width = window.innerWidth + 'px';
+  wrap.style.height = window.innerWidth*0.75 + 'px';
+</script>
+
+</body>
+</html>

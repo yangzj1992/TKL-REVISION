@@ -1,0 +1,140 @@
+<!-- ============================ Off-canvas navigation =========================== -->
+    
+    <div class="sb-slidebar sb-right sb-style-overlay sb-momentum-scrolling">
+        <div class="sb-close" aria-label="Close Menu" aria-hidden="true">
+            <img src="http://7bv937.com1.z0.glb.clouddn.com/qcyoung/TKL/close.png" alt="Close"/>
+        </div>
+        <div class="site-overview">
+           <div class="site-author">
+               <img class="site-author-img" width="100px" height="100px" src="http://7bv937.com1.z0.glb.clouddn.com/qcyoung/avatar.jpg"></img>
+               <div class="site-author-name">yangzj1992</div>
+           </div>
+           <div class="sb-list">
+               <div class="sb-item sb-posts">
+                  <a href="<%- config.root %><%- config.archive_dir %>">
+                    <span class="sb-item-count"><%= site.posts.length %></span>
+                    <span class="sb-item-name">日志</span>
+                  </a>
+               </div>
+               <div class="sb-item sb-words">
+                  <a href="javascript:void(0)">
+                    <span class="sb-item-count"><%= totalcount(site)%></span>
+                    <span class="sb-item-name">字数</span>
+                  </a>
+               </div>
+               <div class="sb-item sb-categories">
+                  <a href="<%- config.root %><%- config.categories_dir %>">
+                    <span class="sb-item-count"><%= site.categories.length %></span>
+                    <span class="sb-item-name">分类</span>
+                  </a>
+               </div>
+           </div>
+       </div>
+
+      <div class="sb-rss">
+        <a href="/atom.xml">RSS</a>
+      </div>
+      
+      <div class="web-links"> 
+        <% if (theme.links && theme.links.length){ %>
+        <div class="sb-links">
+          <div class="links-title">友情链接</div>
+          <span class="sb-item-links">
+            <% theme.links.forEach(function(item){ %>
+              <a href="<%- item.link %>" class="animsition-link"><%= item.name %></a>
+            <% }); %>
+          </span>
+        </div>
+        <% } %>
+      </div>
+
+      <div class="cc-license">
+        <a href="http://creativecommons.org/licenses/by-nc/4.0">
+          <img src="http://7bv937.com1.z0.glb.clouddn.com/qcyoung/cc-by-nc.svg">
+        </a>
+      </div>
+
+    </div>
+    
+    <!-- ============================ END Off-canvas navigation =========================== -->
+
+    <!-- ============================ #sb-site Main Page Wrapper =========================== -->
+
+    <div id="sb-site">
+        <!-- #sb-site - All page content should be contained within this id, except the off-canvas navigation itself -->
+
+        <!-- ============================ Header & Logo bar =========================== -->
+
+        <div id="navigation" class="navbar navbar-fixed-top" style="border:0">
+            <div class="navbar-inner">
+                <div class="container">
+                    <!-- Nav logo -->
+                    <div class="logo">
+                        <a href="/" title="Logo" class="animsition-link">
+                        <% if (theme.logo) { %> <img id="white-logo" src="<%- theme.logo %>" alt="Logo" width="25px;"/><img id="brown-logo" src="<%- theme.logoc %>" alt="Logo" width="25px;" style="display:none"/> <% } %>
+                        </a>
+                    </div>
+                    <!-- // Nav logo -->
+                    <!-- Info-bar -->
+                    <nav>
+                        <ul class="nav">
+                            <li><a href="/" class="animsition-link website-title"><%- config.title %></a></li>
+                            <li><a href="<%- config.root %><%- config.archive_dir %>" class="animsition-link" title="archive">归档</a></li>
+                            <li class="mobile-li"><a href="<%- config.root %><%- config.categories_dir %>" class="animsition-link" title="archive">目录</a></li>
+                            <li><a href="<%- config.root %><%- config.tag_dir %>" class="animsition-link" title="archive">标签</a></li>
+                            <li class="mobile-li"><a href="<%- config.root %><%- config.about_dir %>" class="animsition-link" title="archive">关于</a></li>
+                            <li class="mobile-li"><a href="<%- config.root %><%- config.messageboard_dir %>" class="animsition-link" title="archive">留言板</a></li>
+                            <% if(theme.GitHub){ %>
+                            <li><a href="<%- theme.GitHub %>" title="Github" target="_blank"><i class="icon-Popular_GitHub"></i></a></li>
+                            <% } %>
+                            <li><a href="javascript:void(0)" title="Weixin" class="weixin"><i class="icon-CN_tencent_wechat"></i></a></li>
+                            <% if(theme.Weibo){ %>
+                            <li><a href="<%- theme.Weibo %>" title="Sina-Weibo" target="_blank"><i class="icon-CN_sina_weibo"></i></a></li>
+                            <% } %>
+                            <% if(theme.Twitter){ %>
+                            <li><a href="<%- theme.Twitter %>" title="Twitter" target="_blank"><i class="icon-Popular_Twitter"></i></a></li>
+                            <% } %>
+                            <% if(theme.ZhiHu){ %>
+                            <li><a href="http://www.zhihu.com/people/yangzj1992" title="Zhihu" target="_blank"><i class="icon-CN_zhihu"></i></a></li>
+                            <% } %>
+                            <li class="nolink"><span>Welcome!</span></li>
+                        </ul>
+                    </nav>
+                    <!--// Info-bar -->
+                </div>
+                <!-- // .container -->
+                <button type="button" class="navbar-toggle menu-icon sb-toggle-right" title="More">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar before"></span>
+                <span class="icon-bar main"></span>
+                <span class="icon-bar after"></span>
+                </button>
+            </div>
+            <!-- // .navbar-inner -->
+        </div>
+
+        <!-- ============================ Header & Logo bar =========================== -->
+
+        <!-- ============================ Hero Image =========================== -->
+
+        <section id="hero" class="scrollme">
+            <div class="container-fluid element-img">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-8 col-md-offset-2 vertical-align cover boost text-center">
+                        <div class="center-me animateme" data-when="exit" data-from="0" data-to="0.6" data-opacity="0" data-translatey="100">
+                            <div>
+                            	<% theme.top_saying.forEach(function(item){ %>
+                                <h2><%- item.title %></h2>
+                                <p><%- item.content %></p>
+				    			<% }); %>
+
+                            </div>
+                        </div>
+                    </div>
+                    <!-- // .col-md-12 -->
+                </div>
+                <div class="herofade beige-dk"></div>
+            </div>
+        </section>
+
+        <!-- ============================ END Hero Image =========================== -->

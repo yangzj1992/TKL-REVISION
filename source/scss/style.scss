@@ -1,0 +1,1348 @@
+@charset "utf-8";
+@import "_basic-color.scss";
+*{
+  font-family: "Open Sans", "Helvetica Neue", "Helvetica", "Hiragino Sans GB", "Microsoft YaHei", "Source Han Sans CN", "WenQuanYi Micro Hei", Arial, sans-serif;
+}
+body {
+	font:14px/30px "Open Sans", "Helvetica Neue", "Helvetica", "Hiragino Sans GB", "Microsoft YaHei", "Source Han Sans CN", "WenQuanYi Micro Hei", Arial, sans-serif;
+	background-color: $White;
+	color: $DarkGrey;
+	padding: 0;
+}
+p {
+	font:14px/30px "Open Sans", "Helvetica Neue", "Helvetica", "Hiragino Sans GB", "Microsoft YaHei", "Source Han Sans CN", "WenQuanYi Micro Hei", Arial, sans-serif;
+	color: $DarkGrey;
+}
+i {
+	color: $NormalBlack;
+}
+b, strong {
+	font-weight: 700;
+}
+// code table
+figure{
+	table,tr,td{
+		border:none;
+	}
+	th,td{
+		padding:0;
+		min-width: 0;
+	}
+}
+
+table,th,tr,td{
+	border:1px solid $Gray;
+}
+th,td{
+	padding:5px;
+	min-width: 50px;
+}
+// directory
+#toc{
+	margin: 0 0 20px 20px;
+	background-color:$Grey;
+  padding:1em;
+  border-radius:5px;
+  line-height:1.5em;
+  float:right;
+  .toc{
+  	margin-top: 10px;
+		padding:0;
+		.toc-child{
+			padding-left: 20px;
+		}
+  }
+  .toc-link{
+		color:#58c0af;
+  }
+  li{
+  	list-style-type:none;
+  }
+}
+
+// loading line - pace plugin http://github.hubspot.com/pace/docs/welcome/ 
+.pace {
+	-webkit-pointer-events: none;
+	pointer-events: none;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	user-select: none;
+	.pace-progress{
+		background: $Gray;
+		position: fixed;
+		z-index: 2000;
+		top: 0;
+		right: 100%;
+		width: 100%;
+		height: 2px;
+	}
+}
+.pace-inactive {
+	display: none;
+}
+
+/* Turn off wow page animations for phones and tablets, (touch-scroll devices essentially) */
+/* Why do this? Because on 99% of touch-enabled devices, any on-page actions aren't fired until
+ * the browsers' scroll-engine has fully stopped on the screen, therefore you end up scrolling
+ * to blank page content, until the user removes their finger from the screen and the browsers' engine can
+ * then render the page content, leaving a buggy user-experience */
+@media (max-width: 1024px) {
+	.wow {
+		visibility: visible !important;
+		-webkit-animation-delay: 0 !important;
+		animation-delay: 0 !important;
+	}
+	.animated {
+		-webkit-animation-duration: 0;
+		-moz-animation-duration: 0;
+		-ms-animation-duration: 0;
+		-o-animation-duration: 0;
+		animation-duration: 0;
+		-webkit-animation-fill-mode: none;
+		-moz-animation-fill-mode: none;
+		-ms-animation-fill-mode: none;
+		-o-animation-fill-mode: none;
+		animation-fill-mode: none;
+	}
+}
+
+//Each title'sq font-size
+h1,h2,h3,h4,h5,h6 {
+	margin-top: 0;
+  font-family: "Open Sans", "Helvetica Neue", "Helvetica", "Hiragino Sans GB", "Microsoft YaHei", "Source Han Sans CN", "WenQuanYi Micro Hei", Arial, sans-serif;
+	color: $NormalBlack;
+}
+h1 {
+	font-size: 32px;
+}
+h2 {
+	text-transform: uppercase;
+	font-style: normal;
+	font-weight: 700;
+	font-size: 26px;
+	line-height: 30px;
+	letter-spacing: 1px;
+}
+@media (max-width:768px) {
+	h2 {
+		font-size: 22px;
+	}
+}
+h3 {
+	font-style: normal;
+	font-weight: 700;
+	line-height: 37px;
+	font-size: 20px; 
+}
+@media (max-width:768px) {
+	h3 {
+		font-size: 20px;
+	}
+}
+h4 {
+	font-style: normal;
+	font-weight: 700;
+	font-size: 18px;
+	line-height: 30px;
+	color: $NormalBlack;
+}
+h1 span,h2 span,h3 span,h4 span,h5 span,h6 span,.navbar .nav > li > span {
+	font-family: 'Georgia', "Open Sans", "Helvetica Neue", "Helvetica", "Hiragino Sans GB", "Microsoft YaHei", "Source Han Sans CN", "WenQuanYi Micro Hei", Arial, sans-serif;
+	font-style: italic;
+	margin-left: 4px;
+	margin-right: 3px;
+	text-transform: none;
+	position: relative;
+	top: -1px;
+}
+h1 span {
+	top: -2px
+}
+
+.index-context{
+	.title{
+		color:#4a4a4a;
+	}
+	h3:hover{
+		.title{
+			color:$NormalBlack;
+		}
+	}
+}
+.post-content{
+	h1,h2,h3,h4,h5,h6 {
+		margin-top: 0;
+	  font-family: "Open Sans", "Helvetica Neue", "Helvetica", "Hiragino Sans GB", "Microsoft YaHei", "Source Han Sans CN", "WenQuanYi Micro Hei", Arial, sans-serif;
+		color: $NormalBlack;
+	}
+	h1 {
+		font-size: 22px;
+		font-weight: 700;
+		text-align: center;
+	}
+	h2 {
+		text-transform: uppercase;
+		font-style: normal;
+		font-weight: 700;
+		font-size: 16px;
+		line-height: 24px;
+		letter-spacing: 1px;
+		padding-left: 10px;
+		border-left: 4px solid $DeepGreen;
+		margin-top:10px;
+	}
+	@media (max-width:768px) {
+		h2 {
+			font-size: 14px;
+		}
+	}
+	h3 {
+		font-style: normal;
+		font-weight: 700;
+		line-height: 21px;
+		font-size: 14px;
+		margin-top:14px;
+	}
+	h4 {
+		font-style: normal;
+		font-weight: 700;
+		font-size: 12px;
+		line-height: 30px;
+		color: $NormalBlack;
+	}
+	h1 span,h2 span,h3 span,h4 span,h5 span,h6 span,.navbar .nav > li > span {
+		font-family: 'Georgia', "Open Sans", "Helvetica Neue", "Helvetica", "Hiragino Sans GB", "Microsoft YaHei", "Source Han Sans CN", "WenQuanYi Micro Hei", Arial, sans-serif;
+		font-style: italic;
+		margin-left: 4px;
+		margin-right: 3px;
+		text-transform: none;
+		position: relative;
+		top: -1px;
+	}
+	h1 span {
+		top: -2px
+	}
+	.post-tags{
+		color:$White;
+		background-color: $Gray;
+		padding:2px 6px;
+		font-size:12px;
+		margin-right: 4px;
+	}
+}
+
+section {
+	background-color: $White;
+	position: relative;
+	padding-top: 60px;
+	z-index: 4;
+}
+a,a:active,a:focus,a:hover,a:visited,a:link {
+	color: $NormalBlack;
+	text-decoration: none;
+	word-break:break-all;
+}
+
+// top-banner
+.container {
+	padding:0 20px;
+	ul{
+		a,a:active,a:focus,a:visited,a:link{
+			color: $DeepGreen;
+			text-decoration: none;
+		}
+		a:hover{
+			color: $BlackGreen;
+			text-decoration: underline;
+		}
+	}
+}
+@media (min-width: 768px) {
+	.container {
+		padding:0 15px;
+	}
+}
+
+.container p a,.container p a:active,.container p a:visited,.container p a:link {
+	color: $DeepGreen;
+	text-decoration: none;
+}
+
+[class*="col-"] {
+	padding:15px; 
+	border: none;
+}
+
+/* Responsive tables fix for Firefox */
+@-moz-document url-prefix() {
+  fieldset { display: table-cell; }
+}
+
+blockquote {
+	margin: 40px 0;
+	p{
+		font:italic 15px 'Georgia', "Open Sans", "Helvetica Neue", "Helvetica", "Hiragino Sans GB", "Microsoft YaHei", "Source Han Sans CN", "WenQuanYi Micro Hei", Arial, sans-serif;
+	}
+}
+blockquote footer {
+	background-color: transparent;
+	margin-top: 0;
+	padding: 0;
+	font-size: 12px;
+}
+
+.table-responsive {
+	margin: 40px 0;
+}
+.row {
+	margin-bottom: 0;
+}
+
+::selection {
+	color: $White;
+	background-color: $NormalBlack;
+}
+::-moz-selection {
+ color:$White;
+ background-color:$NormalBlack;
+}
+a, button,
+.sb-close img,
+form#mailinglistForm .btn-primary,
+li.sb-toggle-submenu,
+.menu-icon,
+a.meta,
+#pagetabs .page-nav>li>a > i {
+	-webkit-transition: all ease 0.3s;
+	-moz-transition: all ease .3s;
+	-o-transition: all ease .3s;
+	-ms-transition: all ease .3s;
+	transition: all ease .3s;
+}
+
+// article dividing line
+hr {
+	margin:40px 0 20px;
+ 	.title-accent {
+		height: 4px;
+		width: 40px;
+		background: #333;
+		border-top: none;
+		margin: 20px auto;
+  }
+}
+
+/* Placeholder text color */
+input[placeholder],
+[placeholder],
+*[placeholder] {
+	color: $NormalGrey;
+	font-family: 'Georgia', "Open Sans", "Helvetica Neue", "Helvetica", "Hiragino Sans GB", "Microsoft YaHei", "Source Han Sans CN", "WenQuanYi Micro Hei", Arial, sans-serif;
+}
+input#delivery {
+	color: $NormalGrey !important;
+}
+::-webkit-input-placeholder { /* WebKit browsers */
+	color: $NormalGrey;
+	opacity: 1;
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+	color: $NormalGrey;
+	-moz-opacity: 1;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+	color: $NormalGrey;
+	-moz-opacity: 1;
+}
+:-ms-input-placeholder { /* Internet Explorer 10+ */
+	color: $NormalGrey;
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+}
+
+.archive-list-count,.category-list-count,.tag-list-count{
+	margin-left: 10px;
+}
+.archive-list{
+	line-height: 25px;
+}
+.vertical-align {
+	display: table;
+}
+.center-me {
+	display: table-cell;
+	vertical-align: middle;
+}
+// img welcome panel
+.boost {
+	position: relative;
+	z-index: 11;
+}
+
+.herofade{
+	width: 100%;
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=90)";
+	-khtml-opacity: .9;
+	-moz-opacity: .9;
+	opacity: .9;
+	height: 100%;
+	top: 0;
+	position: absolute;
+	z-index: 2;
+	left: 0;
+}
+.element-img {
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background:no-repeat fixed center center;
+	background-size: cover;
+	height: 100%;
+	position: relative;
+	z-index: 10;
+}
+
+/********************************************************/
+/* Buttons                                              */
+/********************************************************/
+.btn {
+	color: white;
+	-webkit-border-radius: 0;
+	-moz-border-radius: 0;
+	border-radius: 0;
+	font:700 14px "Open Sans", "Helvetica Neue", "Helvetica", "Hiragino Sans GB", "Microsoft YaHei", "Source Han Sans CN", "WenQuanYi Micro Hei", Arial, sans-serif;
+	padding: 8px 18px;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+	text-transform: uppercase;
+	border: none;
+}
+.btn-lg {
+  padding: 25px
+}
+.btn, .btn.disabled, .btn[disabled] {
+  background-color: #aab2bd;
+  border-color: #aab2bd;
+}
+.btn:hover, .btn:focus, .btn:active, .btn.active {
+  color: white;
+  background-color: #ccd1d9;
+  border-color: #ccd1d9;
+  outline: none !important;
+}
+.btn:active, .btn.active {
+  -webkit-box-shadow: none;
+     -moz-box-shadow: none;
+          box-shadow: none;
+}
+.btn.disabled, .btn[disabled] {
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=45)";
+  -khtml-opacity: .45;
+  -moz-opacity: .45;
+  opacity: .45;
+}
+.btn-link, .btn-link:hover, .btn-link:focus, .btn-link:active, .btn-link.active, .btn-link.disabled, .btn-link[disabled] {
+  color: #3bafda;
+  background-color: transparent;
+  border-color: transparent;
+  -webkit-box-shadow: none;
+     -moz-box-shadow: none;
+          box-shadow: none;
+}
+.btn-link:hover, .btn-link:focus {
+  text-decoration: underline;
+}
+.btn-default {
+  color: $White;
+}
+.btn-default:hover, .btn-default:focus, .btn-default:active, .btn-default.active {
+  background-color: #ccd1d9;
+}
+.btn-default, .btn-default.disabled, .btn-default[disabled] {
+  background-color: $NormalBlack
+}
+.open .dropdown-toggle.btn-default {
+  background-color: #ccd1d9;
+}
+.btn-primary, .btn-primary:active, .btn-primary.active, .btn-primary.disabled, .btn-primary[disabled] {
+  background-color: #3bafda;
+  border-color: #3bafda;
+}
+.btn-primary:hover, .btn-primary:focus {
+  background-color: #4fc1e9;
+  border-color: #4fc1e9;
+}
+.open .dropdown-toggle.btn-primary {
+  background-color: #4fc1e9;
+  border-color: #4fc1e9;
+}
+.btn-info, .btn-info:active, .btn-info.active, .btn-info.disabled, .btn-info[disabled] {
+  background-color: #37bc9b;
+  border-color: #37bc9b;
+}
+.btn-info:hover, .btn-info:focus {
+  background-color: #48cfad;
+  border-color: #48cfad;
+}
+.open .dropdown-toggle.btn-info {
+  background-color: #48cfad;
+  border-color: #48cfad;
+}
+.btn-success, .btn-success:active, .btn-success.active, .btn-success.disabled, .btn-success[disabled] {
+  background-color: #8cc152;
+  border-color: #8cc152;
+}
+.btn-success:hover, .btn-success:focus {
+  background-color: #a0d468;
+  border-color: #a0d468;
+}
+.open .dropdown-toggle.btn-success {
+  background-color: #a0d468;
+  border-color: #a0d468;
+}
+.btn-warning, .btn-warning:active, .btn-warning.active, .btn-warning.disabled, .btn-warning[disabled] {
+  background-color: #f6bb42;
+  border-color: #f6bb42;
+}
+.btn-warning:hover, .btn-warning:focus {
+  background-color: #ffce54;
+  border-color: #ffce54;
+}
+.open .dropdown-toggle.btn-warning {
+  background-color: #ffce54;
+  border-color: #ffce54;
+}
+.btn-danger, .btn-danger:active, .btn-danger.active, .btn-danger.disabled, .btn-danger[disabled],
+.btn-danger .open .dropdown-toggle.btn {
+  background-color: #da4453;
+  border-color: #da4453;
+}
+.btn-danger:hover, .btn-danger:focus {
+  background-color: #ed5565;
+  border-color: #ed5565;
+}
+
+.panel {
+	-webkit-box-shadow: none;
+	box-shadow: none;
+}
+.tab-content>.tab-pane {
+	padding: 20px;
+}
+
+.logo {
+	position: absolute;
+	display: block;
+	top: 50%;
+	margin-top: -15px;
+	left: 20px;
+	img{
+		display:block;
+		-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+		-khtml-opacity: 1;
+		-moz-opacity: 1;
+		opacity: 1;
+		-webkit-transition: all ease 0.2s;
+		-moz-transition: all ease .2s;
+		-o-transition: all ease .2s;
+		transition: all ease .2s;
+	}
+}	
+.navbar {
+	position: fixed;
+	top:0;
+	.nav{
+		width:100%;
+		text-align:center;
+		height:50px;		
+	}
+}
+.navbar .nav > li {
+	float:none;
+	display:inline-block;
+}
+.navbar .nav > li > span {
+	font-size: 12px
+}
+.navbar .nav > li a:hover {
+	background-color: transparent;
+}
+.nav>li>a:hover,
+.nav>li>a:focus {
+	background-color: transparent;
+}
+.navbar .nav > li > a,.navbar .nav li.nolink{
+	padding:0 10px;
+	margin:16px 0px;
+	color: $NormalBlack;
+	font:400 11px/14px 'Montserrat', "Open Sans", "Helvetica Neue", "Helvetica", "Hiragino Sans GB", "Microsoft YaHei", "Source Han Sans CN", "WenQuanYi Micro Hei", Arial, sans-serif;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	text-shadow: none;
+	border-right:1px solid #aaa;
+}
+.navbar .nav > li > a{
+	display: block;
+}
+.navbar .nav > li > a > i{
+	font-size: 12px;
+}
+nav i.icon-basic-eye {
+	font-size: 20px;
+	line-height: 0;
+	margin: 0;
+	display: inline-block;
+	position: relative;
+	top: 5px;
+	margin-right: 5px;
+}
+.navbar-inner {
+	background-color: transparent;
+	-webkit-transition: background-color 400ms linear;
+	-moz-transition: background-color 400ms linear;
+	-o-transition: background-color 400ms linear;
+	-ms-transition: background-color 400ms linear;
+	transition: background-color 400ms linear;
+	z-index:10;
+	border:none;
+}
+.lightnav .navbar-inner.lightnav-alt .nav > li > a{
+	color: $NormalBlack;
+}
+/* Changes nav background color to white on scroll */
+.navbar-inner.lightnav-alt {
+    background-color: rgba(255,255,255,.9)
+}
+@media (max-width: 1024px) {
+	.navbar-inner.lightnav-alt {
+		border-bottom: none;
+	}
+	.navbar-inner {
+		border-bottom: none !important;
+	}
+}
+/* Continue Navigation... */
+.navbar .nav > li:last-child > a,
+.navbar .nav > li:last-child {
+	border-right:none;	
+}
+.navbar .nav > li > a:focus,
+.navbar .nav > li > a:hover,
+.navbar .nav > li > a:active {
+	color:#777;
+}
+@media only screen and (max-width: 1024px) {
+	.logo img:hover {
+		top:0px;
+		-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+		-khtml-opacity: 1;
+		-moz-opacity: 1;
+		opacity: 1;
+	}
+	
+	.navbar-inner {
+		padding:0!important;
+		height:60px;
+	}
+	
+	.navbar .nav>li{
+		display: none;
+	}
+	.navbar .nav .mobile-li{
+		display: inline-block;
+	}
+}
+.grey-border {
+	border-right: #333 1px solid !important;
+}
+
+/* *******************************************************
+* Off-canvas navigation, (across all pages)
+******************************************************* */
+/* Bug fix */
+#sb-site {
+	min-height:100% !important;
+}
+button.menu-icon {
+	position: fixed;
+	right: 30px;
+	top: 14px;
+	margin-top: 0;
+	z-index: 2050;
+	padding: 0;
+	background: none;
+	outline: none;
+	display: block;
+	cursor: pointer;
+}
+button.navbar-toggle {
+	-webkit-border-radius: 0;
+	-moz-border-radius: 0;
+	border-radius: 0;
+	margin-bottom: 0;
+	margin-right: 0;
+}
+
+.menu-icon .before, .menu-icon .main, .menu-icon .after {
+	display: block;
+	width: 25px;
+	height: 2px;
+}
+/* sb Button Hover */
+.menu-icon:hover .before,
+html.sb-init.sb-active.sb-active-right .menu-icon .before {
+	-webkit-transform: translateY(-2px);
+	  -moz-transform: translateY(-2px);
+		-ms-transform: translateY(-2px);
+		-o-transform: translateY(-2px);
+		transform: translateY(-2px);
+}
+.menu-icon:hover .after,
+html.sb-init.sb-active.sb-active-right .menu-icon .after {
+	-webkit-transform: translateY(2px);
+	  -moz-transform: translateY(2px);
+		-ms-transform: translateY(2px);
+		-o-transform: translateY(2px);
+		transform: translateY(2px);
+}
+
+button.navbar-toggle .icon-bar {
+	-webkit-border-radius: 0;
+	-moz-border-radius: 0;
+	border-radius: 0;
+	background-color: $NormalBlack;
+	-webkit-transition: all ease 0.2s;
+	-moz-transition: all ease .2s;
+	-o-transition: all ease .2s;
+	transition: all ease .2s;
+}
+html.sb-init.sb-active.sb-active-right,
+html.sb-init.sb-active.sb-active-right #featured a,
+html.sb-init.sb-active.sb-active-right ul.filters li p,
+html.sb-init.sb-active.sb-active-right #projects .filter-item div a {
+	cursor: e-resize;
+}
+.sb-close {
+	text-align: right;
+	cursor: pointer;
+	img{
+		padding: 10px 16px;
+		-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=60)";
+		-khtml-opacity: .6;
+		-moz-opacity: .6;
+		opacity: .6;
+		&:hover{
+			-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+			-khtml-opacity: 1;
+			-moz-opacity: 1;
+			opacity: 1;
+		}
+	}
+}
+
+.sb-slidebar {
+	background-color: $NormalBlack; /* Background colour. */
+	color: $DarkGrey; /* Text colour. */
+	font-weight: 700;
+	font-size: 14px;
+	cursor: default;
+	right: -3px;
+	overflow-y: auto;
+	overflow-x: hidden;
+	a{
+		color: $DarkGrey; /* Link colour. */
+		text-decoration: none;
+		font-weight: 700;
+		text-transform: uppercase;
+		font-size: 13px;
+		&:hover{
+			color: $White; /* Link hover colour. */
+		}
+	}
+}
+/* Off-canvas menu items */
+.sb-slidebar{
+	text-align:center;
+	font-size: 16px;
+	.site-author{
+		margin:5px 0 10px;
+		color:#f5f5f5;
+		line-height: 1.8;
+		.site-author-img{
+			border:2px solid #333;
+			padding:2px;
+		}
+	}
+	.sb-item{
+		display: inline-block;
+		padding: 0 15px;
+		border-left:1px solid #333;
+		text-align: center;
+	}
+	.sb-item:first-child{
+		border:0;
+	}
+	.sb-item-count{
+		display: block;
+		text-align: center;
+		font-size: 18px;
+	}
+	.sb-item-name{
+		display: block;
+		font-size: 13px;
+	}
+	.sb-rss{
+		a{
+			display: inline-block;
+			padding:0 15px;
+			color:#fc6423;
+			border:1px solid #fc6423;
+			border-radius: 4px;
+			line-height: 1.8;
+			font-size: 16px;
+			margin-top: 20px;
+		}
+		a:hover{
+			color:$White;
+			background-color: #fc6423;
+		}
+	}
+	.links-title{
+		font-size: 14px;
+	}
+	.sb-links{
+		color:#999;
+		padding:20px 10px;
+		a{
+			display: inline-block;
+			margin:0 10px 10px 0;
+			vertical-align: middle;
+		}
+		a:before{
+			display: inline-block;
+			position: relative;
+			top:-1px;
+			vertical-align: middle;
+			margin-right: 3px;
+			content: "";
+			width: 4px;
+			height: 4px;
+			border-radius: 50%;
+			background-color: #bd0926;
+		}
+	}
+
+	.sb-menu {
+		padding: 34px 34px 24px;
+		margin: 0;
+		list-style-type: none;
+		li{
+			width: 100%;
+			padding: 0;
+			margin: 0;
+			color: $DarkGrey;
+			font-style: normal;
+			font-weight: 600;
+			line-height: 20px;
+			font-family: 'Open Sans', Helvetica, "Helvetica Neue", "Hiragino Sans GB", "Microsoft YaHei", "Source Han Sans CN", "WenQuanYi Micro Hei", Arial, sans-serif;
+			a{
+				font-family: 'Open Sans', Helvetica, "Helvetica Neue", "Hiragino Sans GB", "Microsoft YaHei", "Source Han Sans CN", "WenQuanYi Micro Hei", Arial, sans-serif;
+				width: 100%; /* Makes links full width. */
+				display: inline-block;
+				font-weight: 600;
+				font-style: normal;
+				color: $DarkGrey;
+				cursor: pointer;
+				line-height: 20px;
+				padding: 3px 10px; /* Creates an even padding the same size as your font. */
+				&:hover{
+					text-decoration: none !important;
+				}
+			}
+		}
+	}
+}
+
+.sb-menu > li:first-child {
+	border-top: none; /* Removes top border from first list item.. */
+}
+.sb-menu > li:last-child {
+	border-bottom: none; /* Removed bottom border from last list item. */
+}
+/* Borders */
+.sb-right .sb-menu li a {
+	border-left: 3px solid transparent;
+	&:hover{
+		border-left: 3px solid; /* Removes transparent colour, so border colour will be the same as link hover colour. */
+	}
+}
+/* Sb Dropdown */
+li.sb-toggle-submenu {
+	font:600 13px 'Open Sans', Helvetica, "Helvetica Neue", "Hiragino Sans GB", "Microsoft YaHei", "Source Han Sans CN", "WenQuanYi Micro Hei", Arial, sans-serif;
+	text-transform: uppercase;
+	border-left: 3px solid transparent;
+	padding: 3px 10px;
+	cursor: pointer;
+	&:hover{
+		color: $White; /* Link hover colour. */
+		border-left: 3px solid $White; /* Removes transparent colour, so border colour will be the same as link hover colour. */
+	}
+}
+ul.sb-submenu li a,
+ul.sb-submenu li a:hover {
+	text-transform: none;
+	font-weight: 400;
+}
+.sb-submenu {
+	display: none;
+	padding: 10px 10px 16px;
+	margin: 0;
+	list-style-type: none;
+}
+/* Submenu parent item caret */
+span.sb-caret {
+	position:relative;
+	top:-1px;
+	width: 0;
+	height: 0;
+	display: inline-block;
+	margin: 0 6px;
+	border: 5px solid transparent;
+}
+span.sb-caret { /* Caret Down */
+	border-top: 5px solid;
+	border-bottom: 0px solid transparent;
+}
+.sb-submenu-active > span.sb-caret { /* Caret Up */
+	border-top: 0px solid transparent;
+	border-bottom: 5px solid;
+}
+/* Secondary menu-items block, (different text styling) */
+.sb-menu.secondary {
+	padding: 24px 34px;
+	a{
+		text-transform: none;
+		font-weight: 400;
+	}
+}
+@media (max-width:991px) {
+	.title-emphasis {
+		text-align: left;
+	}
+}
+
+/* *******************************************************
+* Full-height hero section, (homepage, above the fold,)
+******************************************************* */
+#hero {
+	height: 100%;
+	position: fixed;
+	width: 100%;
+	padding-top: 0;
+	h2{
+		color: $NormalBlack;
+		margin-bottom: 20px;
+		display: inline-block;
+		padding: 14px;
+	}
+	p{
+		color: #333;
+		font:18px 'Georgia', serif, Helvetica, "Helvetica Neue", "Hiragino Sans GB", "Microsoft YaHei", "Source Han Sans CN", "WenQuanYi Micro Hei", Arial, sans-serif;
+		display: inline-block;
+	}
+}
+@media (max-width:1024px) {
+	#hero {
+		position: relative;
+		.element-img{
+			display: none;
+		}
+	}
+	.heightblock {
+		display: none;
+	}
+}
+@media (max-width:767px) {
+	#hero p ,footer .copy,.center-me,#statement,.return-top,.summary{
+		display: none!important;
+	}
+}
+@media (max-width:500px) {
+	#toc{
+		width: 100%;
+	}
+}
+
+
+/* *******************************************************
+* Statement section, (homepage)
+******************************************************* */
+#statement {
+	background-color: $White;
+	padding: 20px 0 10px;
+	p{
+		letter-spacing: 1px;
+		font-size: 20px;
+		color: $NormalBlack;
+	}
+	i{
+		font-size: 40px;
+		position: relative;
+		top: 11px;
+		margin-right: 10px;
+	}
+}
+
+/* *******************************************************
+* Image fader/slider, (homepage)
+******************************************************* */
+.flexslider {
+	-webkit-box-shadow: none;
+	box-shadow: none;
+	-webkit-border-radius: 0;
+	-moz-border-radius: 0;
+	-o-border-radius: 0;
+	border-radius: 0;
+	border: none;
+	margin: 0;
+}
+.flex-control-nav {
+	z-index: 3;
+	top: 10px;
+	right: 0;
+	text-align: right;
+	bottom: inherit;
+	width: auto;
+	padding: 15px 15px 10px;
+}
+.slide-featured .flex-direction-nav a {
+	width: 20%;
+}
+.flex-direction-nav a {
+	width: 30%;
+	height: 100%;
+	display: block;
+	position: absolute;
+	top: 0;
+	z-index: 10;
+	cursor: none;
+	text-indent: -9999px;
+}
+/* Left image cursor */
+a.flex-prev {
+   cursor: w-resize;
+   cursor: url(../img/global/cursor-prev.png), auto;
+}
+/* Right image cursor */
+a.flex-next {
+	cursor: e-resize;
+	cursor: url(../img/global/cursor-next.png), auto;
+}
+.flex-direction-nav a.flex-next:before,
+.flex-direction-nav a.flex-prev:before {
+	display: none;
+	visibility: hidden;
+}
+.flex-caption {
+	position: absolute;
+	margin: auto;
+	left: 0;
+	bottom: 0;
+}
+@media (max-width:650px) {
+	.flex-caption {
+		display: none
+	}
+}
+.flex-caption h4 {
+	background-color: $NormalBlack;
+	color: $White;
+	padding: 22px 30px;
+	margin-top: 0;
+	margin-bottom: 0;
+	display: inline-block;
+	float: left;
+}
+.flexslider p {
+	display: inline-block;
+	background-color: $White;
+	color: #333;
+	padding: 15px 30px;
+	font-family: 'Georgia', serif, Helvetica, "Helvetica Neue", "Hiragino Sans GB", "Microsoft YaHei", "Source Han Sans CN", "WenQuanYi Micro Hei", Arial, sans-serif;
+	font-style: italic;
+	margin-bottom: 0;
+	float: left;
+	clear: left;
+}
+.flex-control-paging li a {
+	display: block;
+	width: 16px;
+	height: 16px;
+	color: transparent;
+	background: transparent;
+	border: 2px solid $White;
+	-webkit-border-radius: 15px;
+	-moz-border-radius: 15px;
+	border-radius: 15px;
+	cursor: pointer;
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	-o-box-shadow: none;
+	box-shadow: none;
+}
+.flex-control-paging li a.flex-active {
+	background: $White;
+}
+
+/* *******************************************************
+* Services, (homepage)
+******************************************************* */
+
+#services {
+	background-color: $White;
+}
+#services .boxes {
+	padding-top: 50px;
+}
+#services .boxes .col-md-3,
+#services .boxes .col-md-6 {
+	padding: 15px;
+}
+#services .boxes i {
+	font-size: 80px;
+}
+#services .partition i {
+	font-size: 30px;
+	position: relative;
+	top: -15px;
+}
+#services .partition hr {
+	margin-top: 0;
+	margin-bottom: 0;
+}
+
+@media (min-width: 992px) {
+  li.support:hover {
+    border: none !important;
+  }
+}
+.spacefix {
+	padding-top: 101px;
+	background-color: transparent !important;
+}
+@media (max-width: 992px) {
+	.spacefix {
+		padding-top: 25px
+	}
+}
+
+/* *******************************************************
+* Global footer, (all pages)
+******************************************************* */
+footer {
+	padding:1% 0 1%;
+	background:$NormalBlack;
+	z-index: 9;
+	position: relative;
+	.footer{
+		width: 95%;
+		margin:0 auto;
+	}
+	.copy{
+		float: left;
+		margin-top: 5px;
+		p{
+			font-size: 12px;
+			color: #767D84;
+		}
+	}
+	.social{
+		float: right;
+		margin-top: 5px;
+		ul{
+			margin: 0;
+			padding: 0;
+		}
+		li{
+			background: none;
+			display: inline-block;
+			a i{
+				font-size: 20px;
+				color: #ccc;
+				margin-right: 4px;
+			}
+		}
+	}
+}
+/* *******************************************************
+* Global background-color classes:
+* simple apply class to any element to produce the desired
+* colored background.
+* Note: keep at end of this document
+******************************************************* */
+
+/* Flat colors */
+.beige-dk{
+	background-color: rgb(247, 247, 247);
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
+	-khtml-opacity: .7;
+	-moz-opacity: .7;
+	opacity: .7;
+}
+
+/*add css*/
+.readMore a {
+	font-size: 12px;
+	color: $Gray;
+	padding:2px 10px;
+	border: 1px solid $Gray;
+	border-radius: 20px;
+	color:$DarkGrey!important;
+	&:hover{
+		background-color: $Gray;
+		color: $White!important;
+		text-decoration: none!important;
+	}
+}
+.pagination {
+	width: 66%;
+	display: block;
+	margin: auto;
+	a{
+		padding:0 10px;
+		border: 1px solid $Gray;
+		border-radius: 20px;
+		max-width: 100%;
+		color: $Gray;
+		text-overflow: ellipsis;
+		overflow: hidden;
+  	white-space: nowrap;
+  	margin-bottom: 10px;
+  	&:hover{
+			background-color: $Gray;
+			color: $White;
+		}
+	}
+}
+
+#intro .col-md-8.col-md-offset-2 img {
+	max-width: 100%;
+}
+
+// /* Import the font file with the icons in it */
+// @font-face { font-family: 'fontawesome-webfont'; src:  url('../fonts/fontawesome-webfont.woff') format('woff'); font-weight: normal; font-style: normal; }
+// /* Apply these base styles to all icons */
+// .icon-feed:before, .icon-twitter:before, .icon-google-plus:before, .icon-facebook:before, .icon-sina-weibo, .icon-github{ font-family: 'icons'; speak: none; font-style: normal; font-weight: normal; font-variant: normal; text-transform: none; line-height: 1; -webkit-font-smoothing: antialiased; text-decoration: none; }
+// /* Each icon is created by inserting the corret character into the
+//    content of the :before pseudo element. Like a boss. */
+// .icon-feed:before { content: "\e631"; }
+// .icon-twitter:before { content: "\e630"; font-size: 1.1em; }
+// .icon-google-plus:before { content: "\e62d"; }
+// .icon-facebook:before { content: "\e62f"; }
+// .icon-sina-weibo:before { content: "\e666"; }
+// .icon-github:before { content: "\e636"; }
+// /*---------------- END ------------------------*/
+
+
+/* qrcodePanel */
+
+.popPanel{width:230px;height:242px;display:none;position:absolute;right:0px;z-index:10000;overflow:hidden;_position:absolute; /* for IE6 */_top:expression(documentElement.scrollTop + 300); }
+.popPanel .popPanel-inner{width:230px;height:242px;position:relative;overflow:hidden;}
+.popPanel .popPanel-inner .qrcodePanel{width:220px;height:240px;text-align:center;background:$White;border:solid 1px #ddd;position:absolute;left:0;top:0;overflow:hidden;}
+.popPanel .popPanel-inner .qrcodePanel img{width:200px;height:200px;border:none;padding:10px 10px 5px 10px;}
+.popPanel .popPanel-inner .qrcodePanel p{font-size:12px;color:$DarkGrey;line-height:24px;letter-spacing:1px;}
+
+/*return-top*/
+.return-top{
+	opacity: 1;
+	position: fixed;
+	bottom: 132px;
+	right:20px;
+	z-index: 10;
+	display: none;
+	.btn-return-top{
+		opacity: 0.5;
+		display: block;
+		width:38px;
+		height:38px;
+		border-radius: 5px;
+		border:0px;
+		cursor: pointer;
+		position: relative;
+		&:hover{
+			opacity: 1;
+		}
+		.arrow{
+			width:0px;
+			height: 0px;
+			border:9px solid transparent;
+			border-bottom-color: #bbb;
+			margin:9px;
+		}
+		.stick{
+			width:8px;
+			height: 14px;
+			top:15px;
+			margin:0 14px;
+			background-color: #bbb;
+			position: absolute;
+			display: block;
+		}
+	}
+}
+// comment
+.duoshuo,.summary,.post-content .nogutter{
+	width:66%;
+	margin:auto;
+}
+.summary{
+	padding-bottom: 6px;
+}
+.post-content{
+	.nogutter{
+		padding:10px 0;
+	}
+	.share-icon{
+		padding:0 .2em;
+	}
+	.qrcode{
+		position: absolute;
+		bottom: 30px;
+		right: 80px;
+		height:108px;
+		border:1px solid #ebebeb;
+		padding:5px;
+		text-align: center;
+		border-radius: 5px;
+		box-shadow:1px 1px 2px #969696;
+		background-color: #fff;
+	}
+	// figure .highlight pre{
+	// 	overflow-x:scroll;
+	// }
+} 
+
+.icon-Popular_GitHub:hover{
+	color:#4078c0;
+}
+.icon-CN_tencent_wechat:hover{
+	color:$WeixinGreen;
+}
+.icon-CN_sina_weibo:hover{
+	color:$WeiboRed;
+}
+.icon-Popular_Twitter:hover{
+	color:$TwitterBlue;
+}
+.icon-CN_zhihu:hover{
+	color:$ZhihuBlue;
+}
+.icon-CN_tencent_qzone:hover{
+	color:$QzoneYellow;
+}
+.icon-Popular_Facebook:hover{
+	color:$FacebookPurple;
+}
+.icon-Popular_G:hover{
+	color:$GoogleRed;
+}
