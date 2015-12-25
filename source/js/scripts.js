@@ -7,28 +7,27 @@ $(document).ready(function($) {
      * }
      */
     var a = {
-                info: "既然你都点进控制台想深入看点什么了..那么就送你一个冰淇淋吧，YY感受一下~",
-                logo: "         _.-.  \n" + "       ,'/ //\\ \n" + "      /// // /)\n" + "     /// // //|\n" + "    /// // /// \n" + "   /// // ///  \n" + "  (`: // ///   \n" + "   `;`: ///    \n" + "   / /  `'      \n" + "  / /\n" + " (_/  \n"
+              info: "既然你都点进控制台想深入看点什么了..那么就送你一个冰淇淋吧，YY感受一下~",
+              logo: "         _.-.  \n" + "       ,'/ //\\ \n" + "      /// // /)\n" + "     /// // //|\n" + "    /// // /// \n" + "   /// // ///  \n" + "  (`: // ///   \n" + "   `;`: ///    \n" + "   / /  `'      \n" + "  / /\n" + " (_/  \n"
             };
-            window.console && console.info && console.info(a.logo + a.info);
+    window.console && console.info && console.info(a.logo + a.info);
     
     // 开始进入时加载位置
     var scrollstatus = $(document).scrollTop();
     if(scrollstatus >10){
-       $(".lightnav .navbar-inner").addClass("lightnav-alt");
+      $(".lightnav .navbar-inner").addClass("lightnav-alt");
     }else{
-       $(".lightnav .navbar-inner").removeClass("lightnav-alt");
+      $(".lightnav .navbar-inner").removeClass("lightnav-alt");
     }
 
     var window_height = $(window).height();
     var window_width = $(window).width();
     $(window).scroll(function () {
-        
-        if ($(document).scrollTop() > 10) {
-            $(".lightnav .navbar-inner").addClass("lightnav-alt");
-        } else {
-            $(".lightnav .navbar-inner").removeClass("lightnav-alt");
-        }
+      if ($(document).scrollTop() > 10) {
+        $(".lightnav .navbar-inner").addClass("lightnav-alt");
+      } else {
+        $(".lightnav .navbar-inner").removeClass("lightnav-alt");
+      }
     });
 
     var wall_number = "url(http://7bv937.com1.z0.glb.clouddn.com/qcyoung/TKL/wall-"+Math.ceil(Math.random()*45)+".jpg)";
@@ -83,17 +82,17 @@ $(document).ready(function($) {
       smoothscroll: true, // scroll with ease movement
       autohidemode: false,
       zindex: "100", // change z-index for scrollbar div
-          scrollspeed: 60, // scrolling speed
-          mousescrollstep: 40,// mouse scrolling speed
-          gesturezoom: false,//上缩放框激活时，间距输出/输入
-          horizrailenabled: false,//管理水平滚动
-          cursorcolor: "#151515",
-          boxzoom: false,// enable zoom for box content
-          cursorborder: "0px solid #202020",
-          cursorborderradius: "5px",
-          cursorwidth: 9,
-          enablemousewheel: true,
-          background: "rgba(255,255,255,0.7)",
+      scrollspeed: 60, // scrolling speed
+      mousescrollstep: 40,// mouse scrolling speed
+      gesturezoom: false,//上缩放框激活时，间距输出/输入
+      horizrailenabled: false,//管理水平滚动
+      cursorcolor: "#151515",
+      boxzoom: false,// enable zoom for box content
+      cursorborder: "0px solid #202020",
+      cursorborderradius: "5px",
+      cursorwidth: 9,
+      enablemousewheel: true,
+      background: "rgba(255,255,255,0.7)",
     });
 
     // Page transitions
@@ -120,17 +119,17 @@ $(document).ready(function($) {
 
     // Functionailty constraints for mobile(wall opacity covering layer)
     if (!Modernizr.touch) {
-        jQuery(function ($) {
-            // Hero & page-header fade-in effect 
-            var divs = $('.herofade');
-            $(window).on('scroll', function () {
-                var st = $(this).scrollTop();
-                divs.css({
-                    'margin-top': -(st / 0) + "px",
-                    'opacity': 0.7 - st / 1600
-                });
-            });
+      jQuery(function ($) {
+        // Hero & page-header fade-in effect 
+        var divs = $('.herofade');
+        $(window).on('scroll', function () {
+          var st = $(this).scrollTop();
+          divs.css({
+            'margin-top': -(st / 0) + "px",
+            'opacity': 0.7 - st / 1600
+          });
         });
+      });
     }
 
     // autohide navbar on scroll
@@ -143,47 +142,30 @@ $(document).ready(function($) {
     var $body   = $(document.body);
     var navHeight = $('.navbar').outerHeight(true) + 80;
 
-    $body.scrollspy({
-      target: '#leftcol',
-      offset: navHeight
+
+    /*!
+     * IE10 viewport hack for Surface/desktop Windows 8 bug
+     * Copyright 2014 Twitter, Inc.
+     * Licensed under the Creative Commons Attribution 3.0 Unported License. For
+     * details, see http://creativecommons.org/licenses/by/3.0/.
+     */
+    // See the Getting Started docs for more information:
+    // http://getbootstrap.com/getting-started/#support-ie10-width
+    if (navigator.userAgent.match(/IEMobile\/10\.0/)) {
+      var msViewportStyle = document.createElement('style');
+      msViewportStyle.appendChild(
+        document.createTextNode(
+          '@-ms-viewport{width:auto!important}'
+        )
+      );
+      document.querySelector('head').appendChild(msViewportStyle);
+    }
+
+    $(".logo").hover(function() {
+      $(this).find("#white-logo").css('display','none');
+      $(this).find("#brown-logo").css('display','block');
+    }, function() {
+      $(this).find("#brown-logo").css('display','none');
+      $(this).find("#white-logo").css('display','block');
     });
-
-      /*!
-       * IE10 viewport hack for Surface/desktop Windows 8 bug
-       * Copyright 2014 Twitter, Inc.
-       * Licensed under the Creative Commons Attribution 3.0 Unported License. For
-       * details, see http://creativecommons.org/licenses/by/3.0/.
-       */
-      // See the Getting Started docs for more information:
-      // http://getbootstrap.com/getting-started/#support-ie10-width
-      if (navigator.userAgent.match(/IEMobile\/10\.0/)) {
-          var msViewportStyle = document.createElement('style');
-          msViewportStyle.appendChild(
-              document.createTextNode(
-                  '@-ms-viewport{width:auto!important}'
-              )
-          );
-          document.querySelector('head').appendChild(msViewportStyle);
-      }
-
-      $(".logo").hover(function() {
-        $(this).find("#white-logo").css('display','none');
-        $(this).find("#brown-logo").css('display','block');
-      }, function() {
-        $(this).find("#brown-logo").css('display','none');
-        $(this).find("#white-logo").css('display','block');
-      });
-
-
-      $('.sb-toggle-submenu').off('click') // Stop submenu toggle from closing Slidebars.
-        .on('click', function() {
-          $submenu = $(this).parent().children('.sb-submenu');
-          $(this).add($submenu).toggleClass('sb-submenu-active'); // Toggle active class.
-    
-          if ($submenu.hasClass('sb-submenu-active')) {
-          $submenu.slideDown(200);
-          } else {
-          $submenu.slideUp(200);
-        }
-      });
 }(jQuery)); // End "use strict"
