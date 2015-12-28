@@ -22,7 +22,7 @@
             <div class="clearfix"></div>
             <hr class="nogutter">
             <div class="summary">
-                <!--<i class="demo-icon icon-file-code">&#xe800;</i> <span class="i-name"></span>-->
+                <!-- <i class="demo-icon icon-file-code">&#xe800;</i> <span class="i-name"></span> -->
                 <i class="demo-icon icon-file-word">&#xe802;</i><span class="i-name"><%-wordcount(post.content)%>字</span>
                 <i class="demo-icon icon-tags">&#xe801;</i> <span class="i-name"></span>
                 <span class="post-meta">
@@ -33,6 +33,10 @@
                         <% }); %>
                     <% } %>
                 </span>
+                <i class="demo-icon icon-eye">&#xe803;</i> <span class="i-name"><span id="busuanzi_container_page_pv">
+                  <span id="busuanzi_value_page_pv"></span>次阅读
+                </span></span>
+                
                <span id="share" style="float: right;position: relative;">
                     <div class="qrcode" id="qrcode" style="display: none;"></div>
                     <a id="wechat" class="share-icon" title="分享到微信" data-wechat-url="<%=  site.url %><% page.url %>" href="javascript:void(0);"><i class="icon-CN_tencent_wechat"></i></a>

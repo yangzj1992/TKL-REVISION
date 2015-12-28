@@ -880,7 +880,11 @@ span.sb-caret {
 
 @media (max-width: 767px) {
   #hero p, footer .copy, .center-me, #statement, .return-top, .summary {
-    display: none !important; } }
+    display: none !important; }
+  .duoshuo, .pagination, .nogutter {
+    width: 100% !important;
+    text-align: center;
+    margin: 0 auto; } }
 
 @media (max-width: 500px) {
   #toc {
