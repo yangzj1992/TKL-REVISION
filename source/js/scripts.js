@@ -1,3 +1,18 @@
+function dispatch() {
+    var searchbox = $("#searchbox");
+    var searchval = searchbox.val()
+    if (searchval != "") {
+        var url = 'http://www.google.com/search?q=site:qcyoung.com/%20' + searchval;
+        if (navigator.userAgent.indexOf('iPad') > -1 || navigator.userAgent.indexOf('iPhone') > -1 || navigator.userAgent.indexOf('iPhone') > -1) {
+            location.href = url;
+        } else {
+            window.open(url, "_blank");
+        }
+        return false;
+    } else {
+        return false;
+    }
+}
 $(document).ready(function($) {
     /**
      * plugins list
@@ -30,8 +45,8 @@ $(document).ready(function($) {
       }
     });
 
-    var wall_number = "url(http://7bv937.com1.z0.glb.clouddn.com/qcyoung/TKL/wall-"+Math.ceil(Math.random()*45)+".jpg)";
-    // var wall_number = "url(http://images.alphacoders.com/453/45373.jpg";
+    var wall_number = "url(http://7bv937.com1.z0.glb.clouddn.com/qcyoung/TKL/wall-"+Math.ceil(Math.random()*50)+".jpg)";
+    // var wall_number = "url(//az619822.vo.msecnd.net/files/SnowySquirrel_EN-US13973676590_1366x768.jpg";
     $(".element-img").css('background-image',wall_number);
 
     // 微信Window
@@ -168,4 +183,6 @@ $(document).ready(function($) {
       $(this).find("#brown-logo").css('display','none');
       $(this).find("#white-logo").css('display','block');
     });
+
+    
 }(jQuery)); // End "use strict"

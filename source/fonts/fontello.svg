@@ -1,7 +1,7 @@
 <?xml version="1.0" standalone="no"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg xmlns="http://www.w3.org/2000/svg">
-<metadata>Copyright (C) 2015 by original authors @ fontello.com</metadata>
+<metadata>Copyright (C) 2016 by original authors @ fontello.com</metadata>
 <defs>
 <font id="fontello" horiz-adv-x="1000" >
 <font-face font-family="fontello" font-weight="400" font-stretch="normal" units-per-em="1000" ascent="850" descent="-150" />
@@ -28,6 +28,7 @@
 <glyph glyph-name="paper-plane" unicode="&#xe813;" d="m984 844q19-14 15-36l-142-857q-3-16-18-25-8-5-18-5-6 0-13 3l-253 103-135-164q-10-13-27-13-7 0-12 2-11 4-17 13t-7 21v194l482 591-596-516-221 91q-20 7-22 30-1 23 18 33l928 536q9 5 18 5 11 0 20-6z" horiz-adv-x="1000" />
 <glyph glyph-name="note-beamed" unicode="&#xe814;" d="m206 714l534 116 0-704q2-42-30-81t-86-59q-64-24-110-8t-62 64q-18 48 7 97t85 73q52 20 106 10l0 376-354-82 0-490q0-42-32-81t-86-59q-64-22-109-7t-61 63q-18 48 6 97t84 73q54 20 108 10l0 592z" horiz-adv-x="740" />
 <glyph glyph-name="eye-1" unicode="&#xe815;" d="m0 350q6 49 64 110 79 80 176 129 129 60 260 60 137-2 260-60 103-53 176-129 64-73 64-110-6-49-64-109-79-80-176-129-129-61-260-61-137 2-260 61-103 53-176 129-64 72-64 109z m264 0q0-94 69-159t167-65 167 65 69 159-69 159-167 66-167-66-69-159z m86 1q0 60 44 102t106 42 106-42 44-102-44-102-106-43-106 43-44 102z" horiz-adv-x="1000" />
+<glyph glyph-name="search" unicode="&#xe816;" d="m772 78q30-34 6-62l-46-46q-36-32-68 0l-190 190q-74-42-156-42-128 0-223 95t-95 223 90 219 218 91 224-95 96-223q0-88-46-162z m-678 358q0-88 68-156t156-68 151 63 63 153q0 88-68 155t-156 67-151-63-63-151z" horiz-adv-x="789" />
 </font>
 </defs>
 </svg>

@@ -7,7 +7,7 @@
         <div class="site-overview">
            <div class="site-author">
                <img class="site-author-img" width="100px" height="100px" src="http://7bv937.com1.z0.glb.clouddn.com/qcyoung/avatar.jpg"></img>
-               <div class="site-author-name">yangzj1992</div>
+               <div class="site-author-name"><%= config.author%></div>
            </div>
            <div class="sb-list">
                <div class="sb-item sb-posts">
@@ -53,7 +53,6 @@
           <img src="http://7bv937.com1.z0.glb.clouddn.com/qcyoung/cc-by-nc.svg">
         </a>
       </div>
-
     </div>
     
     <!-- ============================ END Off-canvas navigation =========================== -->
@@ -126,8 +125,7 @@
                             	<% theme.top_saying.forEach(function(item){ %>
                                 <h2><%- item.title %></h2>
                                 <p><%- item.content %></p>
-				    			<% }); %>
-
+			                          <% }); %>
                             </div>
                         </div>
                     </div>
