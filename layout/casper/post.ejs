@@ -54,6 +54,9 @@
 </section>
 <script src="/js/jquery.qrcode.min.js"></script>
 <script>
+    if($("#toc").width()>350){
+        $("#toc").width("72%")
+    }
     $("#wechat").hover(function() {
         $("#qrcode").css('display','inline-block');
         jQuery("#qrcode").qrcode({
