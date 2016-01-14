@@ -17,7 +17,7 @@ $(document).ready(function($) {
     /**
      * plugins list
      * @type {
-     *   jquery:[nicescroll,slidebars,animsition,Bootstrap Auto-Hiding Navbar]
+     *   jquery:[nicescroll,slidebars,animsition,Bootstrap Auto-Hiding Navbar,pace]
      *   
      * }
      */

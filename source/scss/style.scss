@@ -1319,6 +1319,16 @@ footer {
 		}
 	}
 }
+pre{
+	.line{
+		.label{
+			color:#333;
+			padding:0;
+			font-size: 13px;
+			font-weight:400;
+		}
+	}
+}
 // comment
 .duoshuo,.summary,.post-content .nogutter{
 	width:66%;

@@ -22,6 +22,10 @@ git pull
 
 This theme is base on Sass and jQuery and use gulp to build it. If u want to change this theme's style. Maybe u should know these skills.
 
+###File Directory
+- layout (include every pages content)
+- source 
+
 ###Screen
 Show
 ![](http://7bv937.com1.z0.glb.clouddn.com/qcyoung/TKL-REVISION-SHOW.png)
