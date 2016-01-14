@@ -45,7 +45,7 @@ $(document).ready(function($) {
       }
     });
 
-    var wall_number = "url(http://7bv937.com1.z0.glb.clouddn.com/qcyoung/TKL/wall-"+Math.ceil(Math.random()*50)+".jpg)";
+    var wall_number = "url(http://qcyoung.qiniudn.com/qcyoung/TKL/wall-"+Math.ceil(Math.random()*50)+".jpg)";
     // var wall_number = "url(//az619822.vo.msecnd.net/files/SnowySquirrel_EN-US13973676590_1366x768.jpg";
     $(".element-img").css('background-image',wall_number);
 
@@ -61,7 +61,7 @@ $(document).ready(function($) {
         shift: 2,
         shadeClose: true, //开启遮罩关闭
         area: [ window_width , window_height],
-        content: '<img src="http://7bv937.com1.z0.glb.clouddn.com/qcyoung/yangzj1992QRcode.jpg" width="200px" height="200px"/>'
+        content: '<img src="http://qcyoung.qiniudn.com/qcyoung/yangzj1992QRcode.jpg" width="200px" height="200px"/>'
       });
     });
 
