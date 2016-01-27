@@ -13,6 +13,7 @@ function dispatch() {
         return false;
     }
 }
+
 $(document).ready(function($) {
     /**
      * plugins list
@@ -22,10 +23,69 @@ $(document).ready(function($) {
      * }
      */
     var a = {
-              info: "既然你都点进控制台想深入看点什么了..那么就送你一个冰淇淋,YY感受一下~",
+              info: "卧槽，你居然敢点开控制台看我的代码，这下我的屎代码无所遁形了 T _ T",
               logo: "         _.-.  \n" + "       ,'/ //\\ \n" + "      /// // /)\n" + "     /// // //|\n" + "    /// // /// \n" + "   /// // ///  \n" + "  (`: // ///   \n" + "   `;`: ///    \n" + "   / /  `'      \n" + "  / /\n" + " (_/  \n"
             };
     window.console && console.info && console.info(a.logo + a.info);
+
+    var egglayer;
+    var g_pushed = false;
+    document.onkeydown = function(e){
+      if(!($(':focus').prop("tagName")=="INPUT") && !($(':focus').prop("tagName")=="TEXTAREA")){
+        var e = e || window.event; 
+        if(e.keyCode == 191 && e.shiftKey){
+          var window_height = $(window).height();
+          var window_width = $(window).width();
+          if(window_width<1024){
+            return false;
+          }
+          if($(".layui-layer-shade").length >0){
+            return false;
+          }else{
+            egglayer = layer.open({
+              type: 1,
+              title: false,
+              skin: 'layui-layer-demo', //样式类名
+              closeBtn: false, //不显示关闭按钮
+              shift: 5,
+              shadeClose: true, //开启遮罩关闭
+              area: [ window_width , window_height],
+              content: '<div class="egg-tips"><div class="egg-header"><span>彩蛋指南(仿Github —— 试着按下这些键)</span><span class="egg-close"><i class="demo-icon icon-cancel">&#xe808;</i></span> </div><div class="egg-helps"><table class="keyboard-map"><tbody><tr><th></th><th>快捷方式说明</th></tr><tr><td class="keys"><kbd>?</kbd></td><td>打开彩蛋说明</td></tr><tr><td class="keys"><kbd>g</kbd><kbd>s</kbd></td><td>定焦到搜索框</td></tr><tr><td class="keys"><kbd>g</kbd><kbd>a</kbd></td><td>打开归档页</td></tr><tr><td class="keys"><kbd>g</kbd><kbd>c</kbd></td><td>打开目录页</td></tr><tr><td class="keys"><kbd>g</kbd><kbd>t</kbd></td><td>打开标签页</td></tr></tbody></table></div></div>'
+            });
+          }
+          g_pushed =false;
+        }else if(e.keyCode == 71){//g
+          g_pushed =true;
+        }else if(e.keyCode == 65){//a
+          if(g_pushed){
+            location.href="/archives";
+          }
+          g_pushed =false;
+        }else if(e.keyCode == 67){//c
+          if(g_pushed){
+            location.href="/categories";
+          }
+          g_pushed =false;
+        }else if(e.keyCode == 84){//t
+          if(g_pushed){
+            location.href="/tags";
+          }
+          g_pushed =false;
+        }else if(e.keyCode == 83){//S
+          if(g_pushed){
+            $("#searchbox").focus();
+            $("#searchbox").val("");
+          }
+          g_pushed =false;
+          return false;
+        }else{
+          g_pushed =false;
+        }
+      }
+    }
+    $(document).delegate('.egg-close','click',function(){
+      layer.close(egglayer);
+    });
     
     // 开始进入时加载位置
     var scrollstatus = $(document).scrollTop();
@@ -45,8 +105,8 @@ $(document).ready(function($) {
       }
     });
 
-    var wall_number = "url(http://qcyoung.qiniudn.com/qcyoung/TKL/wall-"+Math.ceil(Math.random()*50)+".jpg)";
-    // var wall_number = "url(//az619822.vo.msecnd.net/files/SnowySquirrel_EN-US13973676590_1366x768.jpg";
+    var wall_number = "url(http://qcyoung.qiniudn.com/qcyoung/TKL/wall-"+Math.ceil(Math.random()*51)+".jpg)";
+    // var wall_number = "url(http://i.imgur.com/NXaU9p9.png";
     $(".element-img").css('background-image',wall_number);
 
     // 微信Window
@@ -66,6 +126,8 @@ $(document).ready(function($) {
     });
 
     var scrollclick;
+
+    
 
     //返回顶部功能
     $(window).bind("scroll",function() {
@@ -183,6 +245,9 @@ $(document).ready(function($) {
       $(this).find("#brown-logo").css('display','none');
       $(this).find("#white-logo").css('display','block');
     });
+
+    
+
 
     
 }(jQuery)); // End "use strict"

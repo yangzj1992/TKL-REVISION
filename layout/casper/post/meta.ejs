@@ -5,7 +5,11 @@
     <% if (post.tags && post.tags.length){ %>
     <% count = post.tags.length %>
     | <% post.tags.forEach(function(tag, index) { %>
-    <a href='<%= config.root + tag.path %>'><%= tag.name %></a><% if (count !== index+1) { %>,<% } %>
+    <a href='<%= config.root + tag.path %>'><%= tag.name %> </a><% if (count !== index+1) { %>,<% } %>
     <% }); %>
     <% } %>
+</span>
+| 
+<span class="article-comment">
+  <a class='disqus-comment-count' href="<%= config.root + post.path %>#disqus_thread" data-disqus-url="<%= config.root + post.path %>"></a>
 </span>

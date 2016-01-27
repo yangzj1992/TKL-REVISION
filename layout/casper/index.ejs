@@ -41,4 +41,28 @@
         </div>
     </div>
 </section>
+<script>
+  var disqusShortName = "<%= theme.disqus_shortname %>"; // 替换为你 Disqus 的 shortname
+  var disqusPublicKey = "<%= config.disqus_api %>"; // 申请的公钥
+  var urlArray = [];
+  $('.disqus-comment-count').each(function () {
+    var url = $(this).attr('data-disqus-url');
+    urlArray.push('link:' + url);
+  });
+  $.ajax({
+    type: 'GET',
+    url: "https://disqus.com/api/3.0/threads/set.jsonp",
+    data: { api_key: disqusPublicKey, forum : disqusShortName, thread : urlArray }, 
+    cache: false,
+    dataType: "jsonp",
+    success: function (result) {
+      for (var i in result.response) {
+        var count = result.response[i].posts;
+        if ( count ) {
+          $('.disqus-comment-count[data-disqus-url="' + result.response[i].link + '"]').html(count);
+        }
+      }
+    }
+  });
+</script>
 <!-- ============================ END Content =========================== -->
