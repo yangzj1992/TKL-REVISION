@@ -23,7 +23,7 @@
             <hr class="nogutter">
             <div class="summary">
                 <a class="code-article" target="_blank"><i class="demo-icon icon-file-code">&#xe800;</i><span class="i-name">源码</span></a>
-                <i class="demo-icon icon-file-word">&#xe802;</i><span class="i-name"><%-wordcount(post.content)%>字</span>
+                <i class="demo-icon icon-file-word">&#xe821;</i><span class="i-name"><%-wordcount(post.content)%>字</span>
                 <i class="demo-icon icon-tags">&#xe801;</i> <span class="i-name"></span>
                 <span class="post-meta">
                     <% if (post.tags && post.tags.length){ %>
@@ -55,7 +55,7 @@
 <script src="/js/jquery.qrcode.min.js"></script>
 <script>
     if($("#toc").width()>350){
-        $("#toc").width("72%")
+        $("#toc").css('width', '100%').after('<div class="clear"></div>')
     }
     $("#wechat").hover(function() {
         $("#qrcode").css('display','inline-block');

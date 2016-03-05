@@ -22,6 +22,9 @@ $(document).ready(function($) {
      *   
      * }
      */
+    var window_height = $(window).height();
+    var window_width = $(window).width();
+    var document_height = $(document).height()
     var a = {
               info: "卧槽，你居然敢点开控制台看我的代码，这下我的屎代码无所遁形了 T _ T",
               logo: "         _.-.  \n" + "       ,'/ //\\ \n" + "      /// // /)\n" + "     /// // //|\n" + "    /// // /// \n" + "   /// // ///  \n" + "  (`: // ///   \n" + "   `;`: ///    \n" + "   / /  `'      \n" + "  / /\n" + " (_/  \n"
@@ -34,8 +37,6 @@ $(document).ready(function($) {
       if(!($(':focus').prop("tagName")=="INPUT") && !($(':focus').prop("tagName")=="TEXTAREA")){
         var e = e || window.event; 
         if(e.keyCode == 191 && e.shiftKey){
-          var window_height = $(window).height();
-          var window_width = $(window).width();
           if(window_width<1024){
             return false;
           }
@@ -95,8 +96,6 @@ $(document).ready(function($) {
       $(".lightnav .navbar-inner").removeClass("lightnav-alt");
     }
 
-    var window_height = $(window).height();
-    var window_width = $(window).width();
     $(window).scroll(function () {
       if ($(document).scrollTop() > 10) {
         $(".lightnav .navbar-inner").addClass("lightnav-alt");
@@ -105,14 +104,12 @@ $(document).ready(function($) {
       }
     });
 
-    var wall_number = "url(http://qcyoung.qiniudn.com/qcyoung/TKL/wall-"+Math.ceil(Math.random()*51)+".jpg)";
-    // var wall_number = "url(http://i.imgur.com/NXaU9p9.png";
+    var wall_number = "url(http://qcyoung.qiniudn.com/qcyoung/TKL/wall-"+Math.ceil(Math.random()*65)+".jpg)";
+    // var wall_number = "url(http://i12.tietuku.com/d504d76cd7e09cf0.png";
     $(".element-img").css('background-image',wall_number);
 
     // 微信Window
     $("#navigation .weixin,.social .weixin").bind('click',function(event) {
-      var window_height = $(window).height();
-      var window_width = $(window).width();
       layer.open({
         type: 1,
         title: false,
@@ -136,17 +133,26 @@ $(document).ready(function($) {
         var scrollTopNum=$(document).scrollTop(),
         //获取浏览器当前高度
         winHeight=$(window).height(),
-        returnTop=$("div.return-top");
+        returnTop=$("div.control-panel");
         //滚动条垂直距离大于0时显示，反之隐藏
         (scrollTopNum>240)?returnTop.fadeIn("fast"):returnTop.fadeOut('fast');
       }
     });
 
     // 点击按钮后，滚动条的垂直方向的值逐渐变为0，也就是滑动向上的效果
-    $("div.return-top").click(function() {
+    
+    $(".icon-gotop").click(function() {
       scrollclick = true;
-      $(this).fadeOut('800');
+      $("div.control-panel").fadeOut('800');
       $("html, body").animate({ scrollTop: 0 }, 800,function(){
+        scrollclick = false;
+      });
+      return false;
+    });
+
+    $(".icon-godown").click(function() {
+      scrollclick = true;
+      $("html, body").animate({ scrollTop: document_height }, 800,function(){
         scrollclick = false;
       });
       return false;
