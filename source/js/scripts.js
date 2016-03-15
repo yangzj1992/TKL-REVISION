@@ -104,8 +104,8 @@ $(document).ready(function($) {
       }
     });
 
-    var wall_number = "url(http://qcyoung.qiniudn.com/qcyoung/TKL/wall-"+Math.ceil(Math.random()*65)+".jpg)";
-    // var wall_number = "url(http://i12.tietuku.com/d504d76cd7e09cf0.png";
+    var wall_number = "url(http://qcyoung.qiniudn.com/qcyoung/TKL/wall-"+Math.ceil(Math.random()*72)+".jpg)";
+    // var wall_number = "url(https://images4.alphacoders.com/572/5726.jpg";
     $(".element-img").css('background-image',wall_number);
 
     // 微信Window
@@ -158,6 +158,9 @@ $(document).ready(function($) {
       return false;
     });
 
+    $(".icon-music").click(function() {
+      window.open("http://yangzj1992.u117.15800000.top/yPlayer/")
+    });
     // Slidebars off-canvas menu
     $.slidebars();
 
