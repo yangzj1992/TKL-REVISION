@@ -24,7 +24,9 @@ $(document).ready(function($) {
      */
     var window_height = $(window).height();
     var window_width = $(window).width();
-    var document_height = $(document).height()
+    var document_height = $(document).height();
+    var footer_height = $('footer').outerHeight();
+    var toc_height = $(".toc").outerHeight();
     var a = {
               info: "卧槽，你居然敢点开控制台看我的代码，这下我的屎代码无所遁形了 T _ T",
               logo: "         _.-.  \n" + "       ,'/ //\\ \n" + "      /// // /)\n" + "     /// // //|\n" + "    /// // /// \n" + "   /// // ///  \n" + "  (`: // ///   \n" + "   `;`: ///    \n" + "   / /  `'      \n" + "  / /\n" + " (_/  \n"
@@ -97,6 +99,36 @@ $(document).ready(function($) {
     }
 
     $(window).scroll(function () {
+      var scrollTop = $(this).scrollTop();
+      if($('#toc').length){
+        var heads = $(".post-article").find("h1,h2,h3,h4,h5");
+        var nowtoc = 0;
+        for(var i=0;i<heads.length;i++){
+          if(heads[i].getBoundingClientRect().top < 0){
+            nowtoc = i;
+          }else{
+            break;
+          }
+        }
+        var tocs = $(".toc").find("a");
+        $(tocs).removeClass('toc-active');
+        $(tocs[nowtoc]).addClass('toc-active');
+        var toc_scroll = tocs[nowtoc].offsetTop;
+        if(toc_scroll > window_height/2){
+          $("#toc").scrollTop(toc_scroll-window_height/2);
+        }
+        if(scrollTop > document_height - window_height - footer_height){
+          $("#toc").css({
+            'position':'absolute',
+            'top':document_height - toc_height - footer_height +'px'
+          });
+        }else{
+          $("#toc").css({
+            'position':'fixed',
+            'top':'50px'
+          });
+        }
+      }
       if ($(document).scrollTop() > 10) {
         $(".lightnav .navbar-inner").addClass("lightnav-alt");
       } else {
@@ -104,8 +136,8 @@ $(document).ready(function($) {
       }
     });
 
-    var wall_number = "url(http://qcyoung.qiniudn.com/qcyoung/TKL/wall-"+Math.ceil(Math.random()*72)+".jpg)";
-    // var wall_number = "url(https://images4.alphacoders.com/572/5726.jpg";
+    var wall_number = "url(http://qcyoung.qiniudn.com/qcyoung/TKL/wall-"+Math.ceil(Math.random()*88)+".jpg)";
+    // var wall_number = "url(https://images8.alphacoders.com/677/677464.jpg)";
     $(".element-img").css('background-image',wall_number);
 
     // 微信Window
@@ -165,20 +197,20 @@ $(document).ready(function($) {
     $.slidebars();
 
     $("html").niceScroll({
-      smoothscroll: true, // scroll with ease movement
-      autohidemode: false,
-      zindex: "100", // change z-index for scrollbar div
-      scrollspeed: 60, // scrolling speed
-      mousescrollstep: 40,// mouse scrolling speed
-      gesturezoom: false,//上缩放框激活时，间距输出/输入
-      horizrailenabled: false,//管理水平滚动
-      cursorcolor: "#151515",
-      boxzoom: false,// enable zoom for box content
-      cursorborder: "0px solid #202020",
-      cursorborderradius: "5px",
-      cursorwidth: 9,
-      enablemousewheel: true,
-      background: "rgba(255,255,255,0.7)",
+      // smoothscroll: true, // scroll with ease movement
+      // autohidemode: false,
+      // zindex: "100", // change z-index for scrollbar div
+      // scrollspeed: 60, // scrolling speed
+      // mousescrollstep: 40,// mouse scrolling speed
+      // gesturezoom: false,//上缩放框激活时，间距输出/输入
+      // horizrailenabled: false,//管理水平滚动
+      // cursorcolor: "#151515",
+      // boxzoom: false,// enable zoom for box content
+      // cursorborder: "0px solid #202020",
+      // cursorborderradius: "5px",
+      cursorwidth: 0,//9
+      // enablemousewheel: true,
+      // background: "rgba(255,255,255,0.7)",
     });
 
     // Page transitions
@@ -254,9 +286,4 @@ $(document).ready(function($) {
       $(this).find("#brown-logo").css('display','none');
       $(this).find("#white-logo").css('display','block');
     });
-
-    
-
-
-    
 }(jQuery)); // End "use strict"

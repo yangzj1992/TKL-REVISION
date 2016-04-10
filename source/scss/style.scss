@@ -39,12 +39,15 @@ th,td{
 }
 // directory
 #toc{
+	position: fixed;
+	top:50px;
+	left:0;
+	max-height: 90%;
+	overflow: scroll;
 	margin: 0 0 20px 20px;
-	background-color:$Grey;
   padding:1em;
   border-radius:5px;
   line-height:1.5em;
-  float:right;
   .toc{
   	margin-top: 10px;
 		padding:0;
@@ -53,7 +56,11 @@ th,td{
 		}
   }
   .toc-link{
-		color:#58c0af;
+		color:#888;
+  }
+  .toc-active{
+		color:#111;
+		font-weight: bolder;
   }
   li{
   	list-style-type:none;
@@ -86,7 +93,7 @@ th,td{
  * the browsers' scroll-engine has fully stopped on the screen, therefore you end up scrolling
  * to blank page content, until the user removes their finger from the screen and the browsers' engine can
  * then render the page content, leaving a buggy user-experience */
-@media (max-width: 1024px) {
+@media (max-width: 991px) {
 	.wow {
 		visibility: visible !important;
 		-webkit-animation-delay: 0 !important;
@@ -613,7 +620,7 @@ nav i.icon-basic-eye {
 .navbar-inner.lightnav-alt {
     background-color: rgba(255,255,255,.9)
 }
-@media (max-width: 1023px) {
+@media (max-width: 991px) {
 	.navbar-inner.lightnav-alt {
 		border-bottom: none;
 	}
@@ -631,7 +638,7 @@ nav i.icon-basic-eye {
 .navbar .nav > li > a:active {
 	color:#777;
 }
-@media only screen and (max-width: 1023px) {
+@media only screen and (max-width: 991px) {
 	.logo img:hover {
 		top:0px;
 		-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
@@ -947,7 +954,7 @@ span.sb-caret { /* Caret Down */
 		display: inline-block;
 	}
 }
-@media (max-width:767px) {
+@media (max-width:768px) {
 	.heightblock {
 		display: none;
 	}
@@ -960,10 +967,8 @@ span.sb-caret { /* Caret Down */
 	#hero p ,footer .copy,.center-me,#statement,.return-top,.summary,.control-panel{
 		display: none!important;
 	}
-	.duoshuo,.pagination,.nogutter{
+	.pagination,.nogutter{
 		width:100%!important;
-		text-align: center;
-		margin:0 auto;
 	}
 	.social{
 		width: 100%;
@@ -984,9 +989,13 @@ span.sb-caret { /* Caret Down */
 		}
 	}
 }
-@media (max-width:500px) {
+@media (max-width:991px) {
 	#toc{
-		width: 100%;
+		display: none!important;
+	}
+	.pagination,.duoshuo{
+		left:0!important;
+		width: 96%!important;
 	}
 }
 
@@ -1127,7 +1136,7 @@ a.flex-next {
 	margin-bottom: 0;
 }
 
-@media (min-width: 992px) {
+@media (min-width: 991px) {
   li.support:hover {
     border: none !important;
   }
@@ -1136,7 +1145,7 @@ a.flex-next {
 	padding-top: 101px;
 	background-color: transparent !important;
 }
-@media (max-width: 992px) {
+@media (max-width: 991px) {
 	.spacefix {
 		padding-top: 25px
 	}
@@ -1251,7 +1260,7 @@ footer {
 	}
 }
 
-#intro .col-md-8.col-md-offset-2 img {
+#intro .col-md-8.col-md-offset-2 img, #intro .col-md-8.col-md-offset-3 img{
 	max-width: 100%;
 }
 
@@ -1329,8 +1338,17 @@ pre{
 	}
 }
 // comment
-.duoshuo,.summary,.post-content .nogutter{
-	width:66%;
+.duoshuo,.pagination,.nogutter{
+		width: 66%;
+		text-align: center;
+		margin:0 auto;
+}
+.duoshuo,.pagination,{
+	position: relative;
+	left: 8.5%;
+}
+.summary,.post-content .nogutter{
+	width:100%;
 	margin:auto;
 }
 .summary{

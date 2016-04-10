@@ -32,7 +32,7 @@
 
     <link rel="alternate" href="<% if (theme.rss){ %><%- theme.rss %><% } else { %><%- config.root %>atom.xml<% } %>" title="<%= config.title %>" type="application/atom+xml">
     <link rel="stylesheet" href="<%- config.root %>css/all.css" media="screen" type="text/css">
-	<% if (theme.highlightjs) { %>
+	  <% if (theme.highlightjs) { %>
     <link rel="stylesheet" href="<%- config.root %>highlightjs/<%- theme.highlightjs %>.css" type="text/css">
     <% } %>
     
@@ -44,15 +44,15 @@
     <![endif]-->
 
     <!-- Google Webfonts (Monserrat 400/700, Open Sans 400/600) -->
-    <link href='//fonts.useso.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
-    <link href='//fonts.useso.com/css?family=Open+Sans:400,600' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Open+Sans:400,600' rel='stylesheet' type='text/css'>
 
     <!-- Load our fonts individually if IE8+, to avoid faux bold & italic rendering -->
     <!--[if IE]>
-    <link href='http://fonts.useso.com/css?family=Montserrat:400' rel='stylesheet' type='text/css'>
-    <link href='http://fonts.useso.com/css?family=Montserrat:700' rel='stylesheet' type='text/css'>
-    <link href='http://fonts.useso.com/css?family=Open+Sans:400' rel='stylesheet' type='text/css'>
-    <link href='http://fonts.useso.com/css?family=Open+Sans:600' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Montserrat:400' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Montserrat:700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:600' rel='stylesheet' type='text/css'>
     <![endif]-->
 
     <!-- jQuery | Load our jQuery, with an alternative source fallback to a local version if request is unavailable -->
