@@ -55,6 +55,9 @@
         </div>
     </div>
 </section>
+<% if (page.mathjax){ %>
+    <%- partial('post/mathjax') %>
+<% } %>
 <script src="/js/jquery.qrcode.min.js"></script>
 <script>
     $("#wechat").hover(function() {
