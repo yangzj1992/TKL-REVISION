@@ -117,16 +117,18 @@ $(document).ready(function($) {
         if(toc_scroll > window_height/2){
           $("#toc").scrollTop(toc_scroll-window_height/2);
         }
-        if(scrollTop > document_height - window_height - footer_height){
-          $("#toc").css({
-            'position':'absolute',
-            'top':document_height - toc_height - footer_height +'px'
-          });
-        }else{
-          $("#toc").css({
-            'position':'fixed',
-            'top':'50px'
-          });
+        if(toc_height > window_height - footer_height - 100){
+          if(scrollTop > document_height - window_height - footer_height){
+            $("#toc").css({
+              'position':'absolute',
+              'top':document_height - toc_height - footer_height +'px'
+            });
+          }else{
+            $("#toc").css({
+              'position':'fixed',
+              'top':'50px'
+            });
+          }
         }
       }
       if ($(document).scrollTop() > 10) {
@@ -137,7 +139,7 @@ $(document).ready(function($) {
     });
 
     var wall_number = "url(http://qcyoung.qiniudn.com/qcyoung/TKL/wall-"+Math.ceil(Math.random()*88)+".jpg)";
-    // var wall_number = "url(https://images8.alphacoders.com/677/677464.jpg)";
+    // var wall_number = "url(https://images4.alphacoders.com/684/684531.jpg)";
     $(".element-img").css('background-image',wall_number);
 
     // 微信Window
@@ -196,6 +198,22 @@ $(document).ready(function($) {
     // Slidebars off-canvas menu
     $.slidebars();
 
+    $("#toc").niceScroll({
+      smoothscroll: true, // scroll with ease movement
+      autohidemode: false,
+      zindex: "100", // change z-index for scrollbar div
+      scrollspeed: 60, // scrolling speed
+      mousescrollstep: 40,// mouse scrolling speed
+      gesturezoom: false,//上缩放框激活时，间距输出/输入
+      horizrailenabled: false,//管理水平滚动
+      cursorcolor: "#151515",
+      boxzoom: false,// enable zoom for box content
+      cursorborder: "0px solid #202020",
+      cursorborderradius: "8px",
+      cursorwidth: 4,//9
+      enablemousewheel: true,
+      background: "rgba(255,255,255,0.7)",
+    });
     $("html").niceScroll({
       // smoothscroll: true, // scroll with ease movement
       // autohidemode: false,

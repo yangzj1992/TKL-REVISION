@@ -44,6 +44,7 @@ th,td{
 	left:0;
 	max-height: 90%;
 	overflow: scroll;
+	overflow-x:hidden;
 	margin: 0 0 20px 20px;
   padding:1em;
   border-radius:5px;
@@ -88,31 +89,6 @@ th,td{
 	display: none;
 }
 
-/* Turn off wow page animations for phones and tablets, (touch-scroll devices essentially) */
-/* Why do this? Because on 99% of touch-enabled devices, any on-page actions aren't fired until
- * the browsers' scroll-engine has fully stopped on the screen, therefore you end up scrolling
- * to blank page content, until the user removes their finger from the screen and the browsers' engine can
- * then render the page content, leaving a buggy user-experience */
-@media (max-width: 991px) {
-	.wow {
-		visibility: visible !important;
-		-webkit-animation-delay: 0 !important;
-		animation-delay: 0 !important;
-	}
-	.animated {
-		-webkit-animation-duration: 0;
-		-moz-animation-duration: 0;
-		-ms-animation-duration: 0;
-		-o-animation-duration: 0;
-		animation-duration: 0;
-		-webkit-animation-fill-mode: none;
-		-moz-animation-fill-mode: none;
-		-ms-animation-fill-mode: none;
-		-o-animation-fill-mode: none;
-		animation-fill-mode: none;
-	}
-}
-
 //Each title'sq font-size
 h1,h2,h3,h4,h5,h6 {
 	margin-top: 0;
@@ -134,17 +110,15 @@ h2 {
 	h2 {
 		font-size: 22px;
 	}
+	h3 {
+		font-size: 20px;
+	}
 }
 h3 {
 	font-style: normal;
 	font-weight: 700;
 	line-height: 37px;
 	font-size: 20px; 
-}
-@media (max-width:768px) {
-	h3 {
-		font-size: 20px;
-	}
 }
 h4 {
 	font-style: normal;
@@ -621,6 +595,35 @@ nav i.icon-basic-eye {
     background-color: rgba(255,255,255,.9)
 }
 @media (max-width: 991px) {
+	/* Turn off wow page animations for phones and tablets, (touch-scroll devices essentially) */
+	/* Why do this? Because on 99% of touch-enabled devices, any on-page actions aren't fired until
+   * the browsers' scroll-engine has fully stopped on the screen, therefore you end up scrolling
+   * to blank page content, until the user removes their finger from the screen and the browsers' engine can
+   * then render the page content, leaving a buggy user-experience */
+	.wow {
+		visibility: visible !important;
+		-webkit-animation-delay: 0 !important;
+		animation-delay: 0 !important;
+	}
+	.animated {
+		-webkit-animation-duration: 0;
+		-moz-animation-duration: 0;
+		-ms-animation-duration: 0;
+		-o-animation-duration: 0;
+		animation-duration: 0;
+		-webkit-animation-fill-mode: none;
+		-moz-animation-fill-mode: none;
+		-ms-animation-fill-mode: none;
+		-o-animation-fill-mode: none;
+		animation-fill-mode: none;
+	}
+	#toc{
+		display: none!important;
+	}
+	.pagination,.duoshuo{
+		left:0!important;
+		width: 96%!important;
+	}
 	.navbar-inner.lightnav-alt {
 		border-bottom: none;
 	}
@@ -989,16 +992,6 @@ span.sb-caret { /* Caret Down */
 		}
 	}
 }
-@media (max-width:991px) {
-	#toc{
-		display: none!important;
-	}
-	.pagination,.duoshuo{
-		left:0!important;
-		width: 96%!important;
-	}
-}
-
 
 /* *******************************************************
 * Statement section, (homepage)
@@ -1140,15 +1133,6 @@ a.flex-next {
   li.support:hover {
     border: none !important;
   }
-}
-.spacefix {
-	padding-top: 101px;
-	background-color: transparent !important;
-}
-@media (max-width: 991px) {
-	.spacefix {
-		padding-top: 25px
-	}
 }
 
 /* *******************************************************
