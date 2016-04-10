@@ -27,6 +27,7 @@ $(document).ready(function($) {
     var document_height = $(document).height();
     var footer_height = $('footer').outerHeight();
     var toc_height = $(".toc").outerHeight();
+    var duoshuo_mark = $(".duoshuo").offset().top;
     var a = {
               info: "卧槽，你居然敢点开控制台看我的代码，这下我的屎代码无所遁形了 T _ T",
               logo: "         _.-.  \n" + "       ,'/ //\\ \n" + "      /// // /)\n" + "     /// // //|\n" + "    /// // /// \n" + "   /// // ///  \n" + "  (`: // ///   \n" + "   `;`: ///    \n" + "   / /  `'      \n" + "  / /\n" + " (_/  \n"
@@ -118,15 +119,15 @@ $(document).ready(function($) {
           $("#toc").scrollTop(toc_scroll-window_height/2);
         }
         if(toc_height > window_height - footer_height - 100){
-          if(scrollTop > document_height - window_height - footer_height){
+          if(scrollTop > duoshuo_mark - window_height){
             $("#toc").css({
               'position':'absolute',
-              'top':document_height - toc_height - footer_height +'px'
+              'top': duoshuo_mark - toc_height,
             });
           }else{
             $("#toc").css({
               'position':'fixed',
-              'top':'50px'
+              'top':'50px',
             });
           }
         }
@@ -200,7 +201,7 @@ $(document).ready(function($) {
 
     $("#toc").niceScroll({
       smoothscroll: true, // scroll with ease movement
-      autohidemode: false,
+      autohidemode: true,
       zindex: "100", // change z-index for scrollbar div
       scrollspeed: 60, // scrolling speed
       mousescrollstep: 40,// mouse scrolling speed
