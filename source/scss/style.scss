@@ -1,17 +1,14 @@
 @charset "utf-8";
 @import "_basic-color.scss";
+@import "variable.scss";
 *{
-  font-family: "Open Sans", "Helvetica Neue", "Helvetica", "Hiragino Sans GB", "Microsoft YaHei", "Source Han Sans CN", "WenQuanYi Micro Hei", Arial, sans-serif;
+  font-family: $font-family-open-sans;
 }
 body {
-	font:14px/30px "Open Sans", "Helvetica Neue", "Helvetica", "Hiragino Sans GB", "Microsoft YaHei", "Source Han Sans CN", "WenQuanYi Micro Hei", Arial, sans-serif;
+	font: $font-basic-open-sans;
 	background-color: $White;
 	color: $DarkGrey;
 	padding: 0;
-}
-p {
-	font:14px/30px "Open Sans", "Helvetica Neue", "Helvetica", "Hiragino Sans GB", "Microsoft YaHei", "Source Han Sans CN", "WenQuanYi Micro Hei", Arial, sans-serif;
-	color: $DarkGrey;
 }
 i {
 	color: $NormalBlack;
@@ -92,43 +89,43 @@ th,td{
 //Each title'sq font-size
 h1,h2,h3,h4,h5,h6 {
 	margin-top: 0;
-  font-family: "Open Sans", "Helvetica Neue", "Helvetica", "Hiragino Sans GB", "Microsoft YaHei", "Source Han Sans CN", "WenQuanYi Micro Hei", Arial, sans-serif;
+  font-family: $font-family-open-sans;
 	color: $NormalBlack;
 }
 h1 {
-	font-size: 32px;
+	font-size: $font-size-h1;
 }
 h2 {
 	text-transform: uppercase;
 	font-style: normal;
 	font-weight: 700;
-	font-size: 24px;
+	font-size: $font-size-h2;
 	line-height: 30px;
 	letter-spacing: 1px;
 }
-@media (max-width:768px) {
+@media (max-width:$screen-sm) {
 	h2 {
-		font-size: 22px;
+		font-size: $font-size-h3;
 	}
 	h3 {
-		font-size: 20px;
+		font-size: $font-size-h4;
 	}
 }
 h3 {
 	font-style: normal;
 	font-weight: 700;
-	line-height: 37px;
-	font-size: 20px; 
+	line-height: 30px;
+	font-size: $font-size-h3; 
 }
 h4 {
 	font-style: normal;
 	font-weight: 700;
-	font-size: 18px;
+	font-size: $font-size-h4;
 	line-height: 30px;
 	color: $NormalBlack;
 }
 h1 span,h2 span,h3 span,h4 span,h5 span,h6 span,.navbar .nav > li > span {
-	font-family: 'Georgia', "Open Sans", "Helvetica Neue", "Helvetica", "Hiragino Sans GB", "Microsoft YaHei", "Source Han Sans CN", "WenQuanYi Micro Hei", Arial, sans-serif;
+	font-family: $font-family-georgia;
 	font-style: italic;
 	margin-left: 4px;
 	margin-right: 3px;
@@ -153,7 +150,7 @@ h1 span {
 .post-content{
 	h1,h2,h3,h4,h5,h6 {
 		margin-top: 0;
-	  font-family: "Open Sans", "Helvetica Neue", "Helvetica", "Hiragino Sans GB", "Microsoft YaHei", "Source Han Sans CN", "WenQuanYi Micro Hei", Arial, sans-serif;
+	  font-family: $font-family-open-sans;
 		color: $NormalBlack;
 	}
 	h1 {
@@ -172,7 +169,7 @@ h1 span {
 		border-left: 4px solid $DeepGreen;
 		margin-top:10px;
 	}
-	@media (max-width:768px) {
+	@media (max-width:$screen-sm) {
 		h2 {
 			font-size: 14px;
 		}
@@ -192,7 +189,7 @@ h1 span {
 		color: $NormalBlack;
 	}
 	h1 span,h2 span,h3 span,h4 span,h5 span,h6 span,.navbar .nav > li > span {
-		font-family: 'Georgia', "Open Sans", "Helvetica Neue", "Helvetica", "Hiragino Sans GB", "Microsoft YaHei", "Source Han Sans CN", "WenQuanYi Micro Hei", Arial, sans-serif;
+		font-family: $font-family-georgia;
 		font-style: italic;
 		margin-left: 4px;
 		margin-right: 3px;
@@ -237,7 +234,7 @@ a,a:active,a:focus,a:hover,a:visited,a:link {
 		}
 	}
 }
-@media (min-width: 768px) {
+@media (min-width: $screen-sm) {
 	.container {
 		padding:0 15px;
 	}
@@ -289,11 +286,8 @@ blockquote footer {
 .clear{clear: both;}
 a, button,
 .sb-close img,
-form#mailinglistForm .btn-primary,
-li.sb-toggle-submenu,
 .menu-icon,
-a.meta,
-#pagetabs .page-nav>li>a > i {
+a.meta{
 	-webkit-transition: all ease 0.3s;
 	-moz-transition: all ease .3s;
 	-o-transition: all ease .3s;
@@ -318,7 +312,7 @@ input[placeholder],
 [placeholder],
 *[placeholder] {
 	color: $NormalGrey;
-	font-family: 'Georgia', "Open Sans", "Helvetica Neue", "Helvetica", "Hiragino Sans GB", "Microsoft YaHei", "Source Han Sans CN", "WenQuanYi Micro Hei", Arial, sans-serif;
+	font-family: $font-family-georgia;
 }
 input#delivery {
 	color: $NormalGrey !important;
@@ -380,135 +374,6 @@ input#delivery {
 	height: 100%;
 	position: relative;
 	z-index: 10;
-}
-
-/********************************************************/
-/* Buttons                                              */
-/********************************************************/
-.btn {
-	color: white;
-	-webkit-border-radius: 0;
-	-moz-border-radius: 0;
-	border-radius: 0;
-	font:700 14px "Open Sans", "Helvetica Neue", "Helvetica", "Hiragino Sans GB", "Microsoft YaHei", "Source Han Sans CN", "WenQuanYi Micro Hei", Arial, sans-serif;
-	padding: 8px 18px;
-	-webkit-border-radius: 4px;
-	-moz-border-radius: 4px;
-	border-radius: 4px;
-	text-transform: uppercase;
-	border: none;
-}
-.btn-lg {
-  padding: 25px
-}
-.btn, .btn.disabled, .btn[disabled] {
-  background-color: #aab2bd;
-  border-color: #aab2bd;
-}
-.btn:hover, .btn:focus, .btn:active, .btn.active {
-  color: white;
-  background-color: #ccd1d9;
-  border-color: #ccd1d9;
-  outline: none !important;
-}
-.btn:active, .btn.active {
-  -webkit-box-shadow: none;
-     -moz-box-shadow: none;
-          box-shadow: none;
-}
-.btn.disabled, .btn[disabled] {
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=45)";
-  -khtml-opacity: .45;
-  -moz-opacity: .45;
-  opacity: .45;
-}
-.btn-link, .btn-link:hover, .btn-link:focus, .btn-link:active, .btn-link.active, .btn-link.disabled, .btn-link[disabled] {
-  color: #3bafda;
-  background-color: transparent;
-  border-color: transparent;
-  -webkit-box-shadow: none;
-     -moz-box-shadow: none;
-          box-shadow: none;
-}
-.btn-link:hover, .btn-link:focus {
-  text-decoration: underline;
-}
-.btn-default {
-  color: $White;
-}
-.btn-default:hover, .btn-default:focus, .btn-default:active, .btn-default.active {
-  background-color: #ccd1d9;
-}
-.btn-default, .btn-default.disabled, .btn-default[disabled] {
-  background-color: $NormalBlack
-}
-.open .dropdown-toggle.btn-default {
-  background-color: #ccd1d9;
-}
-.btn-primary, .btn-primary:active, .btn-primary.active, .btn-primary.disabled, .btn-primary[disabled] {
-  background-color: #3bafda;
-  border-color: #3bafda;
-}
-.btn-primary:hover, .btn-primary:focus {
-  background-color: #4fc1e9;
-  border-color: #4fc1e9;
-}
-.open .dropdown-toggle.btn-primary {
-  background-color: #4fc1e9;
-  border-color: #4fc1e9;
-}
-.btn-info, .btn-info:active, .btn-info.active, .btn-info.disabled, .btn-info[disabled] {
-  background-color: #37bc9b;
-  border-color: #37bc9b;
-}
-.btn-info:hover, .btn-info:focus {
-  background-color: #48cfad;
-  border-color: #48cfad;
-}
-.open .dropdown-toggle.btn-info {
-  background-color: #48cfad;
-  border-color: #48cfad;
-}
-.btn-success, .btn-success:active, .btn-success.active, .btn-success.disabled, .btn-success[disabled] {
-  background-color: #8cc152;
-  border-color: #8cc152;
-}
-.btn-success:hover, .btn-success:focus {
-  background-color: #a0d468;
-  border-color: #a0d468;
-}
-.open .dropdown-toggle.btn-success {
-  background-color: #a0d468;
-  border-color: #a0d468;
-}
-.btn-warning, .btn-warning:active, .btn-warning.active, .btn-warning.disabled, .btn-warning[disabled] {
-  background-color: #f6bb42;
-  border-color: #f6bb42;
-}
-.btn-warning:hover, .btn-warning:focus {
-  background-color: #ffce54;
-  border-color: #ffce54;
-}
-.open .dropdown-toggle.btn-warning {
-  background-color: #ffce54;
-  border-color: #ffce54;
-}
-.btn-danger, .btn-danger:active, .btn-danger.active, .btn-danger.disabled, .btn-danger[disabled],
-.btn-danger .open .dropdown-toggle.btn {
-  background-color: #da4453;
-  border-color: #da4453;
-}
-.btn-danger:hover, .btn-danger:focus {
-  background-color: #ed5565;
-  border-color: #ed5565;
-}
-
-.panel {
-	-webkit-box-shadow: none;
-	box-shadow: none;
-}
-.tab-content>.tab-pane {
-	padding: 20px;
 }
 
 .logo {
@@ -594,7 +459,7 @@ nav i.icon-basic-eye {
 .navbar-inner.lightnav-alt {
     background-color: rgba(255,255,255,.9)
 }
-@media (max-width: 991px) {
+@media (max-width: $screen-sm-max) {
 	/* Turn off wow page animations for phones and tablets, (touch-scroll devices essentially) */
 	/* Why do this? Because on 99% of touch-enabled devices, any on-page actions aren't fired until
    * the browsers' scroll-engine has fully stopped on the screen, therefore you end up scrolling
@@ -641,7 +506,7 @@ nav i.icon-basic-eye {
 .navbar .nav > li > a:active {
 	color:#777;
 }
-@media only screen and (max-width: 991px) {
+@media only screen and (max-width: $screen-sm-max) {
 	.logo img:hover {
 		top:0px;
 		-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
@@ -842,99 +707,6 @@ html.sb-init.sb-active.sb-active-right #projects .filter-item div a {
 			background-color: #bd0926;
 		}
 	}
-
-	.sb-menu {
-		padding: 34px 34px 24px;
-		margin: 0;
-		list-style-type: none;
-		li{
-			width: 100%;
-			padding: 0;
-			margin: 0;
-			color: $DarkGrey;
-			font-style: normal;
-			font-weight: 600;
-			line-height: 20px;
-			font-family: 'Open Sans', Helvetica, "Helvetica Neue", "Hiragino Sans GB", "Microsoft YaHei", "Source Han Sans CN", "WenQuanYi Micro Hei", Arial, sans-serif;
-			a{
-				font-family: 'Open Sans', Helvetica, "Helvetica Neue", "Hiragino Sans GB", "Microsoft YaHei", "Source Han Sans CN", "WenQuanYi Micro Hei", Arial, sans-serif;
-				width: 100%; /* Makes links full width. */
-				display: inline-block;
-				font-weight: 600;
-				font-style: normal;
-				color: $DarkGrey;
-				cursor: pointer;
-				line-height: 20px;
-				padding: 3px 10px; /* Creates an even padding the same size as your font. */
-				&:hover{
-					text-decoration: none !important;
-				}
-			}
-		}
-	}
-}
-
-.sb-menu > li:first-child {
-	border-top: none; /* Removes top border from first list item.. */
-}
-.sb-menu > li:last-child {
-	border-bottom: none; /* Removed bottom border from last list item. */
-}
-/* Borders */
-.sb-right .sb-menu li a {
-	border-left: 3px solid transparent;
-	&:hover{
-		border-left: 3px solid; /* Removes transparent colour, so border colour will be the same as link hover colour. */
-	}
-}
-/* Sb Dropdown */
-li.sb-toggle-submenu {
-	font:600 13px 'Open Sans', Helvetica, "Helvetica Neue", "Hiragino Sans GB", "Microsoft YaHei", "Source Han Sans CN", "WenQuanYi Micro Hei", Arial, sans-serif;
-	text-transform: uppercase;
-	border-left: 3px solid transparent;
-	padding: 3px 10px;
-	cursor: pointer;
-	&:hover{
-		color: $White; /* Link hover colour. */
-		border-left: 3px solid $White; /* Removes transparent colour, so border colour will be the same as link hover colour. */
-	}
-}
-ul.sb-submenu li a,
-ul.sb-submenu li a:hover {
-	text-transform: none;
-	font-weight: 400;
-}
-.sb-submenu {
-	display: none;
-	padding: 10px 10px 16px;
-	margin: 0;
-	list-style-type: none;
-}
-/* Submenu parent item caret */
-span.sb-caret {
-	position:relative;
-	top:-1px;
-	width: 0;
-	height: 0;
-	display: inline-block;
-	margin: 0 6px;
-	border: 5px solid transparent;
-}
-span.sb-caret { /* Caret Down */
-	border-top: 5px solid;
-	border-bottom: 0px solid transparent;
-}
-.sb-submenu-active > span.sb-caret { /* Caret Up */
-	border-top: 0px solid transparent;
-	border-bottom: 5px solid;
-}
-/* Secondary menu-items block, (different text styling) */
-.sb-menu.secondary {
-	padding: 24px 34px;
-	a{
-		text-transform: none;
-		font-weight: 400;
-	}
 }
 
 /* *******************************************************
@@ -957,7 +729,7 @@ span.sb-caret { /* Caret Down */
 		display: inline-block;
 	}
 }
-@media (max-width:768px) {
+@media (max-width:$screen-sm) {
 	.heightblock {
 		display: none;
 	}
@@ -1129,7 +901,7 @@ a.flex-next {
 	margin-bottom: 0;
 }
 
-@media (min-width: 991px) {
+@media (min-width: $screen-sm-max) {
   li.support:hover {
     border: none !important;
   }
@@ -1323,13 +1095,11 @@ pre{
 }
 // comment
 .duoshuo,.pagination,.nogutter{
-		width: 66%;
 		text-align: center;
 		margin:0 auto;
 }
-.duoshuo,.pagination,{
-	position: relative;
-	left: 8.5%;
+.nogutter{
+	width: 100%;
 }
 .summary,.post-content .nogutter{
 	width:100%;
@@ -1339,6 +1109,11 @@ pre{
 	padding-bottom: 6px;
 }
 .post-content{
+	.duoshuo,.pagination{
+		width: 66%;
+		position: relative;
+		left: 8.5%;
+	}
 	.nogutter{
 		padding:10px 0;
 	}
@@ -1357,9 +1132,6 @@ pre{
 		box-shadow:1px 1px 2px #969696;
 		background-color: #fff;
 	}
-	// figure .highlight pre{
-	// 	overflow-x:scroll;
-	// }
 } 
 
 .egg-tips{

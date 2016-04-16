@@ -26,8 +26,10 @@ $(document).ready(function($) {
     var window_width = $(window).width();
     var document_height = $(document).height();
     var footer_height = $('footer').outerHeight();
-    var toc_height = $(".toc").outerHeight();
-    var duoshuo_mark = $(".duoshuo").offset().top;
+    if($('#toc').length){
+      var toc_height = $(".toc").outerHeight();
+      var duoshuo_mark = $(".duoshuo").offset().top;
+    }
     var a = {
               info: "卧槽，你居然敢点开控制台看我的代码，这下我的屎代码无所遁形了 T _ T",
               logo: "         _.-.  \n" + "       ,'/ //\\ \n" + "      /// // /)\n" + "     /// // //|\n" + "    /// // /// \n" + "   /// // ///  \n" + "  (`: // ///   \n" + "   `;`: ///    \n" + "   / /  `'      \n" + "  / /\n" + " (_/  \n"
@@ -105,7 +107,7 @@ $(document).ready(function($) {
         var heads = $(".post-article").find("h1,h2,h3,h4,h5");
         var nowtoc = 0;
         for(var i=0;i<heads.length;i++){
-          if(heads[i].getBoundingClientRect().top < 0){
+          if(heads[i].getBoundingClientRect().top <= 0){
             nowtoc = i;
           }else{
             break;
@@ -139,7 +141,7 @@ $(document).ready(function($) {
       }
     });
 
-    var wall_number = "url(http://qcyoung.qiniudn.com/qcyoung/TKL/wall-"+Math.ceil(Math.random()*88)+".jpg)";
+    var wall_number = "url(http://qcyoung.qiniudn.com/qcyoung/TKL/wall-"+Math.ceil(Math.random()*90)+".jpg)";
     // var wall_number = "url(https://images4.alphacoders.com/684/684531.jpg)";
     $(".element-img").css('background-image',wall_number);
 
