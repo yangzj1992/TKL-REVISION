@@ -11,7 +11,7 @@
             <div class="col-md-8 col-md-offset-3">
                 <div>
                     <h1 class="article-title"><%- post.title %></h1>
-                    <time datetime="<%= date_xml(post.date) %>" itemprop="datePublished" style="color:#969696;display: block;font-size: 13px;font-weight: 400;width: 100%;height: 30px;text-align: center;">
+                    <time datetime="<%= date_xml(post.date) %>" itemprop="datePublished" class="post-time">
                         <%= date(post.date,'YYYY 年 MM 月 DD 日') %>
                     </time>
                 </div>
@@ -20,7 +20,7 @@
                 <div class="post-article">
                     <%- post.content %>
                 </div>
-                <p style="color:#969696;font-size: 13px;text-align: center;">本文版权归yangzj1992所有。商业转载请联系本人获得授权，非商业转载请注明出处。</p>
+                <p class="post-copyright">本文版权归yangzj1992所有。商业转载请联系本人获得授权，非商业转载请注明出处。</p>
                 <div class="clearfix"></div>
                 <hr class="nogutter">
                 <div class="summary">
@@ -50,8 +50,8 @@
                     </span>
                 </div>
             </div>
-            <div style="clear:both;"></div>
             <%- partial('post/navigation') %>
+            <div class="clear"></div>
             <div class="duoshuo"><%- partial('post/duoshuo') %></div>
         </div>
     </div>

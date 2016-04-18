@@ -44,7 +44,6 @@ th,td{
 	overflow-x:hidden;
 	margin: 0 0 20px 20px;
   padding:1em;
-  border-radius:5px;
   line-height:1.5em;
   .toc{
   	margin-top: 10px;
@@ -147,6 +146,7 @@ h1 span {
 		}
 	}
 }
+
 .post-content{
 	h1,h2,h3,h4,h5,h6 {
 		margin-top: 0;
@@ -154,7 +154,7 @@ h1 span {
 		color: $NormalBlack;
 	}
 	h1 {
-		font-size: 22px;
+		font-size: $font-size-h2;
 		font-weight: 700;
 		text-align: center;
 	}
@@ -162,7 +162,7 @@ h1 span {
 		text-transform: uppercase;
 		font-style: normal;
 		font-weight: 700;
-		font-size: 20px;
+		font-size: $font-size-h3;
 		line-height: 24px;
 		letter-spacing: 1px;
 		padding-left: 10px;
@@ -207,6 +207,35 @@ h1 span {
 		font-size:12px;
 		margin-right: 4px;
 	}
+	.post-time,.post-copyright{
+		color:#999;
+		display: block;
+		font-size: 13px;
+		text-align: center;
+	}
+	.duoshuo,.pagination{
+		width: 66%;
+		position: relative;
+		left: 8.5%;
+	}
+	.nogutter{
+		padding:10px 0;
+	}
+	.share-icon{
+		padding:0 .2em;
+	}
+	.qrcode{
+		position: absolute;
+		bottom: 30px;
+		right: 80px;
+		height:108px;
+		border:1px solid #ebebeb;
+		padding:5px;
+		text-align: center;
+		border-radius: 5px;
+		box-shadow:1px 1px 2px #969696;
+		background-color: #fff;
+	}
 }
 
 section {
@@ -223,7 +252,7 @@ a,a:active,a:focus,a:hover,a:visited,a:link {
 
 // top-banner
 .container {
-	padding:0 20px;
+	padding:0 $padding-huge-horizontal;
 	ul{
 		a,a:active,a:focus,a:visited,a:link{
 			color: $DeepGreen;
@@ -236,7 +265,7 @@ a,a:active,a:focus,a:hover,a:visited,a:link {
 }
 @media (min-width: $screen-sm) {
 	.container {
-		padding:0 15px;
+		padding:0 $padding-large-horizontal;
 	}
 }
 
@@ -286,8 +315,7 @@ blockquote footer {
 .clear{clear: both;}
 a, button,
 .sb-close img,
-.menu-icon,
-a.meta{
+.menu-icon{
 	-webkit-transition: all ease 0.3s;
 	-moz-transition: all ease .3s;
 	-o-transition: all ease .3s;
@@ -785,120 +813,31 @@ html.sb-init.sb-active.sb-active-right #projects .filter-item div a {
 }
 
 /* *******************************************************
-* Image fader/slider, (homepage)
-******************************************************* */
-.flexslider {
-	-webkit-box-shadow: none;
-	box-shadow: none;
-	-webkit-border-radius: 0;
-	-moz-border-radius: 0;
-	-o-border-radius: 0;
-	border-radius: 0;
-	border: none;
-	margin: 0;
-}
-.flex-control-nav {
-	z-index: 3;
-	top: 10px;
-	right: 0;
-	text-align: right;
-	bottom: inherit;
-	width: auto;
-	padding: 15px 15px 10px;
-}
-.slide-featured .flex-direction-nav a {
-	width: 20%;
-}
-.flex-direction-nav a {
-	width: 30%;
-	height: 100%;
-	display: block;
-	position: absolute;
-	top: 0;
-	z-index: 10;
-	cursor: none;
-	text-indent: -9999px;
-}
-/* Left image cursor */
-a.flex-prev {
-   cursor: w-resize;
-   cursor: url(../img/global/cursor-prev.png), auto;
-}
-/* Right image cursor */
-a.flex-next {
-	cursor: e-resize;
-	cursor: url(../img/global/cursor-next.png), auto;
-}
-.flex-direction-nav a.flex-next:before,
-.flex-direction-nav a.flex-prev:before {
-	display: none;
-	visibility: hidden;
-}
-.flex-caption h4 {
-	background-color: $NormalBlack;
-	color: $White;
-	padding: 22px 30px;
-	margin-top: 0;
-	margin-bottom: 0;
-	display: inline-block;
-	float: left;
-}
-.flexslider p {
-	display: inline-block;
-	background-color: $White;
-	color: #333;
-	padding: 15px 30px;
-	font-family: 'Georgia', serif, Helvetica, "Helvetica Neue", "Hiragino Sans GB", "Microsoft YaHei", "Source Han Sans CN", "WenQuanYi Micro Hei", Arial, sans-serif;
-	font-style: italic;
-	margin-bottom: 0;
-	float: left;
-	clear: left;
-}
-.flex-control-paging li a {
-	display: block;
-	width: 16px;
-	height: 16px;
-	color: transparent;
-	background: transparent;
-	border: 2px solid $White;
-	-webkit-border-radius: 15px;
-	-moz-border-radius: 15px;
-	border-radius: 15px;
-	cursor: pointer;
-	-webkit-box-shadow: none;
-	-moz-box-shadow: none;
-	-o-box-shadow: none;
-	box-shadow: none;
-}
-.flex-control-paging li a.flex-active {
-	background: $White;
-}
-
-/* *******************************************************
 * Services, (homepage)
 ******************************************************* */
 
 #services {
 	background-color: $White;
-}
-#services .boxes {
-	padding-top: 50px;
-}
-#services .boxes .col-md-3,
-#services .boxes .col-md-6 {
-	padding: 15px;
-}
-#services .boxes i {
-	font-size: 80px;
-}
-#services .partition i {
-	font-size: 30px;
-	position: relative;
-	top: -15px;
-}
-#services .partition hr {
-	margin-top: 0;
-	margin-bottom: 0;
+	.boxes{
+		padding-top: 50px;
+		.col-md-3,.col-md-6{
+			padding: 15px;
+		}
+		.i{
+			font-size: 80px;
+		}
+	}
+	.partition{
+		i{
+			font-size: 30px;
+			position: relative;
+			top: -15px;
+		}
+		hr{
+			margin-top: 0;
+			margin-bottom: 0;
+		}
+	}
 }
 
 @media (min-width: $screen-sm-max) {
@@ -911,7 +850,7 @@ a.flex-next {
 * Global footer, (all pages)
 ******************************************************* */
 footer {
-	padding:1% 0 1%;
+	padding:1% 0;
 	background:$NormalBlack;
 	z-index: 9;
 	position: relative;
@@ -928,9 +867,9 @@ footer {
 		}
 		a{
 			color: #767D84;
-		}
-		a:hover{
-			color:$White;
+			&:hover{
+				color:$White;
+			}
 		}
 	}
 	.social{
@@ -1044,7 +983,6 @@ footer {
 .popPanel .popPanel-inner .qrcodePanel p{font-size:12px;color:$DarkGrey;line-height:24px;letter-spacing:1px;}
 
 .control-panel{
-	display: block;
 	position: fixed;
 	z-index: 10;
 	bottom: 132px;
@@ -1087,7 +1025,7 @@ pre{
 	.line{
 		.label{
 			color:#333;
-			padding:0;
+			padding: 0;
 			font-size: 13px;
 			font-weight:400;
 		}
@@ -1108,31 +1046,6 @@ pre{
 .summary{
 	padding-bottom: 6px;
 }
-.post-content{
-	.duoshuo,.pagination{
-		width: 66%;
-		position: relative;
-		left: 8.5%;
-	}
-	.nogutter{
-		padding:10px 0;
-	}
-	.share-icon{
-		padding:0 .2em;
-	}
-	.qrcode{
-		position: absolute;
-		bottom: 30px;
-		right: 80px;
-		height:108px;
-		border:1px solid #ebebeb;
-		padding:5px;
-		text-align: center;
-		border-radius: 5px;
-		box-shadow:1px 1px 2px #969696;
-		background-color: #fff;
-	}
-} 
 
 .egg-tips{
 	width:860px;
