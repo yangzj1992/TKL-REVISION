@@ -96,28 +96,17 @@ h1 {
 }
 h2 {
 	text-transform: uppercase;
-	font-style: normal;
 	font-weight: 700;
 	font-size: $font-size-h2;
 	line-height: 30px;
 	letter-spacing: 1px;
 }
-@media (max-width:$screen-sm) {
-	h2 {
-		font-size: $font-size-h3;
-	}
-	h3 {
-		font-size: $font-size-h4;
-	}
-}
 h3 {
-	font-style: normal;
 	font-weight: 700;
 	line-height: 30px;
 	font-size: $font-size-h3; 
 }
 h4 {
-	font-style: normal;
 	font-weight: 700;
 	font-size: $font-size-h4;
 	line-height: 30px;
@@ -131,9 +120,6 @@ h1 span,h2 span,h3 span,h4 span,h5 span,h6 span,.navbar .nav > li > span {
 	text-transform: none;
 	position: relative;
 	top: -1px;
-}
-h1 span {
-	top: -2px
 }
 
 .index-context{
@@ -159,46 +145,20 @@ h1 span {
 		text-align: center;
 	}
 	h2 {
-		text-transform: uppercase;
-		font-style: normal;
-		font-weight: 700;
 		font-size: $font-size-h3;
 		line-height: 24px;
-		letter-spacing: 1px;
 		padding-left: 10px;
 		border-left: 4px solid $DeepGreen;
 		margin-top:10px;
 	}
-	@media (max-width:$screen-sm) {
-		h2 {
-			font-size: 14px;
-		}
-	}
 	h3 {
-		font-style: normal;
-		font-weight: 700;
 		line-height: 21px;
-		font-size: 18px;
+		font-size: $font-size-h4;
 		margin-top:14px;
 	}
 	h4 {
-		font-style: normal;
-		font-weight: 700;
-		font-size: 16px;
-		line-height: 30px;
+		font-size: $font-size-h5;
 		color: $NormalBlack;
-	}
-	h1 span,h2 span,h3 span,h4 span,h5 span,h6 span,.navbar .nav > li > span {
-		font-family: $font-family-georgia;
-		font-style: italic;
-		margin-left: 4px;
-		margin-right: 3px;
-		text-transform: none;
-		position: relative;
-		top: -1px;
-	}
-	h1 span {
-		top: -2px
 	}
 	.post-tags{
 		color:$White;
@@ -290,12 +250,6 @@ blockquote {
 		font:italic 15px 'Georgia', "Open Sans", "Helvetica Neue", "Helvetica", "Hiragino Sans GB", "Microsoft YaHei", "Source Han Sans CN", "WenQuanYi Micro Hei", Arial, sans-serif;
 	}
 }
-blockquote footer {
-	background-color: transparent;
-	margin-top: 0;
-	padding: 0;
-	font-size: 12px;
-}
 
 .table-responsive {
 	margin: 40px 0;
@@ -326,24 +280,13 @@ a, button,
 // article dividing line
 hr {
 	margin:40px 0 20px;
- 	.title-accent {
-		height: 4px;
-		width: 40px;
-		background: #333;
-		border-top: none;
-		margin: 20px auto;
-  }
 }
 
-/* Placeholder text color */
 input[placeholder],
 [placeholder],
 *[placeholder] {
 	color: $NormalGrey;
 	font-family: $font-family-georgia;
-}
-input#delivery {
-	color: $NormalGrey !important;
 }
 ::-webkit-input-placeholder { /* WebKit browsers */
 	color: $NormalGrey;
@@ -362,11 +305,11 @@ input#delivery {
 	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
 }
 
+.archive-list,.category-list,.tag-list{
+	line-height: 25px;
+}
 .archive-list-count,.category-list-count,.tag-list-count{
 	margin-left: 10px;
-}
-.archive-list{
-	line-height: 25px;
 }
 .vertical-align {
 	display: table;
@@ -430,45 +373,35 @@ input#delivery {
 		text-align:center;
 		height:50px;		
 	}
-}
-.navbar .nav > li {
-	float:none;
-	display:inline-block;
-}
-.navbar .nav > li > span {
-	font-size: 12px
-}
-.navbar .nav > li a:hover {
-	background-color: transparent;
-}
-.nav>li>a:hover,
-.nav>li>a:focus {
-	background-color: transparent;
-}
-.navbar .nav > li > a,.navbar .nav li.nolink{
-	padding:0 10px;
-	margin:16px 0px;
-	color: $NormalBlack;
-	font:400 11px/14px 'Montserrat', "Open Sans", "Helvetica Neue", "Helvetica", "Hiragino Sans GB", "Microsoft YaHei", "Source Han Sans CN", "WenQuanYi Micro Hei", Arial, sans-serif;
-	text-transform: uppercase;
-	letter-spacing: 1px;
-	text-shadow: none;
-	border-right:1px solid #aaa;
-}
-.navbar .nav > li > a{
-	display: block;
-}
-.navbar .nav > li > a > i{
-	font-size: 12px;
-}
-nav i.icon-basic-eye {
-	font-size: 20px;
-	line-height: 0;
-	margin: 0;
-	display: inline-block;
-	position: relative;
-	top: 5px;
-	margin-right: 5px;
+	.nav > li {
+		float:none;
+		display:inline-block;
+	}
+	.nav > li > span {
+		font-size: 12px
+	}
+	.nav > li a:hover,.nav>li>a:focus{
+		background-color: transparent;
+	}
+	.nav > li > a,.navbar .nav li.nolink{
+		padding:0 10px;
+		margin:16px 0px;
+		color: $NormalBlack;
+		font:400 11px/14px 'Montserrat', "Open Sans", "Helvetica Neue", "Helvetica", "Hiragino Sans GB", "Microsoft YaHei", "Source Han Sans CN", "WenQuanYi Micro Hei", Arial, sans-serif;
+		text-transform: uppercase;
+		letter-spacing: 1px;
+		text-shadow: none;
+		border-right:1px solid #aaa;
+	}
+	.nav > li > a{
+		display: block;
+	}
+	.nav > li > a > i{
+		font-size: 12px;
+	}
+	.nav > li:last-child > a,.nav > li:last-child {
+		border-right:none;	
+	}
 }
 .navbar-inner {
 	background-color: transparent;
@@ -522,19 +455,9 @@ nav i.icon-basic-eye {
 	}
 	.navbar-inner {
 		border-bottom: none !important;
+		padding:0!important;
+		height:60px;
 	}
-}
-/* Continue Navigation... */
-.navbar .nav > li:last-child > a,
-.navbar .nav > li:last-child {
-	border-right:none;	
-}
-.navbar .nav > li > a:focus,
-.navbar .nav > li > a:hover,
-.navbar .nav > li > a:active {
-	color:#777;
-}
-@media only screen and (max-width: $screen-sm-max) {
 	.logo img:hover {
 		top:0px;
 		-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
@@ -542,12 +465,6 @@ nav i.icon-basic-eye {
 		-moz-opacity: 1;
 		opacity: 1;
 	}
-	
-	.navbar-inner {
-		padding:0!important;
-		height:60px;
-	}
-	
 	.navbar .nav>li{
 		display: none;
 	}
@@ -555,14 +472,10 @@ nav i.icon-basic-eye {
 		display: inline-block;
 	}
 }
-.grey-border {
-	border-right: #333 1px solid !important;
-}
 
 /* *******************************************************
 * Off-canvas navigation, (across all pages)
 ******************************************************* */
-/* Bug fix */
 #sb-site {
 	min-height:100% !important;
 }
@@ -619,12 +532,6 @@ button.navbar-toggle .icon-bar {
 	-o-transition: all ease .2s;
 	transition: all ease .2s;
 }
-html.sb-init.sb-active.sb-active-right,
-html.sb-init.sb-active.sb-active-right #featured a,
-html.sb-init.sb-active.sb-active-right ul.filters li p,
-html.sb-init.sb-active.sb-active-right #projects .filter-item div a {
-	cursor: e-resize;
-}
 .sb-close {
 	text-align: right;
 	cursor: pointer;
@@ -653,6 +560,8 @@ html.sb-init.sb-active.sb-active-right #projects .filter-item div a {
 	right: -3px;
 	overflow-y: auto;
 	overflow-x: hidden;
+	text-align:center;
+	font-size: 16px;
 	a{
 		color: $DarkGrey; /* Link colour. */
 		text-decoration: none;
@@ -663,11 +572,6 @@ html.sb-init.sb-active.sb-active-right #projects .filter-item div a {
 			color: $White; /* Link hover colour. */
 		}
 	}
-}
-/* Off-canvas menu items */
-.sb-slidebar{
-	text-align:center;
-	font-size: 16px;
 	.site-author{
 		margin:5px 0 10px;
 		color:#f5f5f5;
@@ -827,17 +731,6 @@ html.sb-init.sb-active.sb-active-right #projects .filter-item div a {
 			font-size: 80px;
 		}
 	}
-	.partition{
-		i{
-			font-size: 30px;
-			position: relative;
-			top: -15px;
-		}
-		hr{
-			margin-top: 0;
-			margin-bottom: 0;
-		}
-	}
 }
 
 @media (min-width: $screen-sm-max) {
@@ -959,23 +852,7 @@ footer {
 	max-width: 100%;
 }
 
-// /* Import the font file with the icons in it */
-// @font-face { font-family: 'fontawesome-webfont'; src:  url('../fonts/fontawesome-webfont.woff') format('woff'); font-weight: normal; font-style: normal; }
-// /* Apply these base styles to all icons */
-// .icon-feed:before, .icon-twitter:before, .icon-google-plus:before, .icon-facebook:before, .icon-sina-weibo, .icon-github{ font-family: 'icons'; speak: none; font-style: normal; font-weight: normal; font-variant: normal; text-transform: none; line-height: 1; -webkit-font-smoothing: antialiased; text-decoration: none; }
-// /* Each icon is created by inserting the corret character into the
-//    content of the :before pseudo element. Like a boss. */
-// .icon-feed:before { content: "\e631"; }
-// .icon-twitter:before { content: "\e630"; font-size: 1.1em; }
-// .icon-google-plus:before { content: "\e62d"; }
-// .icon-facebook:before { content: "\e62f"; }
-// .icon-sina-weibo:before { content: "\e666"; }
-// .icon-github:before { content: "\e636"; }
-// /*---------------- END ------------------------*/
-
-
 /* qrcodePanel */
-
 .popPanel{width:230px;height:242px;display:none;position:absolute;right:0px;z-index:10000;overflow:hidden;_position:absolute; /* for IE6 */_top:expression(documentElement.scrollTop + 300); }
 .popPanel .popPanel-inner{width:230px;height:242px;position:relative;overflow:hidden;}
 .popPanel .popPanel-inner .qrcodePanel{width:220px;height:240px;text-align:center;background:$White;border:solid 1px #ddd;position:absolute;left:0;top:0;overflow:hidden;}
@@ -996,8 +873,6 @@ footer {
 			}
 		}
 	}
-	
-
 }
 /*return-top*/
 .return-top{
@@ -1031,7 +906,7 @@ pre{
 		}
 	}
 }
-// comment
+
 .duoshuo,.pagination,.nogutter{
 		text-align: center;
 		margin:0 auto;
@@ -1070,7 +945,7 @@ pre{
 		padding:15px 0;
 		table{
 			border:none;
-			tr{
+			tr,td{
 				border:none;
 			}
 			th{
@@ -1078,9 +953,6 @@ pre{
 				line-height: 1.5;
 				border:none;
 				text-align: left;
-			}
-			td{
-				border:none;
 			}
 			kbd{
 				display: inline-block;
