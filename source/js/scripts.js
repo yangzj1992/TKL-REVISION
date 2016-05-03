@@ -141,8 +141,8 @@ $(document).ready(function($) {
       }
     });
 
-    var wall_number = "url(http://qcyoung.qiniudn.com/qcyoung/TKL/wall-"+Math.ceil(Math.random()*93)+".jpg)";
-    // var wall_number = "url(https://images6.alphacoders.com/604/604603.jpg)";
+    var wall_number = "url(http://qcyoung.qiniudn.com/qcyoung/TKL/wall-"+Math.ceil(Math.random()*107)+".jpg)";
+    // var wall_number = "url(https://images6.alphacoders.com/697/697221.png)";
     $(".element-img").css('background-image',wall_number);
 
     // 微信Window

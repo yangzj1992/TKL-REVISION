@@ -41,7 +41,20 @@
           <div class="links-title">友情链接</div>
           <span class="sb-item-links">
             <% theme.links.forEach(function(item){ %>
-              <a href="<%- item.link %>" class="animsition-link"><%= item.name %></a>
+              <a href="<%- item.link %>" class="animsition-link" target="_blank"><%= item.name %></a>
+            <% }); %>
+          </span>
+        </div>
+        <% } %>
+      </div>
+
+      <div class="web-links"> 
+        <% if (theme.projects && theme.projects.length){ %>
+        <div class="sb-links">
+          <div class="links-title">更多</div>
+          <span class="sb-item-links">
+            <% theme.projects.forEach(function(item){ %>
+              <a href="<%- item.link %>" class="animsition-link" target="_blank"><%= item.name %></a>
             <% }); %>
           </span>
         </div>
