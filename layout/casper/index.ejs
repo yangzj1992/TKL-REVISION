@@ -7,7 +7,7 @@
         <% page.posts.each(function(post) { %>
         <div class="row">
             <div class="col-md-8 col-md-offset-2 opening-statement">
-                <h3 style="font-size: 26px;line-height: 32px;"><a class="title" href="<%- config.root %><%- post.path %>"><%- post.title %></a></h3>
+                <h3 class="index-title"><a class="title" href="<%- config.root %><%- post.path %>"><%- post.title %></a></h3>
                 <p>
                   <% if (post.excerpt){ %>
                     <%- post.excerpt %>

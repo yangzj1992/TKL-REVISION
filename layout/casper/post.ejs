@@ -39,8 +39,8 @@
                       <span id="busuanzi_value_page_pv"></span>次阅读
                     </span></span>
                     
-                    <span id="share" style="float: right;position: relative;">
-                        <div class="qrcode" id="qrcode" style="display: none;"></div>
+                    <span id="share">
+                        <div class="qrcode" id="qrcode"></div>
                         <a id="wechat" class="share-icon" title="分享到微信" data-wechat-url="<%=  site.url %><% page.url %>" href="javascript:void(0);"><i class="icon-CN_tencent_wechat"></i></a>
                         <a id="weibo" class="share-icon" target="_blank" title="分享到微博" href="http://service.weibo.com/share/share.php?title=<%= page.title %> | <%= theme.title %> &amp;url=<%= theme.url %><%= url_for(path) %>&amp;type=3&amp;searchPic=false"><i class="icon-CN_sina_weibo"></i></a>
                         <a id="qzone" class="share-icon" target="_blank" title="分享到 QQ 空间" href="http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=<%= theme.url %><%= url_for(path) %>&amp;title=<%= page.title %> | <%= theme.title %>"><i class="icon-CN_tencent_qzone"></i></a>

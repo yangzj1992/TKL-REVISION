@@ -42,7 +42,7 @@ th,td{
 	max-height: 90%;
 	overflow: scroll;
 	overflow-x:hidden;
-	margin: 0 0 20px 20px;
+	margin: 0 0 20px 2%;
   padding:1em;
   line-height:1.5em;
   .toc{
@@ -123,6 +123,10 @@ h1 span,h2 span,h3 span,h4 span,h5 span,h6 span,.navbar .nav > li > span {
 }
 
 .index-context{
+	.index-title{
+		font-size: 26px;
+		line-height: 32px;
+	}
 	.title{
 		color:#4a4a4a;
 	}
@@ -132,7 +136,6 @@ h1 span,h2 span,h3 span,h4 span,h5 span,h6 span,.navbar .nav > li > span {
 		}
 	}
 }
-
 .post-content{
 	h1,h2,h3,h4,h5,h6 {
 		margin-top: 0;
@@ -750,6 +753,9 @@ footer {
 	.footer{
 		width: 95%;
 		margin:0 auto;
+		.wrapper{
+			margin:0;
+		}
 	}
 	.copy{
 		float: left;
@@ -757,6 +763,7 @@ footer {
 		p{
 			font-size: 12px;
 			color: #767D84;
+			margin:0;
 		}
 		a{
 			color: #767D84;
@@ -899,6 +906,13 @@ pre{
 }
 .summary{
 	padding-bottom: 6px;
+	#share{
+		float: right;
+		position: relative;
+	}
+	.qrcode{
+		display: none;
+	}
 }
 .egg-tips{
 	width:860px;
