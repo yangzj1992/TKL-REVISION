@@ -1,4 +1,4 @@
-function dispatch() {
+function dispatch () {
   var url;
   var searchbox = $('#searchbox');
   var searchval = searchbox.val();
@@ -40,18 +40,18 @@ $(document).ready(function ($) {
   }
   var a = {
     info: '卧槽，你居然敢点开控制台看我的代码，这下我的屎代码无所遁形了 T _ T',
-    logo: '         _.-.  \n' + '       ,\'/ //\\ \n' + '      /// // /)\n' + '     /// // //|\n' + '    /// // /// \n' + '   /// // ///  \n' + '  (`: // ///   \n' + '   `;`: ///    \n' + '   / /  `\'      \n' + '  / /\n' + ' (_/  \n',
+    logo: '         _.-.  \n' + '       ,\'/ //\\ \n' + '      /// // /)\n' + '     /// // //|\n' + '    /// // /// \n' + '   /// // ///  \n' + '  (`: // ///   \n' + '   `;`: ///    \n' + '   / /  `\'      \n' + '  / /\n' + ' (_/  \n'
   };
   window.console && console.info && console.info(a.logo + a.info);
 
   document.onkeydown = function (e) {
-    if (!($(':focus').prop('tagName') == 'INPUT') && !($(':focus').prop('tagName') == 'TEXTAREA')) {
+    if (!($(':focus').prop('tagName') === 'INPUT') && !($(':focus').prop('tagName') === 'TEXTAREA')) {
       e = e || window.event;
-      if (e.keyCode == 191 && e.shiftKey) {
+      if (e.keyCode === 191 && e.shiftKey) {
         if (windowWidth < 1024) {
           return false;
         }
-        if ($(".layui-layer-shade").length >0) {
+        if ($('.layui-layer-shade').length > 0) {
           return false;
         } else {
           egglayer = layer.open({
@@ -62,28 +62,28 @@ $(document).ready(function ($) {
             shift: 5,
             shadeClose: true, // 开启遮罩关闭
             area: [windowWidth, windowHeight],
-            content: '<div class="egg-tips"><div class="egg-header"><span>彩蛋指南(仿Github —— 试着按下这些键)</span><span class="egg-close"><i class="demo-icon icon-cancel">&#xe808;</i></span> </div><div class="egg-helps"><table class="keyboard-map"><tbody><tr><th></th><th>快捷方式说明</th></tr><tr><td class="keys"><kbd>?</kbd></td><td>打开彩蛋说明</td></tr><tr><td class="keys"><kbd>g</kbd><kbd>s</kbd></td><td>定焦到搜索框</td></tr><tr><td class="keys"><kbd>g</kbd><kbd>a</kbd></td><td>打开归档页</td></tr><tr><td class="keys"><kbd>g</kbd><kbd>c</kbd></td><td>打开目录页</td></tr><tr><td class="keys"><kbd>g</kbd><kbd>t</kbd></td><td>打开标签页</td></tr></tbody></table></div></div>',
+            content: '<div class="egg-tips"><div class="egg-header"><span>彩蛋指南(仿Github —— 试着按下这些键)</span><span class="egg-close"><i class="demo-icon icon-cancel">&#xe808;</i></span> </div><div class="egg-helps"><table class="keyboard-map"><tbody><tr><th></th><th>快捷方式说明</th></tr><tr><td class="keys"><kbd>?</kbd></td><td>打开彩蛋说明</td></tr><tr><td class="keys"><kbd>g</kbd><kbd>s</kbd></td><td>定焦到搜索框</td></tr><tr><td class="keys"><kbd>g</kbd><kbd>a</kbd></td><td>打开归档页</td></tr><tr><td class="keys"><kbd>g</kbd><kbd>c</kbd></td><td>打开目录页</td></tr><tr><td class="keys"><kbd>g</kbd><kbd>t</kbd></td><td>打开标签页</td></tr></tbody></table></div></div>'
           });
         }
         gPushed = false;
-      } else if (e.keyCode == 71) { // g
+      } else if (e.keyCode === 71) { // g
         gPushed = true;
-      } else if (e.keyCode == 65) { // angular.bind(self, function)
+      } else if (e.keyCode === 65) { // angular.bind(self, function)
         if (gPushed) {
           location.href = '/archives';
         }
         gPushed = false;
-      } else if (e.keyCode == 67) { // c
+      } else if (e.keyCode === 67) { // c
         if (gPushed) {
           location.href = '/categories';
         }
         gPushed = false;
-      } else if (e.keyCode == 84) { // t
+      } else if (e.keyCode === 84) { // t
         if (gPushed) {
           location.href = '/tags';
         }
         gPushed = false;
-      } else if (e.keyCode == 83) { // S
+      } else if (e.keyCode === 83) { // S
         if (gPushed) {
           $('#searchbox').focus();
           $('#searchbox').val('');
@@ -130,12 +130,12 @@ $(document).ready(function ($) {
         if (scrollTop > duoshuoMark - windowHeight) {
           $('#toc').css({
             'position': 'absolute',
-            'top': duoshuoMark - tocHeight,
+            'top': duoshuoMark - tocHeight
           });
         } else {
           $('#toc').css({
             'position': 'fixed',
-            'top': '50px',
+            'top': '50px'
           });
         }
       }
@@ -147,8 +147,8 @@ $(document).ready(function ($) {
     }
   });
 
-  wallNumber = 'url(http://qcyoung.qiniudn.com/qcyoung/TKL/wall-' + Math.ceil(Math.random() * 110) + '.jpg)';
-  // wallNumber = "url(https://wallpapers.wallhaven.cc/wallpapers/full/wallhaven-316410.jpg)";
+  wallNumber = 'url(http://qcyoung.qiniudn.com/qcyoung/TKL/wall-' + Math.ceil(Math.random() * 116) + '.jpg)';
+  // wallNumber = "url(http://i2.buimg.com/72f4660123522163.jpg)";
   $('.element-img').css('background-image', wallNumber);
 
   // 微信Window
@@ -161,7 +161,7 @@ $(document).ready(function ($) {
       shift: 2,
       shadeClose: true, // 开启遮罩关闭
       area: [windowWidth, windowHeight],
-      content: '<img src="http://qcyoung.qiniudn.com/qcyoung/yangzj1992QRcode.jpg" width="200px" height="200px"/>',
+      content: '<img src="http://qcyoung.qiniudn.com/qcyoung/yangzj1992QRcode.jpg" width="200px" height="200px"/>'
     });
   });
 
@@ -218,7 +218,7 @@ $(document).ready(function ($) {
     cursorborderradius: '8px',
     cursorwidth: 4, // 9
     enablemousewheel: true,
-    background: 'rgba(255,255,255,0.7)',
+    background: 'rgba(255,255,255,0.7)'
   });
   $('html').niceScroll({
     // smoothscroll: true, // scroll with ease movement
@@ -232,7 +232,7 @@ $(document).ready(function ($) {
     // boxzoom: false,// enable zoom for box content
     // cursorborder: "0px solid #202020",
     // cursorborderradius: "5px",
-    cursorwidth: 0, // 9
+    cursorwidth: 0 // 9
     // enablemousewheel: true,
     // background: "rgba(255,255,255,0.7)",
   });
@@ -255,7 +255,7 @@ $(document).ready(function ($) {
     // that does not support "animation-duration".
     overlay: false,
     overlayClass: 'animsition-overlay-slide',
-    overlayParentElement: 'body',
+    overlayParentElement: 'body'
   });
 
   // Functionailty constraints for mobile(wall opacity covering layer)
@@ -267,7 +267,7 @@ $(document).ready(function ($) {
         var st = $(this).scrollTop();
         divs.css({
           'margin-top': -(st / 0) + 'px',
-          opacity: 0.7 - st / 1600,
+          opacity: 0.7 - st / 1600
         });
       });
     });
@@ -276,7 +276,7 @@ $(document).ready(function ($) {
   // autohide navbar on scroll
   $('div.navbar-fixed-top').autoHidingNavbar({
     animationDuration: 400,
-    hideOffset: 0, //Hides the navbar after scrolling . auto means the navbar's height.
+    hideOffset: 0 // Hides the navbar after scrolling . auto means the navbar's height.
   });
 
   /*!

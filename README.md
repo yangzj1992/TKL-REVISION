@@ -1,10 +1,10 @@
 # TKL-REVISION
-TKL-REVISION is a responsive design theme for Hexo. It's was based on [TKL](https://github.com/SuperKieran/TKL) and reference some [Next](https://github.com/iissnan/hexo-theme-next) features.(It's still not good for other to use it, because I don't finished the custom configuration of image address, so u need know some code skills to modify it, if u don't mind it, u can try to use this theme)
+TKL-REVISION is a responsive design theme for Hexo. It's was based on [TKL](https://github.com/SuperKieran/TKL) and reference some [Next](https://github.com/iissnan/hexo-theme-next) features.(At this time, It's still not good enough for other to use, because I don't finished the custom configuration yet, so u need know some code skills to modify it, if u don't mind, u can try to use this theme)
 
 ###Install
 modify theme in <code>_config.yml</code>.
 
-Switch to the hexo directory and run `npm install hexo-wordcount --save`. and modify all picture address to your own address.
+Switch to the hexo directory and run `npm install hexo-wordcount --save`.
 
 ```
 If u like the original version:

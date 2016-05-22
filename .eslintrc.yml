@@ -1,9 +1,0 @@
-extends: airbnb
-installedESLint: true
-parserOptions:
-  ecmaVersion: 5
-env:
-  browser: true
-  jquery: true
-plugins:
-  - jquery
