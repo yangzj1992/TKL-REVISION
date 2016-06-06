@@ -308,6 +308,7 @@ input[placeholder],
 	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
 }
 
+
 .archive-list,.category-list,.tag-list{
 	line-height: 25px;
 }
@@ -473,6 +474,29 @@ input[placeholder],
 	}
 	.navbar .nav .mobile-li{
 		display: inline-block;
+	}
+	.article-list{
+		.category_index{
+			padding:15px 0 0 15px;
+			.category-list,.tag-list,.archive-list{
+				-webkit-padding-start:10px;
+			}
+			.category-list-item,.tag-list-item,.archive-list-item{
+				display: inline-block;
+				border-radius: 999em;
+				padding: 0 10px;
+				margin:0 2px;
+				margin-bottom: 8px;
+				line-height: 28px;
+				background-color: #0085a1;
+				.category-list-link,.tag-list-link,.archive-list-link{
+					color:#fff;
+				}
+				.category-list-count,.tag-list-count,.archive-list-count{
+					display: none;
+				}
+			}
+		}
 	}
 }
 
@@ -722,7 +746,6 @@ button.navbar-toggle .icon-bar {
 /* *******************************************************
 * Services, (homepage)
 ******************************************************* */
-
 #services {
 	background-color: $White;
 	.boxes{

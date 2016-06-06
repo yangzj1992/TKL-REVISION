@@ -147,8 +147,8 @@ $(document).ready(function ($) {
     }
   });
 
-  wallNumber = 'url(http://qcyoung.qiniudn.com/qcyoung/TKL/wall-' + Math.ceil(Math.random() * 118) + '.jpg)';
-  // wallNumber = "url(https://images4.alphacoders.com/703/703960.png)";
+  wallNumber = 'url(http://qcyoung.qiniudn.com/qcyoung/TKL/wall-' + Math.ceil(Math.random() * 126) + '.jpg)';
+  // wallNumber = "url(http://az608707.vo.msecnd.net/files/Kestrel_EN-US10433052515_1366x768.jpg)";
   $('.element-img').css('background-image', wallNumber);
 
   // 微信Window
