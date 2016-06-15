@@ -16,6 +16,10 @@ i {
 b, strong {
 	font-weight: 700;
 }
+ol ol, ol ul, ul ol, ul ul{
+	-webkit-padding-start: 10px;
+	list-style-type: disc;
+}
 // code table
 figure{
 	table,tr,td{

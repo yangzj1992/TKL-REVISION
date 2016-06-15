@@ -13,6 +13,8 @@ function dispatch () {
   return false;
 }
 
+
+
 $(document).ready(function ($) {
   /**
    * plugins list
@@ -147,8 +149,8 @@ $(document).ready(function ($) {
     }
   });
 
-  wallNumber = 'url(http://qcyoung.qiniudn.com/qcyoung/TKL/wall-' + Math.ceil(Math.random() * 126) + '.jpg)';
-  // wallNumber = "url(http://az608707.vo.msecnd.net/files/Kestrel_EN-US10433052515_1366x768.jpg)";
+  wallNumber = 'url(http://qcyoung.qiniudn.com/qcyoung/TKL/wall-' + Math.ceil(Math.random() * 132) + '.jpg)';
+  // wallNumber = "url(http://i2.buimg.com/7a5bdc5143c173c1.jpg)";
   $('.element-img').css('background-image', wallNumber);
 
   // 微信Window

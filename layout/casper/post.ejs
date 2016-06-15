@@ -12,7 +12,8 @@
                 <div>
                     <h1 class="article-title"><%- post.title %></h1>
                     <time datetime="<%= date_xml(post.date) %>" itemprop="datePublished" class="post-time">
-                        <%= date(post.date,'YYYY 年 MM 月 DD 日') %>
+                        <span>发布时间：<%= date(post.date,'YYYY 年 MM 月 DD 日') %></span>
+                        <span style="margin-left: 10px;">最近更新于：<%= date(post.updated,'YYYY 年 MM 月 DD 日') %></span>
                     </time>
                 </div>
             </div>
@@ -24,7 +25,7 @@
                 <div class="clearfix"></div>
                 <hr class="nogutter">
                 <div class="summary">
-                    <a class="code-article" target="_blank"><i class="demo-icon icon-file-code">&#xe800;</i><span class="i-name">源码</span></a>
+                    <a class="code-article" href="https://github.com/yangzj1992/articles/blob/master/<%= post.slug %>.md" target="_blank"><i class="demo-icon icon-file-code">&#xe800;</i><span class="i-name">源码</span></a>
                     <i class="demo-icon icon-file-word">&#xe821;</i><span class="i-name post-words"><%-wordcount(post.content)%>字</span>
                     <i class="demo-icon icon-tags">&#xe801;</i> <span class="i-name"></span>
                     <span class="post-meta">
@@ -72,8 +73,6 @@
         $("#qrcode").css('display','none');
         jQuery("#qrcode").html('');
     });
-    var titletext = $(".article-title").text()
-    $(".code-article").attr('href','https://github.com/yangzj1992/articles/blob/master/'+titletext+'.md');
     function utf16to8(str) {
         var out, i, len, c;
         out = "";
