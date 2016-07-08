@@ -13,8 +13,6 @@ function dispatch () {
   return false;
 }
 
-
-
 $(document).ready(function ($) {
   /**
    * plugins list
@@ -115,7 +113,7 @@ $(document).ready(function ($) {
       var heads = $('.post-article').find('h1,h2,h3,h4,h5');
       var nowtoc = 0;
       for (var i = 0; i < heads.length; i++) {
-        if (heads[i].getBoundingClientRect().top <= 0) {
+        if (heads[i].getBoundingClientRect().top <= 50) {
           nowtoc = i;
         } else {
           break;
@@ -141,6 +139,18 @@ $(document).ready(function ($) {
           });
         }
       }
+      // var postImgs = $('.post-content').find('img');
+      // if (postImgs.length) {
+      //   var nowimg;
+      //   for (var j = 0; j < heads.length; j++) {
+      //     if (heads[j].getBoundingClientRect().top <= 50) {
+      //       nowimg = j;
+      //     } else {
+      //       break;
+      //     }
+      //   }
+      //   $(postImgs[nowimg]).attr('src', $(postImgs[nowimg]).attr('data-src'));
+      // }
     }
     if ($(document).scrollTop() > 10) {
       $('.lightnav .navbar-inner').addClass('lightnav-alt');
@@ -149,9 +159,21 @@ $(document).ready(function ($) {
     }
   });
 
-  wallNumber = 'url(http://qcyoung.qiniudn.com/qcyoung/TKL/wall-' + Math.ceil(Math.random() * 132) + '.jpg)';
-  // wallNumber = "url(http://i2.buimg.com/7a5bdc5143c173c1.jpg)";
-  $('.element-img').css('background-image', wallNumber);
+  if (windowWidth > 768) {
+    wallNumber = 'url(http://qcyoung.qiniudn.com/qcyoung/TKL/wall-' + Math.ceil(Math.random() * 160) + '.jpg)';
+    // wallNumber = "url(http://ww3.sinaimg.cn/large/0060lm7Tgw1f5jifjk89fj31hc0u0wrw.jpg)";
+    $('.element-img').css('background-image', wallNumber);
+  }
+
+  $('.navbar-toggle').bind('click', function () {
+    var sideImgs = $('.sb-slidebar').find('img');
+    if (sideImgs[0].src) {
+      return false;
+    }
+    sideImgs.each(function (index, el) {
+      $(el).attr('src', $(el).attr('data-src'));
+    });
+  });
 
   // 微信Window
   $('#navigation .weixin,.social .weixin').bind('click', function () {
