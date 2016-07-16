@@ -39,10 +39,10 @@ $(document).ready(function ($) {
     duoshuoMark = $('.duoshuo').offset().top;
   }
   var a = {
-    info: '卧槽，你居然敢点开控制台看我的代码，这下我的屎代码无所遁形了 T _ T',
+    info: '%c卧槽，你居然敢点开控制台看我的代码，这下我的屎代码无所遁形了 T _ T',
     logo: '         _.-.  \n' + '       ,\'/ //\\ \n' + '      /// // /)\n' + '     /// // //|\n' + '    /// // /// \n' + '   /// // ///  \n' + '  (`: // ///   \n' + '   `;`: ///    \n' + '   / /  `\'      \n' + '  / /\n' + ' (_/  \n'
   };
-  window.console && console.info && console.info(a.logo + a.info);
+  window.console && console.info && console.info(a.logo);console.info(a.info,'color:#03a9f4');
 
   document.onkeydown = function (e) {
     if (!($(':focus').prop('tagName') === 'INPUT') && !($(':focus').prop('tagName') === 'TEXTAREA')) {
@@ -107,6 +107,23 @@ $(document).ready(function ($) {
     $('.lightnav .navbar-inner').removeClass('lightnav-alt');
   }
 
+  lazyLoadImg();
+
+  function lazyLoadImg(){
+    var postImgs = $('.post-content').find('img');
+    var nowimg;
+    if (postImgs.length) {
+      for (var j = 0; j < postImgs.length; j++) {
+        if (postImgs[j].getBoundingClientRect().bottom <= windowHeight) {
+          nowimg = j;
+        } else {
+          break;
+        }
+      }
+      $(postImgs[nowimg]).attr('src', $(postImgs[nowimg]).attr('data-src'));
+    }
+  }
+
   $(window).scroll(function () {
     scrollTop = $(this).scrollTop();
     if ($('#toc').length) {
@@ -139,18 +156,7 @@ $(document).ready(function ($) {
           });
         }
       }
-      // var postImgs = $('.post-content').find('img');
-      // if (postImgs.length) {
-      //   var nowimg;
-      //   for (var j = 0; j < heads.length; j++) {
-      //     if (heads[j].getBoundingClientRect().top <= 50) {
-      //       nowimg = j;
-      //     } else {
-      //       break;
-      //     }
-      //   }
-      //   $(postImgs[nowimg]).attr('src', $(postImgs[nowimg]).attr('data-src'));
-      // }
+      lazyLoadImg();
     }
     if ($(document).scrollTop() > 10) {
       $('.lightnav .navbar-inner').addClass('lightnav-alt');
@@ -160,8 +166,8 @@ $(document).ready(function ($) {
   });
 
   if (windowWidth > 768) {
-    wallNumber = 'url(http://qcyoung.qiniudn.com/qcyoung/TKL/wall-' + Math.ceil(Math.random() * 160) + '.jpg)';
-    // wallNumber = "url(http://ww3.sinaimg.cn/large/0060lm7Tgw1f5jifjk89fj31hc0u0wrw.jpg)";
+    wallNumber = 'url(http://qcyoung.qiniudn.com/qcyoung/TKL/wall-' + Math.ceil(Math.random() * 183) + '.jpg)';
+    // wallNumber = "url(http://ww2.sinaimg.cn/large/0060lm7Tgw1f5w3957rd1j31hc0u0k3l.jpg)";
     $('.element-img').css('background-image', wallNumber);
   }
 
@@ -245,20 +251,20 @@ $(document).ready(function ($) {
     background: 'rgba(255,255,255,0.7)'
   });
   $('html').niceScroll({
-    // smoothscroll: true, // scroll with ease movement
-    // autohidemode: false,
-    // zindex: "100", // change z-index for scrollbar div
-    // scrollspeed: 60, // scrolling speed
-    // mousescrollstep: 40,// mouse scrolling speed
-    // gesturezoom: false,//上缩放框激活时，间距输出/输入
-    // horizrailenabled: false,//管理水平滚动
-    // cursorcolor: "#151515",
-    // boxzoom: false,// enable zoom for box content
-    // cursorborder: "0px solid #202020",
-    // cursorborderradius: "5px",
-    cursorwidth: 0 // 9
-    // enablemousewheel: true,
-    // background: "rgba(255,255,255,0.7)",
+    smoothscroll: true, // scroll with ease movement
+    autohidemode: true,
+    zindex: "100", // change z-index for scrollbar div
+    scrollspeed: 60, // scrolling speed
+    mousescrollstep: 40,// mouse scrolling speed
+    gesturezoom: false,//上缩放框激活时，间距输出/输入
+    horizrailenabled: false,//管理水平滚动
+    cursorcolor: "#151515",
+    boxzoom: false,// enable zoom for box content
+    cursorborder: "0px solid #202020",
+    cursorborderradius: "5px",
+    cursorwidth: 5, // 9
+    enablemousewheel: true,
+    background: "rgba(255,255,255,0.7)",
   });
 
   // Page transitions

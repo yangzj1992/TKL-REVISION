@@ -3,42 +3,48 @@
 <div class="heightblock"></div>
 <!-- // End height spacing helper -->
 <section id="intro" class="index-context">
-    <div class="container">
-        <% page.posts.each(function(post) { %>
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2 opening-statement">
-                <h3 class="index-title"><a class="title" href="<%- config.root %><%- post.path %>"><%- post.title %></a></h3>
-                <p>
-                  <% if (post.excerpt){ %>
-                    <%- post.excerpt %>
-                  <% } else { %>
-                    <%- post.content.replace(/<(?:.|\n)*?>/gm, '').substr(0, 220) %>
-                  <% } %>
-                </p>
-                <% if (theme.excerpt_link) { %>
-                <span>
-                    <%- partial('post/meta', {post: post}) %>
-                </span>
-                <p class="pull-right readMore">
-                    <a href="<%- config.root %><%- post.path %>"><%= theme.excerpt_link %>...</a>
-                </p>
-                <% } %>
-                <div class="clearfix"></div>
-                <hr class="nogutter">
-            </div>
+  <div class="container">
+    <% page.posts.each(function(post) { %>
+      <div class="row">
+        <div class="col-md-8 col-md-offset-2 opening-statement">
+          <h3 class="index-title">
+            <a class="title" href="<%- config.root %><%- post.path %>"><%- post.title %></a>
+          </h3>
+          <p>
+            <% if (post.excerpt){ %>
+              <%- post.excerpt %>
+            <% } else { %>
+              <%- post.content.replace(/<(?:.|\n)*?>/gm, '').substr(0, 220) %>
+            <% } %>
+          </p>
+          <% if (theme.excerpt_link) { %>
+            <span>
+              <%- partial('post/meta', {post: post}) %>
+            </span>
+            <p class="pull-right readMore">
+              <a href="<%- config.root %><%- post.path %>"><%= theme.excerpt_link %>...</a>
+            </p>
+          <% } %>
+          <div class="clearfix"></div>
+          <hr class="nogutter">
         </div>
-        <% }); %>
-        <nav class="pagination" role="pagination">
-          <% if (page.prev) { %><a class="pull-left" href="<%- url_for(page.prev_link) %>">← Newer Posts</a><% } %>
-          <% if (page.next) { %><a class="pull-right" href="<%- url_for(page.next_link) %>">Older Posts →</a><% } %>
-        </nav>
-    </div>
+      </div>
+    <% }); %>
+    <nav class="pagination" role="pagination">
+      <% if (page.prev) { %>
+        <a class="pull-left" href="<%- url_for(page.prev_link) %>">← Newer Posts</a>
+      <% } %>
+      <% if (page.next) { %>
+        <a class="pull-right" href="<%- url_for(page.next_link) %>">Older Posts →</a>
+      <% } %>
+    </nav>
+  </div>
 </section>
 <section id="statement">
-    <div class="container text-center wow fadeInUp" data-wow-delay="0.5s">
-        <div class="row">
-            <p><%- theme.bottom_saying %></p>
-        </div>
+  <div class="container text-center wow fadeInUp" data-wow-delay="0.5s">
+    <div class="row">
+      <p><%- theme.bottom_saying %></p>
     </div>
+  </div>
 </section>
 <!-- ============================ END Content =========================== -->

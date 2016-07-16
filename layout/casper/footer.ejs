@@ -1,73 +1,65 @@
 <!-- ============================ Footer =========================== -->
 <div class="control-panel">
-    <ul>
-        <li>
-            <i class="demo-icon icon-gotop">&#xe817;</i>
-        </li>
-        <li>
-            <i class="demo-icon icon-godown">&#xe802;</i>
-        </li>
-        <li>
-            <i class="demo-icon icon-music">&#xe814;</i>
-        </li>
-    </ul>
+  <ul>
+    <li>
+      <i class="demo-icon icon-gotop">&#xe817;</i>
+    </li>
+    <li>
+      <i class="demo-icon icon-godown">&#xe802;</i>
+    </li>
+    <li>
+      <i class="demo-icon icon-music">&#xe814;</i>
+    </li>
+  </ul>
 </div>
 <footer>
-    <div class="footer">
-            <div class="myself">
-                <p>
-                   
-                </p>
-            </div>
-            <div class="copy">
-                <p>
-                    &copy; 2014<script>new Date().getFullYear()>2010&&document.write("-"+new Date().getFullYear());</script>, Content By <%- config.author %>. All Rights Reserved.
-                </p>
-                <p>
-                    <span id="busuanzi_container_site_pv">
-                        This site already had <span id="busuanzi_value_site_pv"></span> Visits by
-                    </span>
-                    <span id="busuanzi_container_site_uv">
-                        <span id="busuanzi_value_site_uv"></span> Visitors 
-                    </span>
-                </p>
-                <p>
-                    Powered by <a href="https://hexo.io/zh-cn/">Hexo</a> and theme By <a href="https://github.com/yangzj1992/TKL-REVISION">Kieran</a>
-                </p>
-            </div>
-            <div class="social">
-                <ul>
-                    <% if(theme.GitHub){ %>
-                    <li><a href="<%- theme.GitHub %>" title="Github" target="_blank"><i class="icon-Popular_GitHub"></i>&nbsp;</a></li>
-                    <% } %>
-                    <li class="weixin"><a href="javascript:void(0)" title="Weixin"><i class="icon-CN_tencent_wechat"></i>&nbsp;</a></li>
-                    <% if(theme.Weibo){ %>
-                    <li><a href="<%- theme.Weibo %>" title="Sina-Weibo" target="_blank"><i class="icon-CN_sina_weibo"></i>&nbsp;</a></li>
-                    <% } %>
-                    <% if(theme.Twitter){ %>
-                    <li><a href="<%- theme.Twitter %>" title="Twitter" target="_blank"><i class="icon-Popular_Twitter"></i>&nbsp;</a></li>
-                    <% } %>
-                    <% if(theme.ZhiHu){ %>
-                    <li><a href="http://www.zhihu.com/people/yangzj1992" title="Zhihu" target="_blank"><i class="icon-CN_zhihu"></i></a>&nbsp;</li>
-                    <% } %>
-                </ul>
-                <div class="search">
-                    <form id="searchform" onsubmit="return dispatch()">
-                      <div class="search_text">
-                        <i class="demo-icon icon-search">&#xe816;</i>
-                        <input type="text" name="q" id="searchbox"value="" placeholder="">
-                      </div>
-                    </form>
-                </div>
-            </div>
-
-            
-            
-            <div class="clearfix"> </div>
-        </div>
-        <div style="display:none">
-            <%- partial('cnzz') %>  
-        </div>
+  <div class="footer">
+    <div class="copy">
+      <p>
+        &copy; 2014<script>new Date().getFullYear()>2010&&document.write("-"+new Date().getFullYear());</script>, Content By <%- config.author %>. All Rights Reserved.
+      </p>
+      <p>
+        <span id="busuanzi_container_site_pv">
+          This site already had <span id="busuanzi_value_site_pv"></span> Visits by
+        </span>
+        <span id="busuanzi_container_site_uv">
+          <span id="busuanzi_value_site_uv"></span> Visitors 
+        </span>
+      </p>
+      <p>
+        Powered by <a href="https://hexo.io/zh-cn/">Hexo</a> and theme By <a href="https://github.com/yangzj1992/TKL-REVISION">Kieran</a>
+      </p>
+    </div>
+    <div class="social">
+      <ul>
+        <% if(theme.GitHub){ %>
+          <li><a href="<%- theme.GitHub %>" title="Github" target="_blank"><i class="icon-Popular_GitHub"></i>&nbsp;</a></li>
+        <% } %>
+        <li class="weixin"><a href="javascript:void(0)" title="Weixin"><i class="icon-CN_tencent_wechat"></i>&nbsp;</a></li>
+        <% if(theme.Weibo){ %>
+          <li><a href="<%- theme.Weibo %>" title="Sina-Weibo" target="_blank"><i class="icon-CN_sina_weibo"></i>&nbsp;</a></li>
+        <% } %>
+        <% if(theme.Twitter){ %>
+          <li><a href="<%- theme.Twitter %>" title="Twitter" target="_blank"><i class="icon-Popular_Twitter"></i>&nbsp;</a></li>
+        <% } %>
+        <% if(theme.ZhiHu){ %>
+          <li><a href="http://www.zhihu.com/people/yangzj1992" title="Zhihu" target="_blank"><i class="icon-CN_zhihu"></i></a>&nbsp;</li>
+        <% } %>
+      </ul>
+      <div class="search">
+        <form id="searchform" onsubmit="return dispatch()">
+          <div class="search_text">
+            <i class="demo-icon icon-search">&#xe816;</i>
+            <input type="text" name="q" id="searchbox" value="" placeholder="">
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="clearfix"></div>
+  </div>
+  <div style="display:none">
+    <%- partial('cnzz') %>  
+  </div>
 </footer>
 <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 <script async id="dsq-count-scr" src="https://<%= theme.disqus_shortname %>.disqus.com/count.js" ></script>

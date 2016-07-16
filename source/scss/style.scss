@@ -204,7 +204,13 @@ h1 span,h2 span,h3 span,h4 span,h5 span,h6 span,.navbar .nav > li > span {
 		background-color: #fff;
 	}
 }
-
+.post-article{
+	img{
+		position: relative;
+		left: 50%;	
+		transform: translateX(-50%);
+	}
+}
 section {
 	background-color: $White;
 	position: relative;
@@ -780,6 +786,7 @@ footer {
 	.footer{
 		width: 95%;
 		margin:0 auto;
+		padding-top: 10px;
 		.wrapper{
 			margin:0;
 		}
