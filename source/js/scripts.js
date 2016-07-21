@@ -120,7 +120,9 @@ $(document).ready(function ($) {
           break;
         }
       }
-      $(postImgs[nowimg]).attr('src', $(postImgs[nowimg]).attr('data-src'));
+      if(!$(postImgs[nowimg]).hasClass('img_replaced')){
+        $(postImgs[nowimg]).attr('src', $(postImgs[nowimg]).attr('data-src')).addClass('img_replaced');
+      }
     }
   }
 
@@ -165,9 +167,9 @@ $(document).ready(function ($) {
     }
   });
 
-  if (windowWidth > 768) {
-    wallNumber = 'url(http://qcyoung.qiniudn.com/qcyoung/TKL/wall-' + Math.ceil(Math.random() * 183) + '.jpg)';
-    // wallNumber = "url(http://ww2.sinaimg.cn/large/0060lm7Tgw1f5w3957rd1j31hc0u0k3l.jpg)";
+  if (windowWidth > 768 && $('.index-context').length) {
+    wallNumber = 'url(http://qcyoung.qiniudn.com/qcyoung/TKL/wall-' + Math.ceil(Math.random() * 184) + '.jpg)';
+    // wallNumber = "url(https://images.alphacoders.com/719/719608.png)";
     $('.element-img').css('background-image', wallNumber);
   }
 
