@@ -44,26 +44,15 @@ $(document).ready(function ($) {
   };
   window.console && console.info && console.info(a.logo);console.info(a.info,'color:#03a9f4');
 
+  $('[data-toggle="tooltip"]').tooltip()
   document.onkeydown = function (e) {
     if (!($(':focus').prop('tagName') === 'INPUT') && !($(':focus').prop('tagName') === 'TEXTAREA')) {
       e = e || window.event;
       if (e.keyCode === 191 && e.shiftKey) {
-        if (windowWidth < 1024) {
-          return false;
-        }
         if ($('.layui-layer-shade').length > 0) {
           return false;
         } else {
-          egglayer = layer.open({
-            type: 1,
-            title: false,
-            skin: 'layui-layer-demo', // 样式类名
-            closeBtn: false, // 不显示关闭按钮
-            shift: 5,
-            shadeClose: true, // 开启遮罩关闭
-            area: [windowWidth, windowHeight],
-            content: '<div class="egg-tips"><div class="egg-header"><span>彩蛋指南(仿Github —— 试着按下这些键)</span><span class="egg-close"><i class="demo-icon icon-cancel">&#xe808;</i></span> </div><div class="egg-helps"><table class="keyboard-map"><tbody><tr><th></th><th>快捷方式说明</th></tr><tr><td class="keys"><kbd>?</kbd></td><td>打开彩蛋说明</td></tr><tr><td class="keys"><kbd>g</kbd><kbd>s</kbd></td><td>定焦到搜索框</td></tr><tr><td class="keys"><kbd>g</kbd><kbd>a</kbd></td><td>打开归档页</td></tr><tr><td class="keys"><kbd>g</kbd><kbd>c</kbd></td><td>打开目录页</td></tr><tr><td class="keys"><kbd>g</kbd><kbd>t</kbd></td><td>打开标签页</td></tr></tbody></table></div></div>'
-          });
+          eggFun();
         }
         gPushed = false;
       } else if (e.keyCode === 71) { // g
@@ -95,6 +84,27 @@ $(document).ready(function ($) {
       }
     }
   };
+
+
+  $('.welcome').on('click', function(event) {
+    eggFun();
+  });
+
+  function eggFun(){
+    if (windowWidth < 1024) {
+      return false;
+    }
+    egglayer = layer.open({
+      type: 1,
+      title: false,
+      skin: 'layui-layer-demo', // 样式类名
+      closeBtn: false, // 不显示关闭按钮
+      shift: 5,
+      shadeClose: true, // 开启遮罩关闭
+      area: [windowWidth, windowHeight],
+      content: '<div class="egg-tips"><div class="egg-header"><span>彩蛋指南（仿 Github —— 通过这些快捷键可以让你更快访问页面哦），按下「?」键同样呼出</span><span class="egg-close"><i class="demo-icon icon-cancel">&#xe808;</i></span> </div><div class="egg-helps"><table class="keyboard-map"><tbody><tr><th></th><th>快捷方式说明</th></tr><tr><td class="keys"><kbd>?</kbd></td><td>打开彩蛋说明</td></tr><tr><td class="keys"><kbd>g</kbd><kbd>s</kbd></td><td>定焦到搜索框</td></tr><tr><td class="keys"><kbd>g</kbd><kbd>a</kbd></td><td>打开归档页</td></tr><tr><td class="keys"><kbd>g</kbd><kbd>c</kbd></td><td>打开目录页</td></tr><tr><td class="keys"><kbd>g</kbd><kbd>t</kbd></td><td>打开标签页</td></tr></tbody></table></div></div>'
+    });
+  }
   $(document).delegate('.egg-close', 'click', function () {
     layer.close(egglayer);
   });
@@ -168,8 +178,8 @@ $(document).ready(function ($) {
   });
 
   if (windowWidth > 768 && $('.index-context').length) {
-    wallNumber = 'url(http://qcyoung.qiniudn.com/qcyoung/TKL/wall-' + Math.ceil(Math.random() * 184) + '.jpg)';
-    // wallNumber = "url(https://images.alphacoders.com/719/719608.png)";
+    wallNumber = 'url(http://qcyoung.qiniudn.com/qcyoung/TKL/wall-' + Math.ceil(Math.random() * 195) + '.jpg)';
+    // wallNumber = "url(https://wallpapers.wallhaven.cc/wallpapers/full/wallhaven-182938.jpg)";
     $('.element-img').css('background-image', wallNumber);
   }
 

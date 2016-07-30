@@ -40,7 +40,7 @@
         <div class="links-title">友情链接</div>
         <span class="sb-item-links">
           <% theme.links.forEach(function(item){ %>
-            <a href="<%- item.link %>" class="animsition-link" target="_blank"><%= item.name %></a>
+            <a href="<%- item.link %>" class="animsition-link" data-toggle="tooltip" data-placement="bottom" title="<%= item.description %>" target="_blank"><%= item.name %></a>
           <% }); %>
         </span>
       </div>
@@ -107,7 +107,9 @@
             <% if(theme.ZhiHu){ %>
               <li><a href="http://www.zhihu.com/people/yangzj1992" title="Zhihu" target="_blank"><i class="icon-CN_zhihu"></i></a></li>
             <% } %>
-            <li class="nolink"><span>Welcome!</span></li>
+            <li class="nolink">
+              <span class="welcome">Welcome!</span>
+            </li>
           </ul>
         </nav>
         <!--// Info-bar -->

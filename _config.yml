@@ -47,10 +47,13 @@ Baidu: http://www.baidu.com/p/yangzj1992
 links:
 - name: USTB
   link: http://www.ustb.edu.cn/
+  description: 我的大学
 - name: 美菜网
   link: http://meicai.cn/
+  description: First Job
 - name: Kieran
   link: http://go.kieran.top/
+  description: 主题原创者
 
 #Project
 projects:
