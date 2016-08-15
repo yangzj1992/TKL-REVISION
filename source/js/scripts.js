@@ -24,13 +24,13 @@ $(document).ready(function ($) {
   var windowWidth = $(window).width();
   var documentHeight = $(document).height();
   var footerHeight = $('footer').outerHeight();
-  var tocHeight;
-  var duoshuoMark;
-  var egglayer;
-  var gPushed = false;
+  var tocHeight; // 目录高度
+  var duoshuoMark;  // 评论栏位置
+  var egglayer;  // 彩蛋框
+  var gPushed = false;  // keydown 状态
   var msViewportStyle;
   var wallNumber;
-  var scrollStatus;
+  var scrollStatus; 
   var scrollTop;
   var tocScroll;
   var tocs;
@@ -44,7 +44,9 @@ $(document).ready(function ($) {
   };
   window.console && console.info && console.info(a.logo);console.info(a.info,'color:#03a9f4');
 
-  $('[data-toggle="tooltip"]').tooltip()
+  // tooltip初始化
+  $('[data-toggle="tooltip"]').tooltip();
+
   document.onkeydown = function (e) {
     if (!($(':focus').prop('tagName') === 'INPUT') && !($(':focus').prop('tagName') === 'TEXTAREA')) {
       e = e || window.event;
@@ -57,7 +59,7 @@ $(document).ready(function ($) {
         gPushed = false;
       } else if (e.keyCode === 71) { // g
         gPushed = true;
-      } else if (e.keyCode === 65) { // angular.bind(self, function)
+      } else if (e.keyCode === 65) { // a
         if (gPushed) {
           location.href = '/archives';
         }
@@ -85,7 +87,6 @@ $(document).ready(function ($) {
     }
   };
 
-
   $('.welcome').on('click', function(event) {
     eggFun();
   });
@@ -105,6 +106,7 @@ $(document).ready(function ($) {
       content: '<div class="egg-tips"><div class="egg-header"><span>彩蛋指南（仿 Github —— 通过这些快捷键可以让你更快访问页面哦），按下「?」键同样呼出</span><span class="egg-close"><i class="demo-icon icon-cancel">&#xe808;</i></span> </div><div class="egg-helps"><table class="keyboard-map"><tbody><tr><th></th><th>快捷方式说明</th></tr><tr><td class="keys"><kbd>?</kbd></td><td>打开彩蛋说明</td></tr><tr><td class="keys"><kbd>g</kbd><kbd>s</kbd></td><td>定焦到搜索框</td></tr><tr><td class="keys"><kbd>g</kbd><kbd>a</kbd></td><td>打开归档页</td></tr><tr><td class="keys"><kbd>g</kbd><kbd>c</kbd></td><td>打开目录页</td></tr><tr><td class="keys"><kbd>g</kbd><kbd>t</kbd></td><td>打开标签页</td></tr></tbody></table></div></div>'
     });
   }
+  
   $(document).delegate('.egg-close', 'click', function () {
     layer.close(egglayer);
   });
@@ -178,8 +180,8 @@ $(document).ready(function ($) {
   });
 
   if (windowWidth > 768 && $('.index-context').length) {
-    wallNumber = 'url(http://qcyoung.qiniudn.com/qcyoung/TKL/wall-' + Math.ceil(Math.random() * 195) + '.jpg)';
-    // wallNumber = "url(https://wallpapers.wallhaven.cc/wallpapers/full/wallhaven-182938.jpg)";
+    wallNumber = 'url(http://qcyoung.qiniudn.com/qcyoung/TKL/wall-' + Math.ceil(Math.random() * 221) + '.jpg)';
+    // wallNumber = "url(https://images5.alphacoders.com/726/726649.jpg)";
     $('.element-img').css('background-image', wallNumber);
   }
 
