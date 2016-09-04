@@ -138,8 +138,8 @@ $(document).ready(function ($) {
     }
   }
 
-  $(window).scroll(function () {
-    scrollTop = $(this).scrollTop();
+  function scrollSpy(){
+    scrollTop = $(window).scrollTop();
     if ($('#toc').length) {
       var heads = $('.post-article').find('h1,h2,h3,h4,h5');
       var nowtoc = 0;
@@ -177,11 +177,49 @@ $(document).ready(function ($) {
     } else {
       $('.lightnav .navbar-inner').removeClass('lightnav-alt');
     }
-  });
+  }
+
+  function showPanel(){
+    var scrollTopNum;
+    var returnTop;
+    // 获取当前垂直位移值
+    if (!scrollclick) {
+      scrollTopNum = $(document).scrollTop();
+      // 获取浏览器当前高度
+      returnTop = $('div.control-panel');
+      // 滚动条垂直距离大于0时显示，反之隐藏
+      (scrollTopNum > 240) ? returnTop.fadeIn('fast') : returnTop.fadeOut('fast');
+    }
+  }
+
+  var throttle = function (delay, atleast) {
+    // 节流
+    var timer = null;
+    var previous = null;
+    return function () {
+        var now = +new Date();
+        if ( !previous ) previous = now;
+        if ( atleast && now - previous > atleast ) {
+            scrollSpy();
+            showPanel();
+            previous = now;
+            clearTimeout(timer);
+        } else {
+            clearTimeout(timer);
+            timer = setTimeout(function() {
+                scrollSpy();
+                showPanel();
+                previous = null;
+            }, delay);
+        }
+    }
+  };
+
+  window.onscroll = throttle(200, 500);
 
   if (windowWidth > 768 && $('.index-context').length) {
-    wallNumber = 'url(http://qcyoung.qiniudn.com/qcyoung/TKL/wall-' + Math.ceil(Math.random() * 221) + '.jpg)';
-    // wallNumber = "url(https://images5.alphacoders.com/726/726649.jpg)";
+    wallNumber = 'url(http://qcyoung.qiniudn.com/qcyoung/TKL/wall-' + Math.ceil(Math.random() * 240) + '.jpg)';
+    // wallNumber = "url(http://233.dog/f_90040893.jpg)";
     $('.element-img').css('background-image', wallNumber);
   }
 
@@ -211,24 +249,9 @@ $(document).ready(function ($) {
 
   var scrollclick;
 
-  // 返回顶部功能
-  $(window).bind('scroll', function () {
-    var scrollTopNum;
-    var returnTop;
-    // 获取当前垂直位移值
-    if (!scrollclick) {
-      scrollTopNum = $(document).scrollTop();
-      // 获取浏览器当前高度
-      returnTop = $('div.control-panel');
-      // 滚动条垂直距离大于0时显示，反之隐藏
-      (scrollTopNum > 240) ? returnTop.fadeIn('fast') : returnTop.fadeOut('fast');
-    }
-  });
-
   $('.icon-gotop').click(function () {
     scrollclick = true;
-    $('div.control-panel').fadeOut('800');
-    $('html, body').animate({ scrollTop: 0 }, 800, function () {
+    $('html, body').stop().animate({ scrollTop: 0 }, 800, function () {
       scrollclick = false;
     });
     return false;
@@ -236,7 +259,7 @@ $(document).ready(function ($) {
 
   $('.icon-godown').click(function () {
     scrollclick = true;
-    $('html, body').animate({ scrollTop: documentHeight }, 800, function () {
+    $('html, body').stop().animate({ scrollTop: documentHeight }, 800, function () {
       scrollclick = false;
     });
     return false;
