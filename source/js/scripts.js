@@ -13,7 +13,7 @@ function dispatch () {
   return false;
 }
 
-$(document).ready(function ($) {
+$(document).ready(function () {
   /**
    * plugins list
    * @type {
@@ -30,7 +30,6 @@ $(document).ready(function ($) {
   var gPushed = false;  // keydown 状态
   var msViewportStyle;
   var wallNumber;
-  var scrollStatus; 
   var scrollTop;
   var tocScroll;
   var tocs;
@@ -38,6 +37,7 @@ $(document).ready(function ($) {
     tocHeight = $('.toc').outerHeight();
     duoshuoMark = $('.duoshuo').offset().top;
   }
+
   var a = {
     info: '%c卧槽，你居然敢点开控制台看我的代码，这下我的屎代码无所遁形了 T _ T',
     logo: '         _.-.  \n' + '       ,\'/ //\\ \n' + '      /// // /)\n' + '     /// // //|\n' + '    /// // /// \n' + '   /// // ///  \n' + '  (`: // ///   \n' + '   `;`: ///    \n' + '   / /  `\'      \n' + '  / /\n' + ' (_/  \n'
@@ -90,6 +90,67 @@ $(document).ready(function ($) {
   $('.welcome').on('click', function(event) {
     eggFun();
   });
+  
+  $(document).delegate('.egg-close', 'click', function () {
+    layer.close(egglayer);
+  });
+
+  navRender();
+  lazyLoadImg();
+
+  if (windowWidth > 768 && $('.index-context').length) {
+    wallNumber = 'url(http://qcyoung.qiniudn.com/qcyoung/TKL/wall-' + Math.ceil(Math.random() * 243) + '.jpg)';
+    // wallNumber = "url(https://images4.alphacoders.com/933/93356.jpg)";
+    $('.element-img').css('background-image', wallNumber);
+  }
+
+  $('.navbar-toggle').on('click', function () {
+    var sideImgs = $('.sb-slidebar').find('img');
+    if (sideImgs[0].src) {
+      return false;
+    }
+    sideImgs.each(function (index, el) {
+      $(el).attr('src', $(el).attr('data-src'));
+    });
+  });
+
+  // 微信Window
+  $('#navigation .weixin,.social .weixin').on('click', function () {
+    layer.open({
+      type: 1,
+      title: false,
+      skin: 'layui-layer-demo', // 样式类名
+      closeBtn: false, // 不显示关闭按钮
+      shift: 2,
+      shadeClose: true, // 开启遮罩关闭
+      area: [windowWidth, windowHeight],
+      content: '<img src="http://qcyoung.qiniudn.com/qcyoung/yangzj1992QRcode.jpg" width="200px" height="200px"/>'
+    });
+  });
+
+  var scrollclick;
+
+  $('.icon-gotop').on('click', function() {
+    scrollclick = true;
+    $('html, body').stop().animate({ scrollTop: 0 }, 800, function () {
+      scrollclick = false;
+    });
+    return false;
+  });
+
+  $('.icon-godown').on('click', function() {
+    scrollclick = true;
+    $('html, body').stop().animate({ scrollTop: documentHeight }, 800, function () {
+      scrollclick = false;
+    });
+    return false;
+  });
+
+  $('.icon-music').on('click', function (){
+    window.open('http://yangzj1992.u117.15800000.top/yPlayer/');
+  });
+  // Slidebars off-canvas menu
+  $.slidebars();
 
   function eggFun(){
     if (windowWidth < 1024) {
@@ -106,20 +167,15 @@ $(document).ready(function ($) {
       content: '<div class="egg-tips"><div class="egg-header"><span>彩蛋指南（仿 Github —— 通过这些快捷键可以让你更快访问页面哦），按下「?」键同样呼出</span><span class="egg-close"><i class="demo-icon icon-cancel">&#xe808;</i></span> </div><div class="egg-helps"><table class="keyboard-map"><tbody><tr><th></th><th>快捷方式说明</th></tr><tr><td class="keys"><kbd>?</kbd></td><td>打开彩蛋说明</td></tr><tr><td class="keys"><kbd>g</kbd><kbd>s</kbd></td><td>定焦到搜索框</td></tr><tr><td class="keys"><kbd>g</kbd><kbd>a</kbd></td><td>打开归档页</td></tr><tr><td class="keys"><kbd>g</kbd><kbd>c</kbd></td><td>打开目录页</td></tr><tr><td class="keys"><kbd>g</kbd><kbd>t</kbd></td><td>打开标签页</td></tr></tbody></table></div></div>'
     });
   }
-  
-  $(document).delegate('.egg-close', 'click', function () {
-    layer.close(egglayer);
-  });
 
-  // 开始进入时加载位置
-  scrollStatus = $(document).scrollTop();
-  if (scrollStatus > 10) {
-    $('.lightnav .navbar-inner').addClass('lightnav-alt');
-  } else {
-    $('.lightnav .navbar-inner').removeClass('lightnav-alt');
+  // 渲染导航栏样式
+  function navRender(){
+    if ($(document).scrollTop() > 10) {
+      $('.lightnav .navbar-inner').addClass('lightnav-alt');
+    } else {
+      $('.lightnav .navbar-inner').removeClass('lightnav-alt');
+    }
   }
-
-  lazyLoadImg();
 
   function lazyLoadImg(){
     var postImgs = $('.post-content').find('img');
@@ -172,11 +228,7 @@ $(document).ready(function ($) {
       }
       lazyLoadImg();
     }
-    if ($(document).scrollTop() > 10) {
-      $('.lightnav .navbar-inner').addClass('lightnav-alt');
-    } else {
-      $('.lightnav .navbar-inner').removeClass('lightnav-alt');
-    }
+    navRender();
   }
 
   function showPanel(){
@@ -192,7 +244,7 @@ $(document).ready(function ($) {
     }
   }
 
-  var throttle = function (delay, atleast) {
+  function throttle(delay, atleast) {
     // 节流
     var timer = null;
     var previous = null;
@@ -216,60 +268,6 @@ $(document).ready(function ($) {
   };
 
   window.onscroll = throttle(200, 500);
-
-  if (windowWidth > 768 && $('.index-context').length) {
-    wallNumber = 'url(http://qcyoung.qiniudn.com/qcyoung/TKL/wall-' + Math.ceil(Math.random() * 240) + '.jpg)';
-    // wallNumber = "url(http://233.dog/f_90040893.jpg)";
-    $('.element-img').css('background-image', wallNumber);
-  }
-
-  $('.navbar-toggle').bind('click', function () {
-    var sideImgs = $('.sb-slidebar').find('img');
-    if (sideImgs[0].src) {
-      return false;
-    }
-    sideImgs.each(function (index, el) {
-      $(el).attr('src', $(el).attr('data-src'));
-    });
-  });
-
-  // 微信Window
-  $('#navigation .weixin,.social .weixin').bind('click', function () {
-    layer.open({
-      type: 1,
-      title: false,
-      skin: 'layui-layer-demo', // 样式类名
-      closeBtn: false, // 不显示关闭按钮
-      shift: 2,
-      shadeClose: true, // 开启遮罩关闭
-      area: [windowWidth, windowHeight],
-      content: '<img src="http://qcyoung.qiniudn.com/qcyoung/yangzj1992QRcode.jpg" width="200px" height="200px"/>'
-    });
-  });
-
-  var scrollclick;
-
-  $('.icon-gotop').click(function () {
-    scrollclick = true;
-    $('html, body').stop().animate({ scrollTop: 0 }, 800, function () {
-      scrollclick = false;
-    });
-    return false;
-  });
-
-  $('.icon-godown').click(function () {
-    scrollclick = true;
-    $('html, body').stop().animate({ scrollTop: documentHeight }, 800, function () {
-      scrollclick = false;
-    });
-    return false;
-  });
-
-  $('.icon-music').click(function () {
-    window.open('http://yangzj1992.u117.15800000.top/yPlayer/');
-  });
-  // Slidebars off-canvas menu
-  $.slidebars();
 
   $('#toc').niceScroll({
     smoothscroll: true, // scroll with ease movement
