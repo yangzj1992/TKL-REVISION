@@ -29,11 +29,11 @@ title = "标签";
                 <% if (item.link){ %>
                   <% if (item.title){ %>
                     <h4 class="title link">
-                      <a href="<%- item.link %>" target="_blank"><%= item.title %></a>
+                      <a href="<%- item.link %>" target="_blank" rel="nofollow noopener noreferrer"><%= item.title %></a>
                     </h4>
                   <% } else { %>
                     <h4 class="title link">
-                      <a href="<%- item.link %>" target="_blank"><%= item.link %></a>
+                      <a href="<%- item.link %>" target="_blank" rel="nofollow noopener noreferrer"><%= item.link %></a>
                     </h4>
                   <% } %>
                 <% } else { %>

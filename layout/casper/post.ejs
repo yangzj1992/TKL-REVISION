@@ -26,7 +26,7 @@
         <div class="clearfix"></div>
         <hr class="nogutter">
         <div class="summary">
-          <a class="code-article" href="https://github.com/yangzj1992/articles/blob/master/<%= post.slug %>.md" target="_blank">
+          <a class="code-article" href="https://github.com/yangzj1992/articles/blob/master/<%= post.slug %>.md" target="_blank" rel="nofollow noopener noreferrer">
             <i class="demo-icon icon-file-code">&#xe800;</i>
             <span class="i-name">源码</span>
           </a>
@@ -54,19 +54,19 @@
             <a id="wechat" class="share-icon" title="分享到微信" data-wechat-url="<%=  site.url %><% page.url %>" href="javascript:void(0);">
               <i class="icon-CN_tencent_wechat"></i>
             </a>
-            <a id="weibo" class="share-icon" target="_blank" title="分享到微博" href="http://service.weibo.com/share/share.php?title=<%= page.title %> | <%= theme.title %> &amp;url=<%= theme.url %><%= url_for(path) %>&amp;type=3&amp;searchPic=false">
+            <a id="weibo" class="share-icon" target="_blank" rel="nofollow noopener noreferrer" title="分享到微博" href="http://service.weibo.com/share/share.php?title=<%= page.title %> | <%= theme.title %> &amp;url=<%= theme.url %><%= url_for(path) %>&amp;type=3&amp;searchPic=false">
               <i class="icon-CN_sina_weibo"></i>
             </a>
-            <a id="qzone" class="share-icon" target="_blank" title="分享到 QQ 空间" href="http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=<%= theme.url %><%= url_for(path) %>&amp;title=<%= page.title %> | <%= theme.title %>">
+            <a id="qzone" class="share-icon" target="_blank" rel="nofollow noopener noreferrer" title="分享到 QQ 空间" href="http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=<%= theme.url %><%= url_for(path) %>&amp;title=<%= page.title %> | <%= theme.title %>">
               <i class="icon-CN_tencent_qzone"></i>
             </a>
-            <a id="twitter" class="share-icon" target="_blank" title="Share to Twitter" href="https://twitter.com/intent/tweet?url=<%= theme.url %><%= url_for(path) %>&amp;text=<%= page.title %>;via=<%= theme.author %>| <%= theme.title %>">
+            <a id="twitter" class="share-icon" target="_blank" rel="nofollow noopener noreferrer" title="Share to Twitter" href="https://twitter.com/intent/tweet?url=<%= theme.url %><%= url_for(path) %>&amp;text=<%= page.title %>;via=<%= theme.author %>| <%= theme.title %>">
               <i class="icon-Popular_Twitter"></i>
             </a>
-            <a id="facebook" class="share-icon" target="_blank" title="Share to Facebook" href="http://www.facebook.com/sharer.php?u=<%=  site.url %><% page.url %>&amp;t=<%= page.title %> | <%= theme.title %>">
+            <a id="facebook" class="share-icon" target="_blank" rel="nofollow noopener noreferrer" title="Share to Facebook" href="http://www.facebook.com/sharer.php?u=<%=  site.url %><% page.url %>&amp;t=<%= page.title %> | <%= theme.title %>">
               <i class="icon-Popular_Facebook"></i>
             </a>
-            <a id="gplus" class="share-icon" target="_blank" title="Share to Google+" href="https://plus.google.com/share?url=<%= theme.url %><%= url_for(path) %>">
+            <a id="gplus" class="share-icon" target="_blank" rel="nofollow noopener noreferrer" title="Share to Google+" href="https://plus.google.com/share?url=<%= theme.url %><%= url_for(path) %>">
               <i class="icon-Popular_G"></i>
             </a>
           </span>

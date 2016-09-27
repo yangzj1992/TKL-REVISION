@@ -40,7 +40,7 @@
         <div class="links-title">友情链接</div>
         <span class="sb-item-links">
           <% theme.links.forEach(function(item){ %>
-            <a href="<%- item.link %>" class="animsition-link" data-toggle="tooltip" data-placement="bottom" title="<%= item.description %>" target="_blank"><%= item.name %></a>
+            <a href="<%- item.link %>" class="animsition-link" data-toggle="tooltip" data-placement="bottom" title="<%= item.description %>" target="_blank" rel="nofollow noopener noreferrer"><%= item.name %></a>
           <% }); %>
         </span>
       </div>
@@ -53,7 +53,7 @@
         <div class="links-title">更多</div>
         <span class="sb-item-links">
           <% theme.projects.forEach(function(item){ %>
-            <a href="<%- item.link %>" class="animsition-link" target="_blank"><%= item.name %></a>
+            <a href="<%- item.link %>" class="animsition-link" target="_blank" rel="nofollow noopener noreferrer"><%= item.name %></a>
           <% }); %>
         </span>
       </div>
@@ -95,17 +95,17 @@
             <li class="mobile-li"><a href="<%- config.root %><%- config.about_dir %>" class="animsition-link" title="archive">关于</a></li>
             <li class="mobile-li"><a href="<%- config.root %><%- config.messageboard_dir %>" class="animsition-link" title="archive">留言板</a></li>
             <% if(theme.GitHub){ %>
-              <li><a href="<%- theme.GitHub %>" title="Github" target="_blank"><i class="icon-Popular_GitHub"></i></a></li>
+              <li><a href="<%- theme.GitHub %>" title="Github" target="_blank" rel="nofollow noopener noreferrer"><i class="icon-Popular_GitHub"></i></a></li>
             <% } %>
             <li><a href="javascript:void(0)" title="Weixin" class="weixin"><i class="icon-CN_tencent_wechat"></i></a></li>
             <% if(theme.Weibo){ %>
-              <li><a href="<%- theme.Weibo %>" title="Sina-Weibo" target="_blank"><i class="icon-CN_sina_weibo"></i></a></li>
+              <li><a href="<%- theme.Weibo %>" title="Sina-Weibo" target="_blank" rel="nofollow noopener noreferrer"><i class="icon-CN_sina_weibo"></i></a></li>
             <% } %>
             <% if(theme.Twitter){ %>
-              <li><a href="<%- theme.Twitter %>" title="Twitter" target="_blank"><i class="icon-Popular_Twitter"></i></a></li>
+              <li><a href="<%- theme.Twitter %>" title="Twitter" target="_blank" rel="nofollow noopener noreferrer"><i class="icon-Popular_Twitter"></i></a></li>
             <% } %>
             <% if(theme.ZhiHu){ %>
-              <li><a href="http://www.zhihu.com/people/yangzj1992" title="Zhihu" target="_blank"><i class="icon-CN_zhihu"></i></a></li>
+              <li><a href="http://www.zhihu.com/people/yangzj1992" title="Zhihu" target="_blank" rel="nofollow noopener noreferrer"><i class="icon-CN_zhihu"></i></a></li>
             <% } %>
             <li class="nolink">
               <span class="welcome">Welcome!</span>

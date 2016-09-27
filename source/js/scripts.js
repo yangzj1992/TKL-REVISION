@@ -99,8 +99,8 @@ $(document).ready(function () {
   lazyLoadImg();
 
   if (windowWidth > 768 && $('.index-context').length) {
-    wallNumber = 'url(http://qcyoung.qiniudn.com/qcyoung/TKL/wall-' + Math.ceil(Math.random() * 243) + '.jpg)';
-    // wallNumber = "url(https://images4.alphacoders.com/933/93356.jpg)";
+    wallNumber = 'url(http://qcyoung.qiniudn.com/qcyoung/TKL/wall-' + Math.ceil(Math.random() * 261) + '.jpg)';
+    // wallNumber = "url(https://images8.alphacoders.com/737/thumb-1920-737474.png)";
     $('.element-img').css('background-image', wallNumber);
   }
 
