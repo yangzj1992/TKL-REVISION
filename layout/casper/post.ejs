@@ -21,7 +21,7 @@
         <div class="post-article">
           <%- post.content %>
         </div>
-        <p class="post-copyright">本文版权归yangzj1992所有。商业转载请联系本人获得授权，非商业转载请注明出处。
+        <p class="post-copyright">本文版权归 yangzj1992 所有。商业转载请联系本人获得授权，非商业转载请注明出处。
         </p>
         <div class="clearfix"></div>
         <hr class="nogutter">
@@ -74,7 +74,9 @@
       </div>
       <%- partial('post/navigation') %>
       <div class="clear"></div>
-      <div class="duoshuo"><%- partial('post/duoshuo') %></div>
+      <div class="post-comment">
+        <div class="duoshuo"><%- partial('post/duoshuo') %></div>
+      </div>
     </div>
   </div>
 </section>

@@ -75,6 +75,11 @@ td {
   padding: 5px;
   min-width: 50px;
 }
+
+.footnotes{
+  padding-top: 0;
+}
+
 // directory
 #toc {
   position: fixed;
@@ -253,6 +258,7 @@ h6 span,
   .pagination {
     width: 66%;
     position: relative;
+    text-align: center;
     left: 8.5%;
   }
 
@@ -1180,7 +1186,7 @@ pre {
 .pagination,
 .nogutter {
   width: 64%;
-  text-align: center;
+  text-align: left;
   margin: 0 auto;
 }
 

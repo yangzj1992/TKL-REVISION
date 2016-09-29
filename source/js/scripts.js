@@ -285,43 +285,6 @@ $(document).ready(function () {
     enablemousewheel: true,
     background: 'rgba(255,255,255,0.7)'
   });
-  $('html').niceScroll({
-    smoothscroll: true, // scroll with ease movement
-    autohidemode: true,
-    zindex: "100", // change z-index for scrollbar div
-    scrollspeed: 60, // scrolling speed
-    mousescrollstep: 40,// mouse scrolling speed
-    gesturezoom: false,//上缩放框激活时，间距输出/输入
-    horizrailenabled: false,//管理水平滚动
-    cursorcolor: "#151515",
-    boxzoom: false,// enable zoom for box content
-    cursorborder: "0px solid #202020",
-    cursorborderradius: "5px",
-    cursorwidth: 5, // 9
-    enablemousewheel: true,
-    background: "rgba(255,255,255,0.7)",
-  });
-
-  // Page transitions
-  $('.animsition').animsition({
-    inClass: 'fade-in',
-    outClass: 'fade-out-down-sm',
-    inDuration: 500,
-    outDuration: 500,
-    linkElement: '.animsition-link',
-    // e.g. linkElement   :   'a:not([target="_blank"]):not([href^=#])'
-    loading: true,
-    loadingParentElement: 'body', // animsition wrapper element
-    loadingClass: 'animsition-loading',
-    unSupportCss: ['animation-duration', '-webkit-animation-duration', '-o-animation-duration'],
-    // "unSupportCss" option allows you to disable the "animsition"
-    // in case the css property in the array is not supported by your browser.
-    // The default setting is to disable the "animsition" in a browser
-    // that does not support "animation-duration".
-    overlay: false,
-    overlayClass: 'animsition-overlay-slide',
-    overlayParentElement: 'body'
-  });
 
   // Functionailty constraints for mobile(wall opacity covering layer)
   if (!Modernizr.touch) {
