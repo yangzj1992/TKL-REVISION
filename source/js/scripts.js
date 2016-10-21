@@ -99,9 +99,19 @@ $(document).ready(function () {
   lazyLoadImg();
 
   if (windowWidth > 768 && $('.index-context').length) {
-    wallNumber = 'url(http://qcyoung.qiniudn.com/qcyoung/TKL/wall-' + Math.ceil(Math.random() * 261) + '.jpg)';
-    // wallNumber = "url(https://images8.alphacoders.com/737/thumb-1920-737474.png)";
-    $('.element-img').css('background-image', wallNumber);
+    var bgImg = new Image();
+    bgImg.onload = function(){
+      var wallPaper = 'url(' + bgImg.src + ')';
+      $('.element-img').css('background-image', wallPaper);
+      $('body').animate({'opacity':1},500);
+    };
+    bgImg.onerror = function(){
+      $('body').animate({'opacity':1},500);
+    }
+    bgImg.src = 'http://qcyoung.qiniudn.com/qcyoung/TKL/wall-' + Math.ceil(Math.random() * 268) + '.jpg';
+    // bgImg.src = 'http://233.dog/f_63195800.jpg';
+  }else{
+    $('body').animate({'opacity':1},500);
   }
 
   $('.navbar-toggle').on('click', function () {

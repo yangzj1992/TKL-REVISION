@@ -17,6 +17,7 @@ body {
   background-color: $White;
   color: $DarkGrey;
   padding: 0;
+  opacity: 0;
 }
 
 i {
@@ -289,6 +290,7 @@ h6 span,
     position: relative;
     left: 50%;
     transform: translateX(-50%);
+    display: block;
   }
 }
 
@@ -357,10 +359,10 @@ a:link {
 }
 
 blockquote {
-  margin: 40px 0;
-
+  margin: 16px 0;
+  font-size: 14px;
   p {
-    font: italic 15px 'Georgia', "Open Sans", "Helvetica Neue", "Helvetica", "Hiragino Sans GB", "Microsoft YaHei", "Source Han Sans CN", "WenQuanYi Micro Hei", Arial, sans-serif;
+    font: italic 14px 'Georgia', "Open Sans", "Helvetica Neue", "Helvetica", "Hiragino Sans GB", "Microsoft YaHei", "Source Han Sans CN", "WenQuanYi Micro Hei", Arial, sans-serif;
   }
 }
 
