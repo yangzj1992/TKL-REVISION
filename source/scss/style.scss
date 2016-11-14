@@ -292,6 +292,9 @@ h6 span,
     transform: translateX(-50%);
     display: block;
   }
+  ol, ul{
+    padding-left: 0;
+  }
 }
 
 section {
@@ -787,7 +790,7 @@ button.navbar-toggle .icon-bar {
 
     a {
       display: inline-block;
-      margin: 0 10px 10px 0;
+      margin: 0 10px 0 0;
       vertical-align: middle;
     }
 
@@ -1274,7 +1277,7 @@ pre {
 }
 
 .icon-Popular_GitHub:hover {
-  color: #4078c0;
+  color: $GithubBlue;
 }
 
 .icon-CN_tencent_wechat:hover {

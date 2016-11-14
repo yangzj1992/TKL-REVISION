@@ -1,0 +1,30 @@
+.index-context {
+  .index-title {
+    font-size: 26px;
+    line-height: 32px;
+  }
+
+  .title {
+    color: #4a4a4a;
+  }
+
+  h3:hover {
+    .title {
+      color: $NormalBlack;
+    }
+  }
+}
+
+.readMore a {
+  font-size: 12px;
+  padding: 2px 10px;
+  border: 1px solid $Gray;
+  border-radius: 20px;
+  color: $DarkGrey !important;
+
+  &:hover {
+    background-color: $Gray;
+    color: $White !important;
+    text-decoration: none !important;
+  }
+}

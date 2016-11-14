@@ -1,0 +1,557 @@
+@mixin topic-style($font) {
+  font-weight: 700;
+  line-height: 30px;
+  font-size: $font;
+}
+
+* {
+  font-family: $font-family-open-sans;
+}
+
+body {
+  font: $font-basic-open-sans;
+  background-color: $White;
+  color: $DarkGrey;
+  padding: 0;
+  opacity: 0;
+}
+
+i {
+  color: $NormalBlack;
+}
+
+b,
+strong,
+em {
+  font-weight: 700;
+}
+
+ol ol,
+ol ul,
+ul ol,
+ul ul {
+  -webkit-padding-start: 10px;
+  list-style-type: disc;
+}
+// code table
+figure {
+  table,
+  tr,
+  td {
+    border: none;
+  }
+
+  th,
+  td {
+    padding: 0;
+    min-width: 0;
+  }
+}
+
+table,
+th,
+tr,
+td {
+  border: 1px solid $Gray;
+}
+
+th,
+td {
+  padding: 5px;
+  min-width: 50px;
+}
+
+figcaption {
+  font-size: 13px;
+  letter-spacing: 0;
+  color: $SlateGray;
+  text-align: center;
+
+  a {
+    text-decoration: underline !important;
+    color: $SlateGray !important;
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-top: 0;
+  font-family: $font-family-open-sans;
+  color: $NormalBlack;
+  span{
+    font-family: $font-family-georgia;
+    font-style: italic;
+    margin-left: 4px;
+    margin-right: 3px;
+    text-transform: none;
+    position: relative;
+    top: -1px;
+  }
+}
+
+h1 {
+  font-size: $font-size-h1;
+}
+
+h2 {
+  @include topic-style($font-size-h2);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+h3 {
+  @include topic-style($font-size-h3);
+}
+
+h4 {
+  @include topic-style($font-size-h4);
+  color: $NormalBlack;
+}
+
+a,
+a:active,
+a:focus,
+a:hover,
+a:visited,
+a:link {
+  color: $NormalBlack;
+  text-decoration: none;
+  word-break: break-all;
+}
+
+[class*="col-"] {
+  padding: 15px;
+  border: none;
+}
+
+/* Responsive tables fix for Firefox */
+@-moz-document url-prefix() {
+  fieldset {
+    display: table-cell;
+  }
+}
+
+blockquote {
+  margin: 16px 0;
+  font-size: 14px;
+  p {
+    font: italic 14px 'Georgia', "Open Sans", "Helvetica Neue", "Helvetica", "Hiragino Sans GB", "Microsoft YaHei", "Source Han Sans CN", "WenQuanYi Micro Hei", Arial, sans-serif;
+  }
+}
+
+.row {
+  margin-bottom: 0;
+}
+
+::selection {
+  color: $White;
+  background-color: $NormalBlack;
+}
+
+::-moz-selection {
+  color: $White;
+  background-color: $NormalBlack;
+}
+
+.clear {
+  clear: both;
+}
+
+a,
+button{
+  -webkit-transition: all ease 0.3s;
+  -moz-transition: all ease .3s;
+  -o-transition: all ease .3s;
+  -ms-transition: all ease .3s;
+  transition: all ease .3s;
+}
+
+// article dividing line
+hr {
+  margin: 40px 0 20px;
+}
+
+section {
+  background-color: $White;
+  position: relative;
+  padding-top: 60px;
+  z-index: 4;
+}
+
+
+// top-banner
+.container {
+  padding: 0 $padding-huge-horizontal;
+
+  ul {
+    a,
+    a:active,
+    a:focus,
+    a:visited,
+    a:link {
+      color: $DeepGreen;
+      text-decoration: none;
+    }
+
+    a:hover {
+      color: $BlackGreen;
+    }
+  }
+
+  p a,
+  p a:active,
+  p a:visited,
+  p a:link {
+    color: $DeepGreen;
+    text-decoration: none;
+  }
+}
+
+@media (min-width: $screen-sm) {
+  .container {
+    padding: 0 $padding-large-horizontal;
+  }
+}
+
+input[placeholder],
+[placeholder],
+*[placeholder] {
+  color: $NormalGrey;
+  font-family: $font-family-georgia;
+}
+
+::-webkit-input-placeholder { /* WebKit browsers */
+  color: $NormalGrey;
+  opacity: 1;
+}
+
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+  color: $NormalGrey;
+  -moz-opacity: 1;
+}
+
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+  color: $NormalGrey;
+  -moz-opacity: 1;
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10+ */
+  color: $NormalGrey;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+}
+
+.vertical-align {
+  display: table;
+}
+
+.center-me {
+  display: table-cell;
+  vertical-align: middle;
+}
+// img welcome panel
+.boost {
+  position: relative;
+  z-index: 11;
+}
+
+.herofade {
+  width: 100%;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=90)";
+  -khtml-opacity: .9;
+  -moz-opacity: .9;
+  opacity: .9;
+  height: 100%;
+  top: 0;
+  position: absolute;
+  z-index: 2;
+  left: 0;
+}
+
+.element-img {
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background: no-repeat fixed center center;
+  background-size: cover;
+  height: 100%;
+  position: relative;
+  z-index: 10;
+}
+
+.logo {
+  position: absolute;
+  display: block;
+  top: 50%;
+  margin-top: -15px;
+  left: 20px;
+
+  img {
+    display: block;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+    -khtml-opacity: 1;
+    -moz-opacity: 1;
+    opacity: 1;
+    -webkit-transition: all ease 0.2s;
+    -moz-transition: all ease .2s;
+    -o-transition: all ease .2s;
+    transition: all ease .2s;
+  }
+}
+
+@media (max-width: $screen-sm-max) {
+  
+  /* Turn off wow page animations for phones and tablets, (touch-scroll devices essentially) 
+   * Why do this? Because on 99% of touch-enabled devices, any on-page actions aren't fired until
+   * the browsers' scroll-engine has fully stopped on the screen, therefore you end up scrolling
+   * to blank page content, until the user removes their finger from the screen and the browsers' engine can
+   * then render the page content, leaving a buggy user-experience */
+  .wow {
+    visibility: visible !important;
+    -webkit-animation-delay: 0 !important;
+    animation-delay: 0 !important;
+  }
+
+  .animated {
+    -webkit-animation-duration: 0;
+    -moz-animation-duration: 0;
+    -ms-animation-duration: 0;
+    -o-animation-duration: 0;
+    animation-duration: 0;
+    -webkit-animation-fill-mode: none;
+    -moz-animation-fill-mode: none;
+    -ms-animation-fill-mode: none;
+    -o-animation-fill-mode: none;
+    animation-fill-mode: none;
+  }
+
+  .pagination,
+  .duoshuo {
+    left: 0 !important;
+    width: 96% !important;
+  }
+
+  .logo img:hover {
+    top: 0;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+    -khtml-opacity: 1;
+    -moz-opacity: 1;
+    opacity: 1;
+  }
+}
+
+#sb-site {
+  min-height: 100% !important;
+}
+
+#hero {
+  height: 100%;
+  position: fixed;
+  width: 100%;
+  padding-top: 0;
+
+  h2 {
+    color: $NormalBlack;
+    margin-bottom: 20px;
+    display: inline-block;
+    padding: 14px;
+  }
+
+  p {
+    color: #333;
+    font: 18px 'Georgia', serif, Helvetica, "Helvetica Neue", "Hiragino Sans GB", "Microsoft YaHei", "Source Han Sans CN", "WenQuanYi Micro Hei", Arial, sans-serif;
+    display: inline-block;
+  }
+}
+
+@media (max-width: $screen-sm) {
+  .heightblock {
+    display: none;
+  }
+
+  #hero {
+    position: relative;
+
+    .element-img {
+      display: none;
+    }
+  }
+
+  #hero p,
+  footer .copy,
+  .center-me,
+  #statement,
+  .return-top,
+  .summary,
+  .control-panel {
+    display: none !important;
+  }
+
+  .pagination,
+  .nogutter {
+    width: 100% !important;
+  }
+}
+
+#statement {
+  background-color: $White;
+  padding: 20px 0 10px;
+
+  p {
+    letter-spacing: 1px;
+    font-size: 20px;
+    color: $NormalBlack;
+  }
+
+  i {
+    font-size: 40px;
+    position: relative;
+    top: 11px;
+    margin-right: 10px;
+  }
+}
+
+.beige-dk {
+  background-color: #f7f7f7;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
+  -khtml-opacity: .7;
+  -moz-opacity: .7;
+  opacity: .7;
+}
+
+.pagination {
+  width: 66%;
+  display: block;
+  margin: auto;
+
+  a {
+    padding: 0 10px;
+    border: 1px solid $Gray;
+    border-radius: 20px;
+    max-width: 100%;
+    color: $Gray;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    margin-bottom: 10px;
+
+    &:hover {
+      background-color: $Gray;
+      color: $White;
+    }
+  }
+}
+
+#intro .col-md-8.col-md-offset-2 img,
+#intro .col-md-8.col-md-offset-3 img {
+  max-width: 100%;
+}
+
+pre {
+  .line {
+    .label {
+      color: #333;
+      padding: 0;
+      font-size: 13px;
+      font-weight: 400;
+    }
+  }
+}
+
+.egg-tips {
+  width: 860px;
+  padding: 10px;
+  border: 1px solid hsla(0, 0%, 0%, .25);
+  border-radius: $border-radius-base;
+  box-shadow: 0 0 18px rgba(0, 0, 0, 0.4);
+  background-color: $White;
+
+  .egg-header {
+    border-bottom: 1px solid #e5e5e5;
+    font-size: 18px;
+  }
+
+  .egg-close {
+    cursor: pointer;
+    float: right;
+    opacity: .25;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+
+  .egg-helps {
+    padding: 15px 0;
+
+    table {
+      border: none;
+
+      tr,
+      td {
+        border: none;
+      }
+
+      th {
+        color: #333;
+        line-height: 1.5;
+        border: none;
+        text-align: left;
+      }
+
+      kbd {
+        display: inline-block;
+        padding: 3px 5px;
+        background-color: #fcfcfc;
+        margin-right: 2px;
+        color: #555;
+        line-height: 10px;
+        vertical-align: middle;
+        border: 1px solid #ccc;
+        border-bottom-color: #bbb;
+        border-radius: 3px;
+        box-shadow: inset 0 -1px 0 #bbb;
+      }
+    }
+  }
+}
+
+.icon-Popular_GitHub:hover {
+  color: $GithubBlue;
+}
+
+.icon-CN_tencent_wechat:hover {
+  color: $WeixinGreen;
+}
+
+.icon-CN_sina_weibo:hover {
+  color: $WeiboRed;
+}
+
+.icon-Popular_Twitter:hover {
+  color: $TwitterBlue;
+}
+
+.icon-CN_zhihu:hover {
+  color: $ZhihuBlue;
+}
+
+.icon-CN_tencent_qzone:hover {
+  color: $QzoneYellow;
+}
+
+.icon-Popular_Facebook:hover {
+  color: $FacebookPurple;
+}
+
+.icon-Popular_G:hover {
+  color: $GoogleRed;
+}
+
+.icon-search {
+  position: absolute;
+}
+

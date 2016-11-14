@@ -108,8 +108,8 @@ $(document).ready(function () {
     bgImg.onerror = function(){
       $('body').animate({'opacity':1},500);
     }
-    bgImg.src = 'http://qcyoung.qiniudn.com/qcyoung/TKL/wall-' + Math.ceil(Math.random() * 268) + '.jpg';
-    // bgImg.src = 'http://233.dog/f_63195800.jpg';
+    bgImg.src = 'http://qcyoung.qiniudn.com/qcyoung/TKL/wall-' + Math.ceil(Math.random() * 305) + '.jpg';
+    // bgImg.src = 'https://images.alphacoders.com/754/thumb-1920-754941.png';
   }else{
     $('body').animate({'opacity':1},500);
   }
