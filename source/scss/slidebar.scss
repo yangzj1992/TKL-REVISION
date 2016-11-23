@@ -26,6 +26,16 @@ button.navbar-toggle {
   border-radius: 0;
   margin-bottom: 0;
   margin-right: 0;
+  .icon-bar {
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+    background-color: $NormalBlack;
+    -webkit-transition: all ease 0.2s;
+    -moz-transition: all ease .2s;
+    -o-transition: all ease .2s;
+    transition: all ease .2s;
+  }
 }
 
 .menu-icon .before,
@@ -53,17 +63,6 @@ html.sb-init.sb-active.sb-active-right .menu-icon .after {
   -ms-transform: translateY(2px);
   -o-transform: translateY(2px);
   transform: translateY(2px);
-}
-
-button.navbar-toggle .icon-bar {
-  -webkit-border-radius: 0;
-  -moz-border-radius: 0;
-  border-radius: 0;
-  background-color: $NormalBlack;
-  -webkit-transition: all ease 0.2s;
-  -moz-transition: all ease .2s;
-  -o-transition: all ease .2s;
-  transition: all ease .2s;
 }
 
 .sb-close {
@@ -150,10 +149,9 @@ button.navbar-toggle .icon-bar {
     padding: 0 15px;
     border-left: 1px solid #333;
     text-align: center;
-  }
-
-  .sb-item:first-child {
-    border: 0;
+    &:first-child{
+      border: 0;
+    }
   }
 
   .sb-item-count {

@@ -1,5 +1,5 @@
 <% permalink = config.url + config.root + post.path %>
-<section id="intro">
+<section id="intro" class="intro">
   <div class="container">
     <div class="post-content">
       <% if (!post.toc){ %>
@@ -49,7 +49,7 @@
               <span id="busuanzi_value_page_pv"></span>次阅读
             </span>
           </span>
-          <span id="share">
+          <span id="share" class="share-box">
             <div class="qrcode" id="qrcode"></div>
             <a id="wechat" class="share-icon" title="分享到微信" data-wechat-url="<%=  site.url %><% page.url %>" href="javascript:void(0);">
               <i class="icon-CN_tencent_wechat"></i>

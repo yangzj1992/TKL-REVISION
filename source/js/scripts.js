@@ -108,8 +108,8 @@ $(document).ready(function () {
     bgImg.onerror = function(){
       $('body').animate({'opacity':1},500);
     }
-    bgImg.src = 'http://qcyoung.qiniudn.com/qcyoung/TKL/wall-' + Math.ceil(Math.random() * 305) + '.jpg';
-    // bgImg.src = 'https://images.alphacoders.com/754/thumb-1920-754941.png';
+    bgImg.src = 'http://qcyoung.qiniudn.com/qcyoung/TKL/wall-' + Math.ceil(Math.random() * 310) + '.jpg';
+    // bgImg.src = 'https://wallpapers.wallhaven.cc/wallpapers/full/wallhaven-458902.jpg';
   }else{
     $('body').animate({'opacity':1},500);
   }

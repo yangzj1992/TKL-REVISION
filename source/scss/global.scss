@@ -128,13 +128,6 @@ a:link {
   border: none;
 }
 
-/* Responsive tables fix for Firefox */
-@-moz-document url-prefix() {
-  fieldset {
-    display: table-cell;
-  }
-}
-
 blockquote {
   margin: 16px 0;
   font-size: 14px;
@@ -147,6 +140,7 @@ blockquote {
   margin-bottom: 0;
 }
 
+// selected text 
 ::selection {
   color: $White;
   background-color: $NormalBlack;
@@ -181,7 +175,6 @@ section {
   padding-top: 60px;
   z-index: 4;
 }
-
 
 // top-banner
 .container {
@@ -343,11 +336,11 @@ input[placeholder],
   }
 }
 
-#sb-site {
+.sb-site {
   min-height: 100% !important;
 }
 
-#hero {
+.scrollme {
   height: 100%;
   position: fixed;
   width: 100%;
@@ -372,7 +365,7 @@ input[placeholder],
     display: none;
   }
 
-  #hero {
+  .scrollme {
     position: relative;
 
     .element-img {
@@ -380,10 +373,10 @@ input[placeholder],
     }
   }
 
-  #hero p,
+  .scrollme p,
   footer .copy,
   .center-me,
-  #statement,
+  .statement,
   .return-top,
   .summary,
   .control-panel {
@@ -396,7 +389,7 @@ input[placeholder],
   }
 }
 
-#statement {
+.statement {
   background-color: $White;
   padding: 20px 0 10px;
 
@@ -445,8 +438,8 @@ input[placeholder],
   }
 }
 
-#intro .col-md-8.col-md-offset-2 img,
-#intro .col-md-8.col-md-offset-3 img {
+.intro .col-md-8.col-md-offset-2 img,
+.intro .col-md-8.col-md-offset-3 img {
   max-width: 100%;
 }
 

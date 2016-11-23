@@ -53,7 +53,7 @@ footer {
       }
     }
 
-    #searchform {
+    .searchform {
       margin-top: 20px;
 
       .icon-search {
@@ -61,7 +61,7 @@ footer {
         margin-top: 8px;
       }
 
-      #searchbox {
+      .searchbox {
         height: 30px;
         background-color: $NormalBlack;
         border: 1px solid $NormalBlack;
@@ -104,11 +104,11 @@ footer {
       position: absolute;
       bottom: 10px;
 
-      #searchform {
+      .searchform {
         margin-top: 0 !important;
       }
 
-      #searchbox {
+      .searchbox {
         width: 100%;
       }
     }
