@@ -12,14 +12,13 @@
   .toc {
     margin-top: 10px;
     padding: 0;
-
     .toc-child {
       padding-left: 20px;
     }
   }
 
   .toc-link {
-    color: #888;
+    color: #888 !important;
   }
 
   .toc-active {
@@ -33,5 +32,7 @@
 }
 
 @media (max-width: $screen-sm-max) {
-  display: none !important;
+  .toc-article {
+    display: none !important;
+  }
 }
