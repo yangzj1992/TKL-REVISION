@@ -1,0 +1,36 @@
+<%
+title = "友链";
+%>
+<% if (theme.friendlinks && theme.friendlinks.length){ %>
+  <section id="services">
+    <div class="container article-list">
+      <div class="row">
+        <div class="row projects">
+          <% theme.friendlinks.forEach(function(item){ %>
+            <div class="p-item">
+              <div class="p-header">
+                <a href="<%- item.link %>"><h3><%= item.name %></h3></a>
+              </div>
+              <div class="p-body"><p><%= item.description %></p></div>
+            </div>
+          <% }); %>
+        </div>
+      </div>
+    </div>
+  </section>
+<% } %>
+<section id="statement" class="statement">
+  <div class="container text-center wow fadeInUp" data-wow-delay="0.5s">
+    <div class="row">
+      <p><%- theme.bottom_saying %></p>
+    </div>
+  </div>
+</section>
+<script>
+$(function() {
+  $(".article-list").css('min-height',$(window).height() - $("footer").height() - $("#statement").height() - $("#navigation").height() - 50);
+  $(".archive-list-count").addClass("badge");
+  $(".category-list-count").addClass("badge");
+  $(".tag-list-count").addClass("badge");
+});
+</script>

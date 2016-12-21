@@ -33,10 +33,6 @@ $(document).ready(function () {
   var scrollTop;
   var tocScroll;
   var tocs;
-  if ($('#toc').length) {
-    tocHeight = $('.toc').outerHeight();
-    duoshuoMark = $('.duoshuo').offset().top;
-  }
 
   var a = {
     info: '%c卧槽，你居然敢点开控制台看我的代码，这下我的屎代码无所遁形了 T _ T',
@@ -108,8 +104,8 @@ $(document).ready(function () {
     bgImg.onerror = function(){
       $('body').animate({'opacity':1},500);
     }
-    bgImg.src = 'http://qcyoung.qiniudn.com/qcyoung/TKL/wall-' + Math.ceil(Math.random() * 332) + '.jpg';
-    // bgImg.src = 'https://images6.alphacoders.com/774/thumb-1920-774483.jpg';
+    bgImg.src = 'http://qcyoung.qiniudn.com/qcyoung/TKL/wall-' + Math.ceil(Math.random() * 336) + '.jpg';
+    // bgImg.src = 'https://images7.alphacoders.com/657/thumb-1920-657368.jpg';
   }else{
     $('body').animate({'opacity':1},500);
   }
@@ -157,7 +153,7 @@ $(document).ready(function () {
   });
 
   $('.icon-music').on('click', function (){
-    window.open('http://yangzj1992.u117.15800000.top/yPlayer/');
+    window.open('http://yangzj1992.u117.my666.top/yPlayer/');
   });
   // Slidebars off-canvas menu
   $.slidebars();
@@ -207,6 +203,9 @@ $(document).ready(function () {
   function scrollSpy(){
     scrollTop = $(window).scrollTop();
     if ($('#toc').length) {
+      documentHeight = $(document).height();
+      tocHeight = $('.toc').outerHeight();
+      duoshuoMark = $('.duoshuo').offset().top;
       var heads = $('.post-article').find('h1,h2,h3,h4,h5');
       var nowtoc = 0;
       for (var i = 0; i < heads.length; i++) {
