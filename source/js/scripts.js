@@ -27,12 +27,14 @@ $(document).ready(function () {
   var tocHeight; // 目录高度
   var duoshuoMark;  // 评论栏位置
   var egglayer;  // 彩蛋框
+  var imgZoom;  // 图片层
   var gPushed = false;  // keydown 状态
   var msViewportStyle;
   var wallNumber;
   var scrollTop;
   var tocScroll;
   var tocs;
+  var mobileWidth = 768;
 
   var a = {
     info: '%c卧槽，你居然敢点开控制台看我的代码，这下我的屎代码无所遁形了 T _ T',
@@ -94,7 +96,7 @@ $(document).ready(function () {
   navRender();
   lazyLoadImg();
 
-  if (windowWidth > 768 && $('.index-context').length) {
+  if (windowWidth > mobileWidth && $('.index-context').length) {
     var bgImg = new Image();
     bgImg.onload = function(){
       var wallPaper = 'url(' + bgImg.src + ')';
@@ -104,8 +106,8 @@ $(document).ready(function () {
     bgImg.onerror = function(){
       $('body').animate({'opacity':1},500);
     }
-    bgImg.src = 'http://qcyoung.qiniudn.com/qcyoung/TKL/wall-' + Math.ceil(Math.random() * 336) + '.jpg';
-    // bgImg.src = 'https://images7.alphacoders.com/657/thumb-1920-657368.jpg';
+    bgImg.src = 'http://qcyoung.qiniudn.com/qcyoung/TKL/wall-' + Math.ceil(Math.random() * 383) + '.jpg';
+    // bgImg.src = 'http://ww2.sinaimg.cn/large/0060lm7Tgw1fbsuhcrhewj31c00u0dkb.jpg';
   }else{
     $('body').animate({'opacity':1},500);
   }
@@ -118,6 +120,23 @@ $(document).ready(function () {
     sideImgs.each(function (index, el) {
       $(el).attr('src', $(el).attr('data-src'));
     });
+  });
+
+  $('.post-article').delegate('.img_replaced', 'click', function(event) {
+    var imgSrc = $(event.target).attr('data-src');
+    imgZoom = layer.open({
+      type: 1,
+      title: false,
+      skin: 'layui-layer-demo', // 样式类名
+      closeBtn: false, // 不显示关闭按钮
+      shadeClose: true, // 开启遮罩关闭
+      area: [windowWidth, windowHeight],
+      content: '<img class="img-zoom" src="'+ imgSrc +'" width="100%" height="100%"/>'
+    });
+  });
+
+  $(document).delegate('.img-zoom', 'click', function () {
+    layer.close(imgZoom);
   });
 
   // 微信Window
@@ -153,7 +172,7 @@ $(document).ready(function () {
   });
 
   $('.icon-music').on('click', function (){
-    window.open('http://yangzj1992.u117.my666.top/yPlayer/');
+    window.open('http://qcyoung.xyz/yPlayer/');
   });
   // Slidebars off-canvas menu
   $.slidebars();

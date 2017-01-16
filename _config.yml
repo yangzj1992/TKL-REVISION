@@ -65,16 +65,22 @@ friendlinks:
 - name: Kieran
   link: http://go.kieran.top/
   description: 最初主题原创者
+- name: DIYgod
+  link: https://www.anotherhome.net/
+  description: Write the Code. Change the World.
 - name: Xcat Liu
   link: http://blog.xcatliu.com/
   description: A cat who writes code
+- name: 寿百年
+  link: http://www.pddjs.com/
+  description: pddjs
 
 #Project
 projects:
 - name: 掘金翻译计划
   link: https://github.com/xitu/gold-miner/wiki/%E8%AF%91%E8%80%85%E7%A7%AF%E5%88%86%E8%A1%A8
 - name: 众成翻译
-  link: http://zcfy.cc/@yangzj1992
+  link: http://zcfy.cc/@yangzj1992/article
 # - name: Resume
   # link: http://qcyoung.com/project/resume
 
