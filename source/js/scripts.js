@@ -22,6 +22,8 @@ $(document).ready(function () {
    */
   var windowHeight = $(window).height();
   var windowWidth = $(window).width();
+  var imgWidth = windowWidth * 0.8;
+  var imgHeight = windowHeight * 0.8;
   var documentHeight = $(document).height();
   var footerHeight = $('footer').outerHeight();
   var tocHeight; // 目录高度
@@ -35,6 +37,7 @@ $(document).ready(function () {
   var tocScroll;
   var tocs;
   var mobileWidth = 768;
+  var miniDeviceWidth = 1024;
 
   var a = {
     info: '%c卧槽，你居然敢点开控制台看我的代码，这下我的屎代码无所遁形了 T _ T',
@@ -127,11 +130,11 @@ $(document).ready(function () {
     imgZoom = layer.open({
       type: 1,
       title: false,
-      skin: 'layui-layer-demo', // 样式类名
+      // skin: 'layui-layer-demo', // 样式类名
       closeBtn: false, // 不显示关闭按钮
       shadeClose: true, // 开启遮罩关闭
       area: [windowWidth, windowHeight],
-      content: '<img class="img-zoom" src="'+ imgSrc +'" width="100%" height="100%"/>'
+      content: '<img class="img-zoom" src="'+ imgSrc +'" width="'+ imgWidth +'" height="'+imgHeight+'"/>'
     });
   });
 
@@ -178,7 +181,7 @@ $(document).ready(function () {
   $.slidebars();
 
   function eggFun(){
-    if (windowWidth < 1024) {
+    if (windowWidth < miniDeviceWidth) {
       return false;
     }
     egglayer = layer.open({

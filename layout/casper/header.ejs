@@ -16,8 +16,8 @@
         </a>
       </div>
       <div class="sb-item sb-words">
-        <a href="javascript:void(0)">
-          <span class="sb-item-count"><%= totalcount(site)%></span>
+        <a href="<%- config.root %><%- config.archive_dir %>">
+          <span class="sb-item-count"><%= totalcount(site) %></span>
           <span class="sb-item-name">字数</span>
         </a>
       </div>
@@ -136,7 +136,7 @@
           <div class="center-me animateme" data-when="exit" data-from="0" data-to="0.6" data-opacity="0" data-translatey="100">
             <div class="center-text">
               <% theme.top_saying.forEach(function(item){ %>
-                <h2><%- item.title %></h2>
+                <h2 class="home-header"><%- item.title %></h2>
                 <p><%- item.content %></p>
 		          <% }); %>
             </div>

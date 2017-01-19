@@ -28,3 +28,27 @@
     text-decoration: none !important;
   }
 }
+
+.center-text{
+  .home-header{
+    -webkit-transition: color 1s ease;
+       -moz-transition: color 1s ease;
+            transition: color 1s ease;
+    position: relative;
+    &:after{
+      content:'';
+      background-color: #151515;
+      width: 3px;
+      height: 3px;
+      right: 0;
+      bottom: 0;
+    }
+    &:hover:after{
+      width: 100%;
+      position: absolute;
+      -webkit-transition: all 1s ease;
+         -moz-transition: all 1s ease;
+              transition: all 1s ease;
+    }
+  }
+}
