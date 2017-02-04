@@ -109,8 +109,8 @@ $(document).ready(function () {
     bgImg.onerror = function(){
       $('body').animate({'opacity':1},500);
     }
-    bgImg.src = 'http://qcyoung.qiniudn.com/qcyoung/TKL/wall-' + Math.ceil(Math.random() * 383) + '.jpg';
-    // bgImg.src = 'http://ww2.sinaimg.cn/large/0060lm7Tgw1fbsuhcrhewj31c00u0dkb.jpg';
+    bgImg.src = 'http://qcyoung.qiniudn.com/qcyoung/TKL/wall-' + Math.ceil(Math.random() * 468) + '.jpg';
+    // bgImg.src = 'https://ww3.sinaimg.cn/large/006tNc79ly1fccgutswgoj31hc0u0js2.jpg';
   }else{
     $('body').animate({'opacity':1},500);
   }
@@ -156,6 +156,20 @@ $(document).ready(function () {
     });
   });
 
+  // 微信Window
+  $('.reward').on('click', function () {
+    layer.open({
+      type: 1,
+      title: false,
+      skin: 'layui-layer-demo', // 样式类名
+      closeBtn: false, // 不显示关闭按钮
+      shift: 2,
+      shadeClose: true, // 开启遮罩关闭
+      area: [windowWidth, windowHeight],
+      content: '<img src="https://ww3.sinaimg.cn/large/006y8lValy1fceedrg02mj30tk0t6ta2.jpg" width="200px" height="200px"/><img src="https://ww3.sinaimg.cn/large/006y8lValy1fceek48cirj30pd0pdwgi.jpg" width="200px" height="200px"/>'
+    });
+  });
+
   var scrollclick;
 
   $('.icon-gotop').on('click', function() {
@@ -192,7 +206,7 @@ $(document).ready(function () {
       shift: 5,
       shadeClose: true, // 开启遮罩关闭
       area: [windowWidth, windowHeight],
-      content: '<div class="egg-tips"><div class="egg-header"><span>彩蛋指南（仿 Github —— 通过这些快捷键可以让你更快访问页面哦），按下「?」键同样呼出</span><span class="egg-close"><i class="demo-icon icon-cancel">&#xe808;</i></span> </div><div class="egg-helps"><table class="keyboard-map"><tbody><tr><th></th><th>快捷方式说明</th></tr><tr><td class="keys"><kbd>?</kbd></td><td>打开彩蛋说明</td></tr><tr><td class="keys"><kbd>g</kbd><kbd>s</kbd></td><td>定焦到搜索框</td></tr><tr><td class="keys"><kbd>g</kbd><kbd>a</kbd></td><td>打开归档页</td></tr><tr><td class="keys"><kbd>g</kbd><kbd>c</kbd></td><td>打开目录页</td></tr><tr><td class="keys"><kbd>g</kbd><kbd>t</kbd></td><td>打开标签页</td></tr></tbody></table></div></div>'
+      content: '<div class="egg-tips"><div class="egg-header"><span>彩蛋指南（仿 Github —— 通过这些快捷键可以让你更快访问页面哦），按下「?」键同样呼出</span><span class="egg-close"><i class="fa fa-close" style="padding-right:5px;"></i></span> </div><div class="egg-helps"><table class="keyboard-map"><tbody><tr><th></th><th>快捷方式说明</th></tr><tr><td class="keys"><kbd>?</kbd></td><td>打开彩蛋说明</td></tr><tr><td class="keys"><kbd>g</kbd><kbd>s</kbd></td><td>定焦到搜索框</td></tr><tr><td class="keys"><kbd>g</kbd><kbd>a</kbd></td><td>打开归档页</td></tr><tr><td class="keys"><kbd>g</kbd><kbd>c</kbd></td><td>打开目录页</td></tr><tr><td class="keys"><kbd>g</kbd><kbd>t</kbd></td><td>打开标签页</td></tr></tbody></table></div></div>'
     });
   }
 

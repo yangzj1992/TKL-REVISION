@@ -69,6 +69,7 @@
 
   .qrcode {
     position: absolute;
+    z-index: 55;
     bottom: 30px;
     right: 80px;
     height: 108px;
@@ -121,5 +122,8 @@
 
   .qrcode {
     display: none;
+  }
+  .reward{
+    cursor: pointer;
   }
 }
