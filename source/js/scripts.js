@@ -166,7 +166,7 @@ $(document).ready(function () {
       shift: 2,
       shadeClose: true, // 开启遮罩关闭
       area: [windowWidth, windowHeight],
-      content: '<img src="https://ww3.sinaimg.cn/large/006y8lValy1fceedrg02mj30tk0t6ta2.jpg" width="200px" height="200px"/><img src="https://ww3.sinaimg.cn/large/006y8lValy1fceek48cirj30pd0pdwgi.jpg" width="200px" height="200px"/>'
+      content: '<img src="http://qcyoung.qiniudn.com/qcyoung/wxpay.jpg" width="200px" height="200px"/><img src="http://qcyoung.qiniudn.com/qcyoung/alipay.jpg" width="200px" height="200px"/>'
     });
   });
 
