@@ -32,7 +32,6 @@ $(document).ready(function () {
   var imgZoom;  // 图片层
   var gPushed = false;  // keydown 状态
   var msViewportStyle;
-  var wallNumber;
   var scrollTop;
   var tocScroll;
   var tocs;
@@ -43,7 +42,7 @@ $(document).ready(function () {
     info: '%c卧槽，你居然敢点开控制台看我的代码，这下我的屎代码无所遁形了 T _ T',
     logo: '         _.-.  \n' + '       ,\'/ //\\ \n' + '      /// // /)\n' + '     /// // //|\n' + '    /// // /// \n' + '   /// // ///  \n' + '  (`: // ///   \n' + '   `;`: ///    \n' + '   / /  `\'      \n' + '  / /\n' + ' (_/  \n'
   };
-  window.console && console.info && console.info(a.logo);console.info(a.info,'color:#03a9f4');
+  window.console && console.info && console.info(a.logo); console.info(a.info, 'color:#03a9f4');
 
   // tooltip初始化
   $('[data-toggle="tooltip"]').tooltip();
@@ -88,10 +87,9 @@ $(document).ready(function () {
     }
   };
 
-  $('.welcome').on('click', function(event) {
+  $('.welcome').on('click', function (event) {
     eggFun();
   });
-  
   $(document).delegate('.egg-close', 'click', function () {
     layer.close(egglayer);
   });
@@ -101,18 +99,18 @@ $(document).ready(function () {
 
   if (windowWidth > mobileWidth && $('.index-context').length) {
     var bgImg = new Image();
-    bgImg.onload = function(){
+    bgImg.onload = function () {
       var wallPaper = 'url(' + bgImg.src + ')';
       $('.element-img').css('background-image', wallPaper);
-      $('body').animate({'opacity':1},500);
+      $('body').animate({'opacity': 1}, 500);
     };
-    bgImg.onerror = function(){
-      $('body').animate({'opacity':1},500);
-    }
-    bgImg.src = 'http://qcyoung.qiniudn.com/qcyoung/TKL/wall-' + Math.ceil(Math.random() * 468) + '.jpg';
-    // bgImg.src = 'https://ww3.sinaimg.cn/large/006tNc79ly1fccgutswgoj31hc0u0js2.jpg';
-  }else{
-    $('body').animate({'opacity':1},500);
+    bgImg.onerror = function () {
+      $('body').animate({'opacity': 1}, 500);
+    };
+    bgImg.src = 'http://qcyoung.qiniudn.com/qcyoung/TKL/wall-' + Math.ceil(Math.random() * 515) + '.jpg';
+    // bgImg.src = 'https://ww1.sinaimg.cn/large/006tKfTcly1fcmwix6p6yj315o0l6785.jpg';
+  } else {
+    $('body').animate({'opacity': 1}, 500);
   }
 
   $('.navbar-toggle').on('click', function () {
@@ -125,7 +123,7 @@ $(document).ready(function () {
     });
   });
 
-  $('.post-article').delegate('.img_replaced', 'click', function(event) {
+  $('.post-article').delegate('.img_replaced', 'click', function (event) {
     var imgSrc = $(event.target).attr('data-src');
     imgZoom = layer.open({
       type: 1,
@@ -134,7 +132,7 @@ $(document).ready(function () {
       closeBtn: false, // 不显示关闭按钮
       shadeClose: true, // 开启遮罩关闭
       area: [windowWidth, windowHeight],
-      content: '<img class="img-zoom" src="'+ imgSrc +'" width="'+ imgWidth +'" height="'+imgHeight+'"/>'
+      content: '<img class="img-zoom" src="' + imgSrc + '" width="' + imgWidth + '" height="' + imgHeight + '"/>'
     });
   });
 
@@ -172,7 +170,7 @@ $(document).ready(function () {
 
   var scrollclick;
 
-  $('.icon-gotop').on('click', function() {
+  $('.icon-gotop').on('click', function () {
     scrollclick = true;
     $('html, body').stop().animate({ scrollTop: 0 }, 800, function () {
       scrollclick = false;
@@ -180,7 +178,7 @@ $(document).ready(function () {
     return false;
   });
 
-  $('.icon-godown').on('click', function() {
+  $('.icon-godown').on('click', function () {
     scrollclick = true;
     $('html, body').stop().animate({ scrollTop: documentHeight }, 800, function () {
       scrollclick = false;
@@ -188,13 +186,13 @@ $(document).ready(function () {
     return false;
   });
 
-  $('.icon-music').on('click', function (){
+  $('.icon-music').on('click', function () {
     window.open('http://qcyoung.xyz/yPlayer/');
   });
   // Slidebars off-canvas menu
   $.slidebars();
 
-  function eggFun(){
+  function eggFun () {
     if (windowWidth < miniDeviceWidth) {
       return false;
     }
@@ -211,7 +209,7 @@ $(document).ready(function () {
   }
 
   // 渲染导航栏样式
-  function navRender(){
+  function navRender () {
     if ($(document).scrollTop() > 10) {
       $('.lightnav .navbar-inner').addClass('lightnav-alt');
     } else {
@@ -219,7 +217,7 @@ $(document).ready(function () {
     }
   }
 
-  function lazyLoadImg(){
+  function lazyLoadImg () {
     var postImgs = $('.post-content').find('img');
     var nowimg;
     if (postImgs.length) {
@@ -230,13 +228,13 @@ $(document).ready(function () {
           break;
         }
       }
-      if(!$(postImgs[nowimg]).hasClass('img_replaced')){
+      if (!$(postImgs[nowimg]).hasClass('img_replaced')) {
         $(postImgs[nowimg]).attr('src', $(postImgs[nowimg]).attr('data-src')).addClass('img_replaced');
       }
     }
   }
 
-  function scrollSpy(){
+  function scrollSpy () {
     scrollTop = $(window).scrollTop();
     if ($('#toc').length) {
       documentHeight = $(document).height();
@@ -276,7 +274,7 @@ $(document).ready(function () {
     navRender();
   }
 
-  function showPanel(){
+  function showPanel () {
     var scrollTopNum;
     var returnTop;
     // 获取当前垂直位移值
@@ -289,27 +287,27 @@ $(document).ready(function () {
     }
   }
 
-  function throttle(delay, atleast) {
+  function throttle (delay, atleast) {
     // 节流
     var timer = null;
     var previous = null;
     return function () {
-        var now = +new Date();
-        if ( !previous ) previous = now;
-        if ( atleast && now - previous > atleast ) {
-            scrollSpy();
-            showPanel();
-            previous = now;
-            clearTimeout(timer);
-        } else {
-            clearTimeout(timer);
-            timer = setTimeout(function() {
-                scrollSpy();
-                showPanel();
-                previous = null;
-            }, delay);
-        }
-    }
+      var now = +new Date();
+      if (!previous) previous = now;
+      if (atleast && now - previous > atleast) {
+        scrollSpy();
+        showPanel();
+        previous = now;
+        clearTimeout(timer);
+      } else {
+        clearTimeout(timer);
+        timer = setTimeout(function () {
+          scrollSpy();
+          showPanel();
+          previous = null;
+        }, delay);
+      }
+    };
   };
 
   window.onscroll = throttle(200, 500);

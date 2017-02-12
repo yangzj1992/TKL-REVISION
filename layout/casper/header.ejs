@@ -4,10 +4,12 @@
     <i class="fa fa-close"></i>
   </div>
   <div class="site-overview">
-    <div class="site-author">
-      <img class="site-author-img" width="100px" height="100px" data-src="http://qcyoung.qiniudn.com/qcyoung/avatar.jpg">
-      <div class="site-author-name"><%= config.author%></div>
-    </div>
+    <a style="text-transform: none;" href="<%- config.root %><%- config.about_dir %>">
+      <div class="site-author">
+        <img class="site-author-img" width="100px" height="100px" data-src="http://qcyoung.qiniudn.com/qcyoung/avatar.jpg">
+        <div class="site-author-name"><%= config.author%></div>
+      </div>
+    </a>
     <div class="sb-list">
       <div class="sb-item sb-posts">
         <a href="<%- config.root %><%- config.archive_dir %>">
@@ -37,7 +39,7 @@
   <div class="web-links"> 
     <% if (theme.links && theme.links.length){ %>
       <div class="sb-links">
-        <div class="links-title">友情链接</div>
+        <div class="links-title">链接</div>
         <span class="sb-item-links">
           <% theme.links.forEach(function(item){ %>
             <a href="<%- item.link %>" class="animsition-link" data-toggle="tooltip" data-placement="bottom" title="<%= item.description %>" target="_blank" rel="nofollow noopener noreferrer"><%= item.name %></a>
