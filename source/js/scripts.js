@@ -13,7 +13,7 @@ function dispatch () {
   return false;
 }
 
-$(document).ready(function () {
+$(function () {
   /**
    * plugins list
    * @type {
@@ -170,7 +170,7 @@ $(document).ready(function () {
 
   var scrollclick;
 
-  $('.icon-gotop').on('click', function () {
+  $('.fa-arrow-up').on('click', function () {
     scrollclick = true;
     $('html, body').stop().animate({ scrollTop: 0 }, 800, function () {
       scrollclick = false;
@@ -178,7 +178,7 @@ $(document).ready(function () {
     return false;
   });
 
-  $('.icon-godown').on('click', function () {
+  $('.fa-arrow-down').on('click', function () {
     scrollclick = true;
     $('html, body').stop().animate({ scrollTop: documentHeight }, 800, function () {
       scrollclick = false;
@@ -186,7 +186,7 @@ $(document).ready(function () {
     return false;
   });
 
-  $('.icon-music').on('click', function () {
+  $('.fa-music').on('click', function () {
     window.open('http://qcyoung.xyz/yPlayer/');
   });
   // Slidebars off-canvas menu
