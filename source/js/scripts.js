@@ -107,8 +107,8 @@ $(document).ready(function () {
     bgImg.onerror = function () {
       $('body').animate({'opacity': 1}, 500);
     };
-    bgImg.src = 'http://qcyoung.qiniudn.com/qcyoung/TKL/wall-' + Math.ceil(Math.random() * 515) + '.jpg';
-    // bgImg.src = 'https://ww1.sinaimg.cn/large/006tKfTcly1fcmwix6p6yj315o0l6785.jpg';
+    bgImg.src = 'http://qcyoung.qiniudn.com/qcyoung/TKL/wall-' + Math.ceil(Math.random() * 552) + '.jpg';
+    // bgImg.src = 'https://images2.alphacoders.com/803/thumb-1920-803590.jpg';
   } else {
     $('body').animate({'opacity': 1}, 500);
   }
