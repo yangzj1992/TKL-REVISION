@@ -1,5 +1,161 @@
-import ('./../scss/index.scss') // The page is now styled
-function dispatch () {
+/******/ (function(modules) { // webpackBootstrap
+/******/ 	// install a JSONP callback for chunk loading
+/******/ 	var parentJsonpFunction = window["webpackJsonp"];
+/******/ 	window["webpackJsonp"] = function webpackJsonpCallback(chunkIds, moreModules, executeModules) {
+/******/ 		// add "moreModules" to the modules object,
+/******/ 		// then flag all "chunkIds" as loaded and fire callback
+/******/ 		var moduleId, chunkId, i = 0, resolves = [], result;
+/******/ 		for(;i < chunkIds.length; i++) {
+/******/ 			chunkId = chunkIds[i];
+/******/ 			if(installedChunks[chunkId])
+/******/ 				resolves.push(installedChunks[chunkId][0]);
+/******/ 			installedChunks[chunkId] = 0;
+/******/ 		}
+/******/ 		for(moduleId in moreModules) {
+/******/ 			if(Object.prototype.hasOwnProperty.call(moreModules, moduleId)) {
+/******/ 				modules[moduleId] = moreModules[moduleId];
+/******/ 			}
+/******/ 		}
+/******/ 		if(parentJsonpFunction) parentJsonpFunction(chunkIds, moreModules, executeModules);
+/******/ 		while(resolves.length)
+/******/ 			resolves.shift()();
+
+/******/ 	};
+
+/******/ 	// The module cache
+/******/ 	var installedModules = {};
+
+/******/ 	// objects to store loaded and loading chunks
+/******/ 	var installedChunks = {
+/******/ 		1: 0
+/******/ 	};
+
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+
+/******/ 		// Check if module is in cache
+/******/ 		if(installedModules[moduleId])
+/******/ 			return installedModules[moduleId].exports;
+
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = installedModules[moduleId] = {
+/******/ 			i: moduleId,
+/******/ 			l: false,
+/******/ 			exports: {}
+/******/ 		};
+
+/******/ 		// Execute the module function
+/******/ 		modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
+
+/******/ 		// Flag the module as loaded
+/******/ 		module.l = true;
+
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+
+/******/ 	// This file contains only the entry chunk.
+/******/ 	// The chunk loading function for additional chunks
+/******/ 	__webpack_require__.e = function requireEnsure(chunkId) {
+/******/ 		if(installedChunks[chunkId] === 0)
+/******/ 			return Promise.resolve();
+
+/******/ 		// an Promise means "currently loading".
+/******/ 		if(installedChunks[chunkId]) {
+/******/ 			return installedChunks[chunkId][2];
+/******/ 		}
+/******/ 		// start chunk loading
+/******/ 		var head = document.getElementsByTagName('head')[0];
+/******/ 		var script = document.createElement('script');
+/******/ 		script.type = 'text/javascript';
+/******/ 		script.charset = 'utf-8';
+/******/ 		script.async = true;
+/******/ 		script.timeout = 120000;
+
+/******/ 		if (__webpack_require__.nc) {
+/******/ 			script.setAttribute("nonce", __webpack_require__.nc);
+/******/ 		}
+/******/ 		script.src = __webpack_require__.p + "chunks/" + ({}[chunkId]||chunkId) + ".chunk" + {"0":"6a0b9c82"}[chunkId] + ".js";
+/******/ 		var timeout = setTimeout(onScriptComplete, 120000);
+/******/ 		script.onerror = script.onload = onScriptComplete;
+/******/ 		function onScriptComplete() {
+/******/ 			// avoid mem leaks in IE.
+/******/ 			script.onerror = script.onload = null;
+/******/ 			clearTimeout(timeout);
+/******/ 			var chunk = installedChunks[chunkId];
+/******/ 			if(chunk !== 0) {
+/******/ 				if(chunk) chunk[1](new Error('Loading chunk ' + chunkId + ' failed.'));
+/******/ 				installedChunks[chunkId] = undefined;
+/******/ 			}
+/******/ 		};
+
+/******/ 		var promise = new Promise(function(resolve, reject) {
+/******/ 			installedChunks[chunkId] = [resolve, reject];
+/******/ 		});
+/******/ 		installedChunks[chunkId][2] = promise;
+
+/******/ 		head.appendChild(script);
+/******/ 		return promise;
+/******/ 	};
+
+/******/ 	// expose the modules object (__webpack_modules__)
+/******/ 	__webpack_require__.m = modules;
+
+/******/ 	// expose the module cache
+/******/ 	__webpack_require__.c = installedModules;
+
+/******/ 	// identity function for calling harmony imports with the correct context
+/******/ 	__webpack_require__.i = function(value) { return value; };
+
+/******/ 	// define getter function for harmony exports
+/******/ 	__webpack_require__.d = function(exports, name, getter) {
+/******/ 		if(!__webpack_require__.o(exports, name)) {
+/******/ 			Object.defineProperty(exports, name, {
+/******/ 				configurable: false,
+/******/ 				enumerable: true,
+/******/ 				get: getter
+/******/ 			});
+/******/ 		}
+/******/ 	};
+
+/******/ 	// getDefaultExport function for compatibility with non-harmony modules
+/******/ 	__webpack_require__.n = function(module) {
+/******/ 		var getter = module && module.__esModule ?
+/******/ 			function getDefault() { return module['default']; } :
+/******/ 			function getModuleExports() { return module; };
+/******/ 		__webpack_require__.d(getter, 'a', getter);
+/******/ 		return getter;
+/******/ 	};
+
+/******/ 	// Object.prototype.hasOwnProperty.call
+/******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
+
+/******/ 	// __webpack_public_path__
+/******/ 	__webpack_require__.p = "build/dev/";
+
+/******/ 	// on error function for async loading
+/******/ 	__webpack_require__.oe = function(err) { console.error(err); throw err; };
+
+/******/ 	// Load entry module and return exports
+/******/ 	return __webpack_require__(__webpack_require__.s = 2);
+/******/ })
+/************************************************************************/
+/******/ ([
+/* 0 */
+/***/ (function(module, exports) {
+
+module.exports = jQuery;
+
+/***/ }),
+/* 1 */,
+/* 2 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function($, jQuery) {
+
+__webpack_require__.e/* import() */(0).then(__webpack_require__.bind(null, 1)); // The page is now styled
+function dispatch() {
   var url;
   var searchbox = $('#searchbox');
   var searchval = searchbox.val();
@@ -28,10 +184,10 @@ $(function () {
   var documentHeight = $(document).height();
   var footerHeight = $('footer').outerHeight();
   var tocHeight; // 目录高度
-  var duoshuoMark;  // 评论栏位置
-  var egglayer;  // 彩蛋框
-  var imgZoom;  // 图片层
-  var gPushed = false;  // keydown 状态
+  var duoshuoMark; // 评论栏位置
+  var egglayer; // 彩蛋框
+  var imgZoom; // 图片层
+  var gPushed = false; // keydown 状态
   var msViewportStyle;
   var scrollTop;
   var tocScroll;
@@ -43,7 +199,7 @@ $(function () {
     info: '%c卧槽，你居然敢点开控制台看我的代码，这下我的屎代码无所遁形了 T _ T',
     logo: '         _.-.  \n' + '       ,\'/ //\\ \n' + '      /// // /)\n' + '     /// // //|\n' + '    /// // /// \n' + '   /// // ///  \n' + '  (`: // ///   \n' + '   `;`: ///    \n' + '   / /  `\'      \n' + '  / /\n' + ' (_/  \n'
   };
-  window.console && console.info && console.info(a.logo); console.info(a.info, 'color:#03a9f4');
+  window.console && console.info && console.info(a.logo);console.info(a.info, 'color:#03a9f4');
 
   // tooltip初始化
   $('[data-toggle="tooltip"]').tooltip();
@@ -58,24 +214,29 @@ $(function () {
           eggFun();
         }
         gPushed = false;
-      } else if (e.keyCode === 71) { // g
+      } else if (e.keyCode === 71) {
+        // g
         gPushed = true;
-      } else if (e.keyCode === 65) { // a
+      } else if (e.keyCode === 65) {
+        // a
         if (gPushed) {
           location.href = '/archives';
         }
         gPushed = false;
-      } else if (e.keyCode === 67) { // c
+      } else if (e.keyCode === 67) {
+        // c
         if (gPushed) {
           location.href = '/categories';
         }
         gPushed = false;
-      } else if (e.keyCode === 84) { // t
+      } else if (e.keyCode === 84) {
+        // t
         if (gPushed) {
           location.href = '/tags';
         }
         gPushed = false;
-      } else if (e.keyCode === 83) { // S
+      } else if (e.keyCode === 83) {
+        // S
         if (gPushed) {
           $('#searchbox').focus();
           $('#searchbox').val('');
@@ -103,15 +264,15 @@ $(function () {
     bgImg.onload = function () {
       var wallPaper = 'url(' + bgImg.src + ')';
       $('.element-img').css('background-image', wallPaper);
-      $('body').animate({'opacity': 1}, 500);
+      $('body').animate({ 'opacity': 1 }, 500);
     };
     bgImg.onerror = function () {
-      $('body').animate({'opacity': 1}, 500);
+      $('body').animate({ 'opacity': 1 }, 500);
     };
     bgImg.src = 'http://qcyoung.qiniudn.com/qcyoung/TKL/wall-' + Math.ceil(Math.random() * 552) + '.jpg';
     // bgImg.src = 'https://images2.alphacoders.com/803/thumb-1920-803590.jpg';
   } else {
-    $('body').animate({'opacity': 1}, 500);
+    $('body').animate({ 'opacity': 1 }, 500);
   }
 
   $('.navbar-toggle').on('click', function () {
@@ -193,7 +354,7 @@ $(function () {
   // Slidebars off-canvas menu
   $.slidebars();
 
-  function eggFun () {
+  function eggFun() {
     if (windowWidth < miniDeviceWidth) {
       return false;
     }
@@ -210,7 +371,7 @@ $(function () {
   }
 
   // 渲染导航栏样式
-  function navRender () {
+  function navRender() {
     if ($(document).scrollTop() > 10) {
       $('.lightnav .navbar-inner').addClass('lightnav-alt');
     } else {
@@ -218,7 +379,7 @@ $(function () {
     }
   }
 
-  function lazyLoadImg () {
+  function lazyLoadImg() {
     var postImgs = $('.post-content').find('img');
     var nowimg;
     if (postImgs.length) {
@@ -235,7 +396,7 @@ $(function () {
     }
   }
 
-  function scrollSpy () {
+  function scrollSpy() {
     scrollTop = $(window).scrollTop();
     if ($('#toc').length) {
       documentHeight = $(document).height();
@@ -275,7 +436,7 @@ $(function () {
     navRender();
   }
 
-  function showPanel () {
+  function showPanel() {
     var scrollTopNum;
     var returnTop;
     // 获取当前垂直位移值
@@ -284,11 +445,11 @@ $(function () {
       // 获取浏览器当前高度
       returnTop = $('div.control-panel');
       // 滚动条垂直距离大于0时显示，反之隐藏
-      (scrollTopNum > 240) ? returnTop.fadeIn('fast') : returnTop.fadeOut('fast');
+      scrollTopNum > 240 ? returnTop.fadeIn('fast') : returnTop.fadeOut('fast');
     }
   }
 
-  function throttle (delay, atleast) {
+  function throttle(delay, atleast) {
     // 节流
     var timer = null;
     var previous = null;
@@ -361,11 +522,7 @@ $(function () {
   // http://getbootstrap.com/getting-started/#support-ie10-width
   if (navigator.userAgent.match(/IEMobile\/10\.0/)) {
     msViewportStyle = document.createElement('style');
-    msViewportStyle.appendChild(
-      document.createTextNode(
-        '@-ms-viewport{width:auto!important}'
-      )
-    );
+    msViewportStyle.appendChild(document.createTextNode('@-ms-viewport{width:auto!important}'));
     document.querySelector('head').appendChild(msViewportStyle);
   }
 
@@ -377,3 +534,7 @@ $(function () {
     $(this).find('#white-logo').css('display', 'block');
   });
 }(jQuery)); // End "use strict"
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0), __webpack_require__(0)))
+
+/***/ })
+/******/ ]);
