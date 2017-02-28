@@ -18,6 +18,7 @@ var config = {
   resolve: {
     alias: {
       'jquery': RootDir + './source/js/jquery-1.11.1.min.js',
+      'root': RootDir
     },
     // 自动扩展的文件名后缀
     extensions: ['.js', '.css', '.scss', '.png', '.jpg']
@@ -70,27 +71,20 @@ var config = {
       $: "jquery",
       jQuery: "jquery",
     }),
-    // new HtmlWebpackPlugin({
-    //   title: '',
-    //   template: 'ejs-render!./layout/casper/bundle.ejs',
-    //   filename: 'ejs!./../../../layout/bundle.ejs',
-    //   chunks: ['bundle']
-    // })
-    //避免重复的模块
+    new HtmlWebpackPlugin({
+      template: '!!raw-loader!./layout/casper/layout.txt',
+      filename: './../../../layout/layout.ejs',
+    }),
   ] : [
     new ExtractTextPlugin({filename: 'css/[name].[contenthash:8].min.css', allChunks: true}),
     new webpack.ProvidePlugin({
       $: "jquery",
       jQuery: "jquery"
     }),
-    // new HtmlWebpackPlugin({
-    //   title: '',
-    //   hash: true,
-    //   template: 'raw!./layout/casper/bundle.ejs',
-    //   partial: '<%- partial("casper/header") %>',
-    //   filename: 'raw!./../../../../layout/bundle.ejs',
-    //   chunks: ['bundle']
-    // }),
+    new HtmlWebpackPlugin({
+      template: '!!raw-loader!./layout/casper/layout.txt',
+      filename: './../../../layout/layout.ejs',
+    }),
   ]
 }
 if (!debug) {

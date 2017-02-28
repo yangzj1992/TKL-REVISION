@@ -155,8 +155,9 @@ module.exports = jQuery;
 /* WEBPACK VAR INJECTION */(function($, jQuery) {
 
 __webpack_require__.e/* import() */(0).then(__webpack_require__.bind(null, 1)); // The page is now styled
+
 function dispatch() {
-  var url;
+  var url = void 0;
   var searchbox = $('#searchbox');
   var searchval = searchbox.val();
   if (searchval !== '') {
@@ -181,25 +182,27 @@ $(function () {
   var windowWidth = $(window).width();
   var imgWidth = windowWidth * 0.8;
   var imgHeight = windowHeight * 0.8;
-  var documentHeight = $(document).height();
   var footerHeight = $('footer').outerHeight();
-  var tocHeight; // 目录高度
-  var duoshuoMark; // 评论栏位置
-  var egglayer; // 彩蛋框
-  var imgZoom; // 图片层
+  var documentHeight = $(document).height();
+  var egglayer = void 0; // 彩蛋框
+  var imgZoom = void 0; // 图片层
   var gPushed = false; // keydown 状态
-  var msViewportStyle;
-  var scrollTop;
-  var tocScroll;
-  var tocs;
   var mobileWidth = 768;
   var miniDeviceWidth = 1024;
+  var keyValue = {
+    '/?': 191,
+    'g': 71,
+    'a': 65,
+    'c': 67,
+    't': 84,
+    's': 83
+  };
 
-  var a = {
+  var consoleInfo = {
     info: '%c卧槽，你居然敢点开控制台看我的代码，这下我的屎代码无所遁形了 T _ T',
     logo: '         _.-.  \n' + '       ,\'/ //\\ \n' + '      /// // /)\n' + '     /// // //|\n' + '    /// // /// \n' + '   /// // ///  \n' + '  (`: // ///   \n' + '   `;`: ///    \n' + '   / /  `\'      \n' + '  / /\n' + ' (_/  \n'
   };
-  window.console && console.info && console.info(a.logo);console.info(a.info, 'color:#03a9f4');
+  window.console && console.info && console.info(consoleInfo.logo);console.info(consoleInfo.info, 'color:#03a9f4');
 
   // tooltip初始化
   $('[data-toggle="tooltip"]').tooltip();
@@ -207,36 +210,31 @@ $(function () {
   document.onkeydown = function (e) {
     if (!($(':focus').prop('tagName') === 'INPUT') && !($(':focus').prop('tagName') === 'TEXTAREA')) {
       e = e || window.event;
-      if (e.keyCode === 191 && e.shiftKey) {
+      if (e.keyCode === keyValue['/?'] && e.shiftKey) {
         if ($('.layui-layer-shade').length > 0) {
           return false;
         } else {
           eggFun();
         }
         gPushed = false;
-      } else if (e.keyCode === 71) {
-        // g
+      } else if (e.keyCode === keyValue['g']) {
         gPushed = true;
-      } else if (e.keyCode === 65) {
-        // a
+      } else if (e.keyCode === keyValue['a']) {
         if (gPushed) {
           location.href = '/archives';
         }
         gPushed = false;
-      } else if (e.keyCode === 67) {
-        // c
+      } else if (e.keyCode === keyValue['c']) {
         if (gPushed) {
           location.href = '/categories';
         }
         gPushed = false;
-      } else if (e.keyCode === 84) {
-        // t
+      } else if (e.keyCode === keyValue['t']) {
         if (gPushed) {
           location.href = '/tags';
         }
         gPushed = false;
-      } else if (e.keyCode === 83) {
-        // S
+      } else if (e.keyCode === keyValue['s']) {
         if (gPushed) {
           $('#searchbox').focus();
           $('#searchbox').val('');
@@ -330,7 +328,7 @@ $(function () {
     });
   });
 
-  var scrollclick;
+  var scrollclick = void 0;
 
   $('.fa-arrow-up').on('click', function () {
     scrollclick = true;
@@ -381,7 +379,7 @@ $(function () {
 
   function lazyLoadImg() {
     var postImgs = $('.post-content').find('img');
-    var nowimg;
+    var nowimg = void 0;
     if (postImgs.length) {
       for (var j = 0; j < postImgs.length; j++) {
         if (postImgs[j].getBoundingClientRect().bottom <= windowHeight) {
@@ -397,11 +395,11 @@ $(function () {
   }
 
   function scrollSpy() {
-    scrollTop = $(window).scrollTop();
+    var scrollTop = $(window).scrollTop();
     if ($('#toc').length) {
       documentHeight = $(document).height();
-      tocHeight = $('.toc').outerHeight();
-      duoshuoMark = $('.duoshuo').offset().top;
+      var tocHeight = $('.toc').outerHeight(); // 目录高度
+      var duoshuoMark = $('.duoshuo').offset().top; // 评论栏位置
       var heads = $('.post-article').find('h1,h2,h3,h4,h5');
       var nowtoc = 0;
       for (var i = 0; i < heads.length; i++) {
@@ -411,10 +409,10 @@ $(function () {
           break;
         }
       }
-      tocs = $('.toc').find('a');
+      var tocs = $('.toc').find('a');
       $(tocs).removeClass('toc-active');
       $(tocs[nowtoc]).addClass('toc-active');
-      tocScroll = tocs[nowtoc].offsetTop;
+      var tocScroll = tocs[nowtoc].offsetTop;
       if (tocScroll > windowHeight / 2) {
         $('#toc').scrollTop(tocScroll - windowHeight / 2);
       }
@@ -437,8 +435,8 @@ $(function () {
   }
 
   function showPanel() {
-    var scrollTopNum;
-    var returnTop;
+    var scrollTopNum = void 0;
+    var returnTop = void 0;
     // 获取当前垂直位移值
     if (!scrollclick) {
       scrollTopNum = $(document).scrollTop();
@@ -521,7 +519,7 @@ $(function () {
   // See the Getting Started docs for more information:
   // http://getbootstrap.com/getting-started/#support-ie10-width
   if (navigator.userAgent.match(/IEMobile\/10\.0/)) {
-    msViewportStyle = document.createElement('style');
+    var msViewportStyle = document.createElement('style');
     msViewportStyle.appendChild(document.createTextNode('@-ms-viewport{width:auto!important}'));
     document.querySelector('head').appendChild(msViewportStyle);
   }

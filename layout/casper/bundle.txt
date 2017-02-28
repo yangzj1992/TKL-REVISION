@@ -1,6 +1,0 @@
-<body>
-  <%- include layout/casper/header -%>
-  <%- body %>
-  <%- include layout/casper/footer -%>
-  <%- include layout/casper/after_all -%>
-</body>

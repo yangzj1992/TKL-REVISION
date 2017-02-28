@@ -1,8 +1,9 @@
 import ('./../scss/index.scss') // The page is now styled
+
 function dispatch () {
-  var url;
-  var searchbox = $('#searchbox');
-  var searchval = searchbox.val();
+  let url;
+  let searchbox = $('#searchbox');
+  let searchval = searchbox.val();
   if (searchval !== '') {
     url = 'http://www.google.com/search?q=site:qcyoung.com/%20' + searchval;
     if (navigator.userAgent.indexOf('iPad') > -1 || navigator.userAgent.indexOf('iPhone') > -1) {
@@ -21,29 +22,31 @@ $(function () {
    *   jquery:[nicescroll,slidebars,animsition,Bootstrap Auto-Hiding Navbar,pace]
    * }
    */
-  var windowHeight = $(window).height();
-  var windowWidth = $(window).width();
-  var imgWidth = windowWidth * 0.8;
-  var imgHeight = windowHeight * 0.8;
-  var documentHeight = $(document).height();
-  var footerHeight = $('footer').outerHeight();
-  var tocHeight; // 目录高度
-  var duoshuoMark;  // 评论栏位置
-  var egglayer;  // 彩蛋框
-  var imgZoom;  // 图片层
-  var gPushed = false;  // keydown 状态
-  var msViewportStyle;
-  var scrollTop;
-  var tocScroll;
-  var tocs;
-  var mobileWidth = 768;
-  var miniDeviceWidth = 1024;
+  const windowHeight = $(window).height();
+  const windowWidth = $(window).width();
+  const imgWidth = windowWidth * 0.8;
+  const imgHeight = windowHeight * 0.8;
+  const footerHeight = $('footer').outerHeight();
+  let documentHeight = $(document).height();
+  let egglayer;  // 彩蛋框
+  let imgZoom;  // 图片层
+  let gPushed = false;  // keydown 状态
+  let mobileWidth = 768;
+  let miniDeviceWidth = 1024;
+  let keyValue = {
+    '/?' : 191,
+    'g'  : 71,
+    'a'  : 65,
+    'c'  : 67,
+    't'  : 84,
+    's'  : 83
+  };
 
-  var a = {
+  let consoleInfo = {
     info: '%c卧槽，你居然敢点开控制台看我的代码，这下我的屎代码无所遁形了 T _ T',
     logo: '         _.-.  \n' + '       ,\'/ //\\ \n' + '      /// // /)\n' + '     /// // //|\n' + '    /// // /// \n' + '   /// // ///  \n' + '  (`: // ///   \n' + '   `;`: ///    \n' + '   / /  `\'      \n' + '  / /\n' + ' (_/  \n'
   };
-  window.console && console.info && console.info(a.logo); console.info(a.info, 'color:#03a9f4');
+  window.console && console.info && console.info(consoleInfo.logo); console.info(consoleInfo.info, 'color:#03a9f4');
 
   // tooltip初始化
   $('[data-toggle="tooltip"]').tooltip();
@@ -51,31 +54,31 @@ $(function () {
   document.onkeydown = function (e) {
     if (!($(':focus').prop('tagName') === 'INPUT') && !($(':focus').prop('tagName') === 'TEXTAREA')) {
       e = e || window.event;
-      if (e.keyCode === 191 && e.shiftKey) {
+      if (e.keyCode === keyValue['/?'] && e.shiftKey) {
         if ($('.layui-layer-shade').length > 0) {
           return false;
         } else {
           eggFun();
         }
         gPushed = false;
-      } else if (e.keyCode === 71) { // g
+      } else if (e.keyCode === keyValue['g']) {
         gPushed = true;
-      } else if (e.keyCode === 65) { // a
+      } else if (e.keyCode === keyValue['a']) {
         if (gPushed) {
           location.href = '/archives';
         }
         gPushed = false;
-      } else if (e.keyCode === 67) { // c
+      } else if (e.keyCode === keyValue['c']) {
         if (gPushed) {
           location.href = '/categories';
         }
         gPushed = false;
-      } else if (e.keyCode === 84) { // t
+      } else if (e.keyCode === keyValue['t']) {
         if (gPushed) {
           location.href = '/tags';
         }
         gPushed = false;
-      } else if (e.keyCode === 83) { // S
+      } else if (e.keyCode === keyValue['s']) {
         if (gPushed) {
           $('#searchbox').focus();
           $('#searchbox').val('');
@@ -99,9 +102,9 @@ $(function () {
   lazyLoadImg();
 
   if (windowWidth > mobileWidth && $('.index-context').length) {
-    var bgImg = new Image();
+    let bgImg = new Image();
     bgImg.onload = function () {
-      var wallPaper = 'url(' + bgImg.src + ')';
+      let wallPaper = 'url(' + bgImg.src + ')';
       $('.element-img').css('background-image', wallPaper);
       $('body').animate({'opacity': 1}, 500);
     };
@@ -115,7 +118,7 @@ $(function () {
   }
 
   $('.navbar-toggle').on('click', function () {
-    var sideImgs = $('.sb-slidebar').find('img');
+    let sideImgs = $('.sb-slidebar').find('img');
     if (sideImgs[0].src) {
       return false;
     }
@@ -125,7 +128,7 @@ $(function () {
   });
 
   $('.post-article').delegate('.img_replaced', 'click', function (event) {
-    var imgSrc = $(event.target).attr('data-src');
+    let imgSrc = $(event.target).attr('data-src');
     imgZoom = layer.open({
       type: 1,
       title: false,
@@ -169,7 +172,7 @@ $(function () {
     });
   });
 
-  var scrollclick;
+  let scrollclick;
 
   $('.fa-arrow-up').on('click', function () {
     scrollclick = true;
@@ -219,10 +222,10 @@ $(function () {
   }
 
   function lazyLoadImg () {
-    var postImgs = $('.post-content').find('img');
-    var nowimg;
+    let postImgs = $('.post-content').find('img');
+    let nowimg;
     if (postImgs.length) {
-      for (var j = 0; j < postImgs.length; j++) {
+      for (let j = 0; j < postImgs.length; j++) {
         if (postImgs[j].getBoundingClientRect().bottom <= windowHeight) {
           nowimg = j;
         } else {
@@ -236,24 +239,24 @@ $(function () {
   }
 
   function scrollSpy () {
-    scrollTop = $(window).scrollTop();
+    let scrollTop = $(window).scrollTop();
     if ($('#toc').length) {
       documentHeight = $(document).height();
-      tocHeight = $('.toc').outerHeight();
-      duoshuoMark = $('.duoshuo').offset().top;
-      var heads = $('.post-article').find('h1,h2,h3,h4,h5');
-      var nowtoc = 0;
-      for (var i = 0; i < heads.length; i++) {
+      let tocHeight = $('.toc').outerHeight(); // 目录高度
+      let duoshuoMark = $('.duoshuo').offset().top; // 评论栏位置
+      let heads = $('.post-article').find('h1,h2,h3,h4,h5');
+      let nowtoc = 0;
+      for (let i = 0; i < heads.length; i++) {
         if (heads[i].getBoundingClientRect().top <= 50) {
           nowtoc = i;
         } else {
           break;
         }
       }
-      tocs = $('.toc').find('a');
+      let tocs = $('.toc').find('a');
       $(tocs).removeClass('toc-active');
       $(tocs[nowtoc]).addClass('toc-active');
-      tocScroll = tocs[nowtoc].offsetTop;
+      let tocScroll = tocs[nowtoc].offsetTop;
       if (tocScroll > windowHeight / 2) {
         $('#toc').scrollTop(tocScroll - windowHeight / 2);
       }
@@ -276,8 +279,8 @@ $(function () {
   }
 
   function showPanel () {
-    var scrollTopNum;
-    var returnTop;
+    let scrollTopNum;
+    let returnTop;
     // 获取当前垂直位移值
     if (!scrollclick) {
       scrollTopNum = $(document).scrollTop();
@@ -290,10 +293,10 @@ $(function () {
 
   function throttle (delay, atleast) {
     // 节流
-    var timer = null;
-    var previous = null;
+    let timer = null;
+    let previous = null;
     return function () {
-      var now = +new Date();
+      let now = +new Date();
       if (!previous) previous = now;
       if (atleast && now - previous > atleast) {
         scrollSpy();
@@ -334,9 +337,9 @@ $(function () {
   if (!Modernizr.touch) {
     jQuery(function ($) {
       // Hero & page-header fade-in effect
-      var divs = $('.herofade');
+      let divs = $('.herofade');
       $(window).on('scroll', function () {
-        var st = $(this).scrollTop();
+        let st = $(this).scrollTop();
         divs.css({
           'margin-top': -(st / 0) + 'px',
           opacity: 0.7 - st / 1600
@@ -360,7 +363,7 @@ $(function () {
   // See the Getting Started docs for more information:
   // http://getbootstrap.com/getting-started/#support-ie10-width
   if (navigator.userAgent.match(/IEMobile\/10\.0/)) {
-    msViewportStyle = document.createElement('style');
+    let msViewportStyle = document.createElement('style');
     msViewportStyle.appendChild(
       document.createTextNode(
         '@-ms-viewport{width:auto!important}'
