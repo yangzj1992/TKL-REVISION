@@ -3,4 +3,4 @@ Thumbs.db
 node_modules/
 source/project
 npm-debug.log
-source/build/dev/
+source/build/**/*

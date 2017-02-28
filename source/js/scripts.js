@@ -111,8 +111,8 @@ $(function () {
     bgImg.onerror = function () {
       $('body').animate({'opacity': 1}, 500);
     };
-    bgImg.src = 'http://qcyoung.qiniudn.com/qcyoung/TKL/wall-' + Math.ceil(Math.random() * 552) + '.jpg';
-    // bgImg.src = 'https://images2.alphacoders.com/803/thumb-1920-803590.jpg';
+    bgImg.src = 'http://qcyoung.qiniudn.com/qcyoung/TKL/wall-' + Math.ceil(Math.random() * 557) + '.jpg';
+    // bgImg.src = 'https://ww2.sinaimg.cn/large/006tNbRwly1fd6izqbqtmj31hc0zfqe0.jpg';
   } else {
     $('body').animate({'opacity': 1}, 500);
   }
