@@ -24,6 +24,9 @@
   <meta name="author" content="<%- config.author %>">
   <meta name="description" content="<%- config.description %>">
   <meta name="keywords" content="<%- config.keywords %>">
+  <meta name="renderer" content="webkit|ie-comp|ie-stand"/>
+  <meta name="Copyright" content="yangzj1992"/>
+  <meta name="Contact" content="yangzj1992@qq.com"/>
 
   <!-- Favicon, (keep icon in root folder) -->
   <link rel="Shortcut Icon" href="<%- config.root %>img/favicon.ico" type="image/ico">
@@ -57,8 +60,8 @@
   <!-- Load these in the <head> for quicker IE8+ load times -->
   <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!--[if lt IE 9]>
-  <script src="<%- config.root %>js/html5shiv.min.js"></script>
-  <script src="<%- config.root %>js/respond.min.js"></script>
+  <script src="<%- config.root %>js/lib/html5shiv.min.js"></script>
+  <script src="<%- config.root %>js/lib/respond.min.js"></script>
   <![endif]-->
   <% if (config.rss) { %>
   <link rel="alternate" type="application/rss+xml" title="RSS" href="<%- config.rss %>">

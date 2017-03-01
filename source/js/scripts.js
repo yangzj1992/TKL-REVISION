@@ -1,6 +1,8 @@
 import ('./../scss/index.scss') // The page is now styled
+import { Utils } from 'root/source/js/utils';
+import { Layer } from 'root/source/js/layer';
 
-function dispatch () {
+window.dispatch = function() {
   let url;
   let searchbox = $('#searchbox');
   let searchval = searchbox.val();
@@ -22,17 +24,15 @@ $(function () {
    *   jquery:[nicescroll,slidebars,animsition,Bootstrap Auto-Hiding Navbar,pace]
    * }
    */
-  const windowHeight = $(window).height();
-  const windowWidth = $(window).width();
-  const imgWidth = windowWidth * 0.8;
-  const imgHeight = windowHeight * 0.8;
+  window.windowHeight = $(window).height();
+  window.windowWidth = $(window).width();
+  window.mobileWidth = 768;
+  window.miniDeviceWidth = 1024;
+  window.imgWidth = windowWidth * 0.8;
+  window.imgHeight = windowHeight * 0.8;
   const footerHeight = $('footer').outerHeight();
   let documentHeight = $(document).height();
-  let egglayer;  // 彩蛋框
-  let imgZoom;  // 图片层
   let gPushed = false;  // keydown 状态
-  let mobileWidth = 768;
-  let miniDeviceWidth = 1024;
   let keyValue = {
     '/?' : 191,
     'g'  : 71,
@@ -58,7 +58,7 @@ $(function () {
         if ($('.layui-layer-shade').length > 0) {
           return false;
         } else {
-          eggFun();
+          Layer.eggFun();
         }
         gPushed = false;
       } else if (e.keyCode === keyValue['g']) {
@@ -95,7 +95,7 @@ $(function () {
     eggFun();
   });
   $(document).delegate('.egg-close', 'click', function () {
-    layer.close(egglayer);
+    layer.closeAll()
   });
 
   navRender();
@@ -111,8 +111,8 @@ $(function () {
     bgImg.onerror = function () {
       $('body').animate({'opacity': 1}, 500);
     };
-    bgImg.src = 'http://qcyoung.qiniudn.com/qcyoung/TKL/wall-' + Math.ceil(Math.random() * 557) + '.jpg';
-    // bgImg.src = 'https://ww2.sinaimg.cn/large/006tNbRwly1fd6izqbqtmj31hc0zfqe0.jpg';
+    bgImg.src = 'http://qcyoung.qiniudn.com/qcyoung/TKL/wall-' + Math.ceil(Math.random() * 558) + '.jpg';
+    // bgImg.src = 'http://img.ngacn.cc/attachments/mon_201702/28/-7Q2g-38h4ZgT3cS1hc-u0.jpg';
   } else {
     $('body').animate({'opacity': 1}, 500);
   }
@@ -128,48 +128,21 @@ $(function () {
   });
 
   $('.post-article').delegate('.img_replaced', 'click', function (event) {
-    let imgSrc = $(event.target).attr('data-src');
-    imgZoom = layer.open({
-      type: 1,
-      title: false,
-      // skin: 'layui-layer-demo', // 样式类名
-      closeBtn: false, // 不显示关闭按钮
-      shadeClose: true, // 开启遮罩关闭
-      area: [windowWidth, windowHeight],
-      content: '<img class="img-zoom" src="' + imgSrc + '" width="' + imgWidth + '" height="' + imgHeight + '"/>'
-    });
+    Layer.imgZoom(event);
   });
 
   $(document).delegate('.img-zoom', 'click', function () {
-    layer.close(imgZoom);
+    layer.closeAll();
   });
 
   // 微信Window
   $('#navigation .weixin,.social .weixin').on('click', function () {
-    layer.open({
-      type: 1,
-      title: false,
-      skin: 'layui-layer-demo', // 样式类名
-      closeBtn: false, // 不显示关闭按钮
-      shift: 2,
-      shadeClose: true, // 开启遮罩关闭
-      area: [windowWidth, windowHeight],
-      content: '<img src="http://qcyoung.qiniudn.com/qcyoung/yangzj1992QRcode.jpg" width="200px" height="200px"/>'
-    });
+    Layer.wechatLayer();
   });
 
   // 微信Window
   $('.reward').on('click', function () {
-    layer.open({
-      type: 1,
-      title: false,
-      skin: 'layui-layer-demo', // 样式类名
-      closeBtn: false, // 不显示关闭按钮
-      shift: 2,
-      shadeClose: true, // 开启遮罩关闭
-      area: [windowWidth, windowHeight],
-      content: '<img src="http://qcyoung.qiniudn.com/qcyoung/wxpay.jpg" width="200px" height="200px"/><img src="http://qcyoung.qiniudn.com/qcyoung/alipay.jpg" width="200px" height="200px"/>'
-    });
+    Layer.rewardLayer();
   });
 
   let scrollclick;
@@ -195,22 +168,6 @@ $(function () {
   });
   // Slidebars off-canvas menu
   $.slidebars();
-
-  function eggFun () {
-    if (windowWidth < miniDeviceWidth) {
-      return false;
-    }
-    egglayer = layer.open({
-      type: 1,
-      title: false,
-      skin: 'layui-layer-demo', // 样式类名
-      closeBtn: false, // 不显示关闭按钮
-      shift: 5,
-      shadeClose: true, // 开启遮罩关闭
-      area: [windowWidth, windowHeight],
-      content: '<div class="egg-tips"><div class="egg-header"><span>彩蛋指南（仿 Github —— 通过这些快捷键可以让你更快访问页面哦），按下「?」键同样呼出</span><span class="egg-close"><i class="fa fa-close" style="padding-right:5px;"></i></span> </div><div class="egg-helps"><table class="keyboard-map"><tbody><tr><th></th><th>快捷方式说明</th></tr><tr><td class="keys"><kbd>?</kbd></td><td>打开彩蛋说明</td></tr><tr><td class="keys"><kbd>g</kbd><kbd>s</kbd></td><td>定焦到搜索框</td></tr><tr><td class="keys"><kbd>g</kbd><kbd>a</kbd></td><td>打开归档页</td></tr><tr><td class="keys"><kbd>g</kbd><kbd>c</kbd></td><td>打开目录页</td></tr><tr><td class="keys"><kbd>g</kbd><kbd>t</kbd></td><td>打开标签页</td></tr></tbody></table></div></div>'
-    });
-  }
 
   // 渲染导航栏样式
   function navRender () {

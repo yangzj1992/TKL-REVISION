@@ -77,6 +77,10 @@ friendlinks:
 - name: 朱嘉伟
   link: http://buzhundong.com/
   description: 单曲循环 | ΒΙΟG
+- name: 个人博客导航
+  link: http://blog.yiyeti.cc/hexo.html
+  description: 为个人博客爱好者打造的资源导航站
+
 
 #Project
 projects:

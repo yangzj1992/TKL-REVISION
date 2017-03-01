@@ -12,7 +12,7 @@ var config = {
   output: {
     path: __dirname + (debug?'/source/build/dev':'/source/build/public'),  // 指定某些loader 的输出路径（js/img）
     filename: debug?'js/[name].js':'js/[name].[chunkhash:8].min.js',
-    publicPath: debug?'build/dev/':'build/public/',  // generate URL
+    publicPath: debug?'/build/dev/':'/build/public/',  // generate URL
     chunkFilename: 'chunks/[name].chunk[chunkhash:8].js'
   },
   resolve: {
