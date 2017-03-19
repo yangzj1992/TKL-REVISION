@@ -75,7 +75,7 @@
 /******/ 		if (__webpack_require__.nc) {
 /******/ 			script.setAttribute("nonce", __webpack_require__.nc);
 /******/ 		}
-/******/ 		script.src = __webpack_require__.p + "chunks/" + ({}[chunkId]||chunkId) + ".chunk" + {"0":"46e41536"}[chunkId] + ".js";
+/******/ 		script.src = __webpack_require__.p + "chunks/" + ({}[chunkId]||chunkId) + ".chunk" + {"0":"8bb7811a"}[chunkId] + ".js";
 /******/ 		var timeout = setTimeout(onScriptComplete, 120000);
 /******/ 		script.onerror = script.onload = onScriptComplete;
 /******/ 		function onScriptComplete() {
@@ -137,7 +137,7 @@
 /******/ 	__webpack_require__.oe = function(err) { console.error(err); throw err; };
 
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 4);
+/******/ 	return __webpack_require__(__webpack_require__.s = 5);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -148,6 +148,92 @@ module.exports = jQuery;
 
 /***/ }),
 /* 1 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function($) {
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+var Config = {
+  keyValue: {
+    '/?': 191,
+    'g': 71,
+    'a': 65,
+    'c': 67,
+    't': 84,
+    's': 83
+  },
+  consoleInfo: {
+    info: '%c卧槽，你居然敢点开控制台看我的代码，这下我的屎代码无所遁形了 T _ T',
+    logo: '         _.-.  \n' + '       ,\'/ //\\ \n' + '      /// // /)\n' + '     /// // //|\n' + '    /// // /// \n' + '   /// // ///  \n' + '  (`: // ///   \n' + '   `;`: ///    \n' + '   / /  `\'      \n' + '  / /\n' + ' (_/  \n'
+  },
+  niceScroll: {
+    smoothscroll: true, // scroll with ease movement
+    autohidemode: true,
+    zindex: '100', // change z-index for scrollbar div
+    scrollspeed: 60, // scrolling speed
+    mousescrollstep: 40, // mouse scrolling speed
+    gesturezoom: false, // 上缩放框激活时，间距输出/输入
+    horizrailenabled: false, // 管理水平滚动
+    cursorcolor: '#151515',
+    boxzoom: false, // enable zoom for box content
+    cursorborder: '0px solid #202020',
+    cursorborderradius: '8px',
+    cursorwidth: 4, // 9
+    enablemousewheel: true,
+    background: 'rgba(255,255,255,0.7)'
+  },
+  snow: {
+    el: 'slide-canvas',
+    width: 360,
+    height: $(window).height(),
+    cell: 90,
+    maxCell: 200,
+    line: [
+      // {baseX: '50%',from: {X: -950,Y: 56},to: {X: -878,Y: 62}},
+      // {baseX: '50%',from: {X: -878,Y: 62},to: {X: -835,Y: 55}},
+      // {baseX: '50%',from: {X: -835,Y: 55},to: {X: -820,Y: 53}},
+      // {baseX: '50%',from: {X: -820,Y: 53},to: {X: -789,Y: 70},cubicBezier: [0,.27,.06,.97]},
+      // {baseX: '50%',from: {X: -789,Y: 70},to: {X: -722,Y: 63}},
+      // {baseX: '50%',from: {X: -722,Y: 63},to: {X: -668,Y: 66}},
+      // {baseX: '50%',from: {X: -668,Y: 66},to: {X: -643,Y: 62}},
+      // {baseX: '50%',from: {X: -643,Y: 62},to: {X: -615,Y: 56}},
+      // {baseX: '50%',from: {X: -615,Y: 56},to: {X: -599,Y: 54}},
+      // {baseX: '50%',from: {X: -599,Y: 54},to: {X: -579,Y: 57}},
+      // {baseX: '50%',from: {X: -579,Y: 57},to: {X: -463,Y: 59}},
+      // {baseX: '50%',from: {X: -463,Y: 59},to: {X: -445,Y: 55}},
+      // {baseX: '50%',from: {X: -445,Y: 55},to: {X: -384,Y: 56}},
+      // {baseX: '50%',from: {X: -384,Y: 56},to: {X: -380,Y: 53}},
+      // {baseX: '50%',from: {X: -380,Y: 53},to: {X: -348,Y: 55}},
+      // {baseX: '50%',from: {X: -348,Y: 55},to: {X: -246,Y: 64}},
+      // {baseX: '50%',from: {X: -246,Y: 64},to: {X: -158,Y: 57}},
+      // {baseX: '50%',from: {X: -158,Y: 57},to: {X: -109,Y: 58}},
+      // {baseX: '50%',from: {X: -109,Y: 58},to: {X: -43,Y: 55},},
+      // {baseX: '50%',from: {X: -43,Y: 55},to: {X: 0,Y: 59},cubicBezier: [.05,.35,.25,1]},
+      // {baseX: '50%',from: {X: 0,Y: 59},to: {X: 49,Y: 57},cubicBezier: [.46, 0, .09, .85]},
+      // {baseX: '50%',from: {X: 49,Y: 57},to: {X: 71,Y: 60}},
+      // {baseX: '50%',from: {X: 71,Y: 60},to: {X: 100,Y: 56}},
+      // {baseX: '50%',from: {X: 100,Y: 56},to: {X: 108,Y: 58}},
+      // {baseX: '50%',from: {X: 108,Y: 58},to: {X: 125,Y: 55}},
+      // {baseX: '50%',from: {X: 125,Y: 55},to: {X: 165,Y: 70},cubicBezier: [.08,.36,.33,.77]},
+      // {baseX: '50%',from: {X: 165,Y: 70},to: {X: 357,Y: 58}},
+      // {baseX: '50%',from: {X: 357,Y: 58},to: {X: 505,Y: 64}},
+      // {baseX: '50%',from: {X: 505,Y: 64},to: {X: 687,Y: 53}},
+      // {baseX: '50%',from: {X: 687,Y: 53},to: {X: 705,Y: 57}},
+      // {baseX: '50%',from: {X: 705,Y: 57},to: {X: 754,Y: 53}},
+      // {baseX: '50%',from: {X: 754,Y: 53},to: {X: 861,Y: 80},cubicBezier: [0,.2,.34,.86]},
+      // {baseX: '50%',from: {X: 861,Y: 80},to: {X: 950,Y: 58},cubicBezier: [.4,.13,.88,.36]}
+    ]
+  }
+};
+
+exports.Config = Config;
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
+
+/***/ }),
+/* 2 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -214,7 +300,7 @@ exports.Layer = Layer;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 2 */
+/* 3 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -223,23 +309,344 @@ exports.Layer = Layer;
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-var Utils = {};
+/**
+  * Snowy Fun
+  * @param  {
+  *   el => 'String' 
+  *   width => 100% or 1280
+  *   height => 100% or 800
+  *   cell => Number
+  *   maxCell => Number
+  *   line => Array
+  * }
+  * @return {init} 
+  */
+function Snowy(options) {
+  function Snow(x, y, radius, fn) {
+    this.x = x;
+    this.y = y;
+    this.r = radius;
+    this.fn = fn;
+    this.move = true;
+  }
+  Snow.prototype.refresh = function (toUpper) {
+    var H = docEl.height,
+        prevReachX = ~~this.x,
+        nextReachX = ~~this.x + 1,
+        thisReach = snowList.widthReach[prevReachX] || 0,
+        useReachX = void 0,
+        useReach = void 0;
 
-exports.Utils = Utils;
+    if (!this.move) {
+      return;
+    }
+    if (snowList.widthReach[prevReachX] <= snowList.widthReach[nextReachX]) {
+      useReachX = prevReachX;
+    } else {
+      useReachX = nextReachX;
+    }
+    useReach = snowList.widthReach[useReachX] || 0;
+    if (this.y > H - thisReach - 2 && this.y < H - thisReach + 3) {
+      if (toUpper) {
+        this.y = H - thisReach;
+        if (useReach < thisReach) {
+          this.x = useReachX;
+          thisReach = useReach;
+        } else {
+          useReachX = ~~this.x;
+        }
+        if (H - this.y + ~~(this.r / 6) >= thisReach) {
+          snowList.widthReach[useReachX] = H - this.y + ~~(this.r / 6);
+        }
+        this.move = false;
+      } else {
+        this.x = getRandom('x');
+        this.y = 0;
+      }
+    } else if (this.y > docEl.height) {
+      if (toUpper) {
+        snowList.widthReach[useReachX] = H - this.y + ~~(this.r / 3);
+        this.move = false;
+      } else {
+        this.x = getRandom('x');
+        this.y = 0;
+      }
+    } else {
+      this.x = this.fn.x(this.x, this.y);
+      this.y = this.fn.y(this.y, this.y);
+    }
+  };
+
+  function UnitBezier(p1x, p1y, p2x, p2y) {
+    // pre-calculate the polynomial coefficients
+    // First and last control points are implied to be (0,0) and (1.0, 1.0)
+    this.cx = 3.0 * p1x;
+    this.bx = 3.0 * (p2x - p1x) - this.cx;
+    this.ax = 1.0 - this.cx - this.bx;
+
+    this.cy = 3.0 * p1y;
+    this.by = 3.0 * (p2y - p1y) - this.cy;
+    this.ay = 1.0 - this.cy - this.by;
+  }
+  UnitBezier.prototype = {
+    epsilon: 1e-3, // Precision  
+    sampleCurveX: function sampleCurveX(t) {
+      return ((this.ax * t + this.bx) * t + this.cx) * t;
+    },
+    sampleCurveY: function sampleCurveY(t) {
+      return ((this.ay * t + this.by) * t + this.cy) * t;
+    },
+    sampleCurveDerivativeX: function sampleCurveDerivativeX(t) {
+      return (3.0 * this.ax * t + 2.0 * this.bx) * t + this.cx;
+    },
+    solveCurveX: function solveCurveX(x, epsilon) {
+      var t0 = void 0,
+          t1 = void 0,
+          t2 = void 0,
+          x2 = void 0,
+          d2 = void 0,
+          i = void 0;
+      // First try a few iterations of Newton's method -- normally very fast.
+      for (t2 = x, i = 0; i < 8; i++) {
+        x2 = this.sampleCurveX(t2) - x;
+        if (Math.abs(x2) < epsilon) return t2;
+        d2 = this.sampleCurveDerivativeX(t2);
+        if (Math.abs(d2) < epsilon) break;
+        t2 = t2 - x2 / d2;
+      }
+
+      // No solution found - use bi-section
+      t0 = 0.0;
+      t1 = 1.0;
+      t2 = x;
+
+      if (t2 < t0) return t0;
+      if (t2 > t1) return t1;
+
+      while (t0 < t1) {
+        x2 = this.sampleCurveX(t2);
+        if (Math.abs(x2 - x) < epsilon) return t2;
+        if (x > x2) t0 = t2;else t1 = t2;
+
+        t2 = (t1 - t0) * .5 + t0;
+      }
+      return t2;
+    },
+
+    // Find new function of Y along curve X
+    solve: function solve(x, epsilon) {
+      return this.sampleCurveY(this.solveCurveX(x, epsilon));
+    }
+  };
+
+  function listInit(o, that) {
+    var base = getDistance(o.baseX),
+        bezier = void 0,
+        cubic = void 0,
+        len = void 0,
+        per = void 0,
+        i = void 0;
+    if (o.cubicBezier) {
+      bezier = o.cubicBezier;
+      cubic = new UnitBezier(bezier[0], bezier[1], bezier[2], bezier[3]);
+    }
+    for (i = 0, len = o.to.X - o.from.X; i < len; i++) {
+      per = (i + 1) / len;
+      if (cubic) {
+        per = cubic.solve(per, 1e-3);
+      }
+      that.widthReach[~~(base + o.from.X) + i] = (o.to.Y - o.from.Y) * per + o.from.Y;
+    }
+  }
+  function SnowList() {
+    var len = options.line.length,
+        i = 0;
+    this.list = [];
+    this.widthReach = [];
+    for (; i < len; i++) {
+      listInit(options.line[i], this);
+    }
+  }
+  SnowList.prototype.refresh = function () {
+    var lenNoMove = 0,
+        i = 0,
+        len = this.list.length;
+    for (; i < len; i++) {
+      if (this.list[i].move === false) {
+        lenNoMove++;
+      }
+      if (len >= options.maxCell) {
+        this.list[i].refresh(false);
+      } else this.list[i].refresh(true);
+    }
+    /*clearInterval(interval);*/
+    // if (len >= options.maxCell) return;
+    if (len < options.maxCell) {
+      for (i = 0, len = options.cell - (len - lenNoMove); i < len; i++) {
+        !function () {
+          var snow = void 0,
+              randomX = void 0,
+              randomY = void 0,
+              randomR = void 0,
+              randomFnx = void 0,
+              randomFny = void 0;
+          randomX = getRandom('x');
+          randomY = getRandom('y');
+          randomR = getRandom('r');
+          randomFnx = getRandom('fnx');
+          randomFny = getRandom('fny');
+
+          snow = new Snow(randomX, randomY, randomR, {
+            x: randomFnx,
+            y: randomFny
+          });
+          snow.draw(cxt);
+          snowList.push(snow);
+        }();
+      }
+    }
+  };
+
+  SnowList.prototype.push = function (snow) {
+    this.list.push(snow);
+  };
+
+  SnowList.prototype.draw = function (cxt) {
+    for (var i = 0, len = this.list.length; i < len; i++) {
+      this.list[i].draw(cxt);
+    }
+    /*cxt.clearRect(300 - 6, docEl.height - 200, 200 + 12, 4);*/
+  };
+  SnowList.prototype.get = function (i) {
+    return this.list[i];
+  };
+  SnowList.prototype.size = function () {
+    return this.list.length;
+  };
+  Snow.prototype.draw = function (cxt) {
+    var grd = cxt.createRadialGradient(this.x, this.y, 0, this.x, this.y, this.r);
+    grd.addColorStop(0, 'rgba(255, 255, 255, ' + this.r / 6 * 1 + ')');
+    grd.addColorStop(.5, 'rgba(255, 255, 255, ' + this.r / 6 * .5 + ')');
+    grd.addColorStop(1, 'rgba(255, 255, 255, 0)');
+    cxt.fillStyle = grd;
+    cxt.fillRect(this.x - this.r, this.y - this.r, this.r * 2, this.r * 2);
+  };
+
+  /**
+  * Generate random x-pos, y-pos or fn functions
+  * @param  {string} option x|y|fnx|fny
+  * @return {int|Function} 
+  */
+  function getRandom(option) {
+    var ret = void 0,
+        random = void 0;
+    switch (option) {
+      case 'x':
+        ret = Math.random() * docEl.width;
+        break;
+      case 'y':
+        ret = (Math.random() - 1) * docEl.height;
+        break;
+      case 'r':
+        ret = 2 + Math.random() * 4;
+        break;
+      case 'fnx':
+        // x axis offset
+        random = 27 + Math.random() * 100;
+        ret = function ret(x, y) {
+          return x + 0.5 * Math.sin(y / random);
+        };
+        break;
+      case 'fny':
+        // y axis offset
+        random = 0.4 + Math.random() * 1.4;
+        ret = function ret(x, y) {
+          return y + random;
+        };
+        break;
+    }
+    return ret;
+  }
+  function newSnow() {
+    var snow = void 0,
+        randomX = void 0,
+        randomY = void 0,
+        randomR = void 0,
+        randomFnx = void 0,
+        randomFny = void 0;
+    for (var i = 0; i < options.cell; i++) {
+      randomX = getRandom('x');
+      randomY = getRandom('y');
+      randomR = getRandom('r');
+      randomFnx = getRandom('fnx');
+      randomFny = getRandom('fny');
+      snow = new Snow(randomX, randomY, randomR, {
+        x: randomFnx,
+        y: randomFny
+      });
+      snow.draw(cxt);
+      snowList.push(snow);
+    }
+  }
+
+  function getDistance(n) {
+    if (n.toString().indexOf('%') !== -1) {
+      n = n.split('%')[0] / 100 * el.offsetWidth;
+    }
+    return n;
+  }
+
+  // Start paint
+  var el = document.getElementById(options.el) || document.getElementsByTagName('body')[0],
+      docEl = {
+    width: getDistance(options.width),
+    height: getDistance(options.height)
+  },
+      canvas = document.createElement('canvas'),
+      cxt = void 0,
+      interval = void 0;
+  el.innerHTML = '';
+  el.appendChild(canvas);
+  cxt = canvas.getContext('2d');
+  // Create snow objects
+  var snowList = new SnowList();
+  function init() {
+    canvas.height = docEl.height;
+    canvas.width = docEl.width;
+    snowList = new SnowList();
+    newSnow();
+  }
+  init();
+
+  // Refresh snow position data, and redraw them in each frame
+  interval = setInterval(function () {
+    cxt.clearRect(0, 0, canvas.width, canvas.height);
+    snowList.refresh();
+    snowList.draw(cxt);
+  }, 13);
+
+  return {
+    init: init
+  };
+}
+
+exports.Snowy = Snowy;
 
 /***/ }),
-/* 3 */,
-/* 4 */
+/* 4 */,
+/* 5 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 /* WEBPACK VAR INJECTION */(function($, jQuery) {
 
-var _utils = __webpack_require__(2);
+var _config = __webpack_require__(1);
 
-var _layer = __webpack_require__(1);
+var _layer = __webpack_require__(2);
 
-__webpack_require__.e/* import() */(0).then(__webpack_require__.bind(null, 3)); // The page is now styled
+var _snow = __webpack_require__(3);
+
+__webpack_require__.e/* import() */(0).then(__webpack_require__.bind(null, 4)); // The page is now styled
 
 
 window.dispatch = function () {
@@ -273,19 +680,9 @@ $(function () {
   var footerHeight = $('footer').outerHeight();
   var documentHeight = $(document).height();
   var gPushed = false; // keydown 状态
-  var keyValue = {
-    '/?': 191,
-    'g': 71,
-    'a': 65,
-    'c': 67,
-    't': 84,
-    's': 83
-  };
+  var keyValue = _config.Config.keyValue;
 
-  var consoleInfo = {
-    info: '%c卧槽，你居然敢点开控制台看我的代码，这下我的屎代码无所遁形了 T _ T',
-    logo: '         _.-.  \n' + '       ,\'/ //\\ \n' + '      /// // /)\n' + '     /// // //|\n' + '    /// // /// \n' + '   /// // ///  \n' + '  (`: // ///   \n' + '   `;`: ///    \n' + '   / /  `\'      \n' + '  / /\n' + ' (_/  \n'
-  };
+  var consoleInfo = _config.Config.consoleInfo;
   window.console && console.info && console.info(consoleInfo.logo);console.info(consoleInfo.info, 'color:#03a9f4');
 
   // tooltip初始化
@@ -352,7 +749,7 @@ $(function () {
       $('body').animate({ 'opacity': 1 }, 500);
     };
     bgImg.src = 'http://qcyoung.qiniudn.com/qcyoung/TKL/wall-' + Math.ceil(Math.random() * 558) + '.jpg';
-    // bgImg.src = 'http://img.ngacn.cc/attachments/mon_201702/28/-7Q2g-38h4ZgT3cS1hc-u0.jpg';
+    // bgImg.src = 'https://wallpapers.wallhaven.cc/wallpapers/full/wallhaven-30346.jpg';
   } else {
     $('body').animate({ 'opacity': 1 }, 500);
   }
@@ -380,7 +777,7 @@ $(function () {
     _layer.Layer.wechatLayer();
   });
 
-  // 微信Window
+  // 赞赏Window
   $('.reward').on('click', function () {
     _layer.Layer.rewardLayer();
   });
@@ -406,8 +803,36 @@ $(function () {
   $('.fa-music').on('click', function () {
     window.open('http://qcyoung.xyz/yPlayer/');
   });
+
+  $('.slider-action .action-go').click(function () {
+    $(this).removeClass('shake');
+    $(this).offset($(this).offset());
+    $(this).addClass('shake');
+    sliderFlash(Math.ceil(Math.random() * 1));
+  });
+
+  function sliderFlash(n) {
+    switch (n) {
+      case 1:
+        snow();
+    }
+  }
+
+  function snow() {
+    var snowy = (0, _snow.Snowy)(_config.Config.snow);
+
+    snowy.init();
+    if (!!document.createElement('canvas').getContext) {
+      var canvasObj = document.getElementById('slide-canvas');
+
+      var canvasParent = canvasObj.parentNode;
+      canvasParent.removeChild(canvasObj);
+      canvasParent.appendChild(canvasObj);
+    }
+  }
+
   // Slidebars off-canvas menu
-  $.slidebars();
+  var mySlidebars = new $.slidebars();
 
   // 渲染导航栏样式
   function navRender() {
@@ -513,22 +938,7 @@ $(function () {
 
   window.onscroll = throttle(200, 500);
 
-  $('#toc').niceScroll({
-    smoothscroll: true, // scroll with ease movement
-    autohidemode: true,
-    zindex: '100', // change z-index for scrollbar div
-    scrollspeed: 60, // scrolling speed
-    mousescrollstep: 40, // mouse scrolling speed
-    gesturezoom: false, // 上缩放框激活时，间距输出/输入
-    horizrailenabled: false, // 管理水平滚动
-    cursorcolor: '#151515',
-    boxzoom: false, // enable zoom for box content
-    cursorborder: '0px solid #202020',
-    cursorborderradius: '8px',
-    cursorwidth: 4, // 9
-    enablemousewheel: true,
-    background: 'rgba(255,255,255,0.7)'
-  });
+  $('#toc').niceScroll(_config.Config.niceScroll);
 
   // Functionailty constraints for mobile(wall opacity covering layer)
   if (!Modernizr.touch) {

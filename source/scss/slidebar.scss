@@ -96,93 +96,136 @@ html.sb-init.sb-active.sb-active-right .menu-icon .after {
   overflow-x: hidden;
   text-align: center;
   font-size: 16px;
-
-  a {
-    color: $DarkGrey;
-    text-decoration: none;
-    font-weight: 700;
-    text-transform: uppercase;
-    font-size: 13px;
-
-    &:hover {
-      color: $White;
-    }
-  }
-
-  .sb-links {
-    color: #999;
-    padding: 20px 10px;
-
+  .slide-wrapper{
+    position: relative;
     a {
-      display: inline-block;
-      margin: 0 10px 0 0;
-      vertical-align: middle;
+      color: $DarkGrey;
+      text-decoration: none;
+      font-weight: 700;
+      text-transform: uppercase;
+      font-size: 13px;
+
+      &:hover {
+        color: $White;
+      }
     }
 
-    a:before {
-      display: inline-block;
+    .slide-content{
+      z-index: 10001;
       position: relative;
-      top: -1px;
-      vertical-align: middle;
-      margin-right: 3px;
-      content: "";
-      width: 4px;
-      height: 4px;
-      border-radius: 50%;
-      background-color: #bd0926;
+      .sb-links {
+        color: #999;
+        padding: 20px 10px;
+        
+        .links-title {
+          font-size: 14px;
+        }
+
+        a {
+          display: inline-block;
+          margin: 0 10px 0 0;
+          vertical-align: middle;
+        }
+
+        a:before {
+          display: inline-block;
+          position: relative;
+          top: -1px;
+          vertical-align: middle;
+          margin-right: 3px;
+          content: "";
+          width: 4px;
+          height: 4px;
+          border-radius: 50%;
+          background-color: #bd0926;
+        }
+      }
+
+      .site-author {
+        margin: 5px 0 10px;
+        line-height: 1.8;
+
+        .site-author-img {
+          border: 2px solid #333;
+          padding: 2px;
+        }
+      }
+
+      .sb-item {
+        display: inline-block;
+        padding: 0 15px;
+        border-left: 1px solid #333;
+        text-align: center;
+        &:first-child{
+          border: 0;
+        }
+      }
+
+      .sb-item-count {
+        display: block;
+        text-align: center;
+        font-size: 18px;
+      }
+
+      .sb-item-name {
+        display: block;
+        font-size: 13px;
+      }
+
+      .sb-rss {
+        a {
+          display: inline-block;
+          padding: 0 15px;
+          color: #fc6423;
+          border: 1px solid #fc6423;
+          border-radius: $border-radius-base;
+          line-height: 1.8;
+          font-size: 16px;
+          margin-top: 20px;
+        }
+
+        a:hover {
+          color: $White;
+          background-color: #fc6423;
+        }
+      }
+      .slider-action{
+        position: relative;
+        .action-go{
+          display: inline-block;
+          position: relative;
+          &:hover{
+            color: #fff;
+            cursor: pointer;
+          }
+        }
+        .shake{
+          animation: faceshake 0.3s;
+          -webkit-animation: faceshake 0.3s;
+        }
+      }
+    }
+    #slide-canvas{
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      top: 0;
+      z-index: 10000;
     }
   }
+}
+@keyframes faceshake {
+  0% { transform: scale(1); }
+  25% { transform: scale(1.05) rotate(5deg);}
+  50% { transform: scale(1.1) rotate(0deg)}
+  75% { transform: scale(1.05) rotate(-5deg)}
+  100% { transform: scale(1); }
+}
 
-  .site-author {
-    margin: 5px 0 10px;
-    line-height: 1.8;
-
-    .site-author-img {
-      border: 2px solid #333;
-      padding: 2px;
-    }
-  }
-
-  .sb-item {
-    display: inline-block;
-    padding: 0 15px;
-    border-left: 1px solid #333;
-    text-align: center;
-    &:first-child{
-      border: 0;
-    }
-  }
-
-  .sb-item-count {
-    display: block;
-    text-align: center;
-    font-size: 18px;
-  }
-
-  .sb-item-name {
-    display: block;
-    font-size: 13px;
-  }
-
-  .sb-rss {
-    a {
-      display: inline-block;
-      padding: 0 15px;
-      color: #fc6423;
-      border: 1px solid #fc6423;
-      border-radius: $border-radius-base;
-      line-height: 1.8;
-      font-size: 16px;
-      margin-top: 20px;
-    }
-
-    a:hover {
-      color: $White;
-      background-color: #fc6423;
-    }
-  }
-
-  .links-title {
-    font-size: 14px;
-  }
+@-webkit-keyframes faceshake {
+  0% { -webkit-transform: scale(1); }
+  25% { transform: scale(1.05) rotate(5deg);}
+  50% { transform: scale(1.1) rotate(0deg)}
+  75% { transform: scale(1.05) rotate(-5deg)}
+  100% { -webkit-transform: scale(1); }
 }

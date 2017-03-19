@@ -1,73 +1,84 @@
 <!-- ============================ Off-canvas navigation =========================== -->
 <div class="sb-slidebar sb-right sb-style-overlay sb-momentum-scrolling">
-  <div class="sb-close" aria-label="Close Menu" aria-hidden="true">
-    <i class="fa fa-close"></i>
-  </div>
-  <div class="clear"></div>
-  <div class="site-overview">
-    <a style="text-transform: none;" href="<%- config.root %><%- config.about_dir %>">
-      <div class="site-author">
-        <img class="site-author-img" width="100px" height="100px" data-src="http://qcyoung.qiniudn.com/qcyoung/avatar.jpg">
-        <div class="site-author-name"><%= config.author%></div>
-      </div>
-    </a>
-    <div class="sb-list">
-      <div class="sb-item sb-posts">
-        <a href="<%- config.root %><%- config.archive_dir %>">
-          <span class="sb-item-count"><%= site.posts.length %></span>
-          <span class="sb-item-name">日志</span>
-        </a>
-      </div>
-      <div class="sb-item sb-words">
-        <a href="<%- config.root %><%- config.archive_dir %>">
-          <span class="sb-item-count"><%= totalcount(site) %></span>
-          <span class="sb-item-name">字数</span>
-        </a>
-      </div>
-      <div class="sb-item sb-categories">
-        <a href="<%- config.root %><%- config.categories_dir %>">
-          <span class="sb-item-count"><%= site.categories.length %></span>
-          <span class="sb-item-name">分类</span>
-        </a>
+  <div class="slide-wrapper" id="slide-wrapper">
+    <div id="slide-canvas">
+      
+    </div>
+    <div class="slide-content">
+        <div class="sb-close" aria-label="Close Menu" aria-hidden="true">
+          <i class="fa fa-close"></i>
+        </div>
+        <div class="clear"></div>
+        <div class="site-overview">
+          <a style="text-transform: none;" href="<%- config.root %><%- config.about_dir %>">
+            <div class="site-author">
+              <img class="site-author-img" width="100px" height="100px" data-src="http://qcyoung.qiniudn.com/qcyoung/avatar.jpg">
+              <div class="site-author-name"><%= config.author%></div>
+            </div>
+          </a>
+          <div class="sb-list">
+            <div class="sb-item sb-posts">
+              <a href="<%- config.root %><%- config.archive_dir %>">
+                <span class="sb-item-count"><%= site.posts.length %></span>
+                <span class="sb-item-name">日志</span>
+              </a>
+            </div>
+            <div class="sb-item sb-words">
+              <a href="<%- config.root %><%- config.archive_dir %>">
+                <span class="sb-item-count"><%= totalcount(site) %></span>
+                <span class="sb-item-name">字数</span>
+              </a>
+            </div>
+            <div class="sb-item sb-categories">
+              <a href="<%- config.root %><%- config.categories_dir %>">
+                <span class="sb-item-count"><%= site.categories.length %></span>
+                <span class="sb-item-name">分类</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="sb-rss">
+          <a href="/atom.xml">RSS</a>
+        </div>
+        
+        <div class="web-links"> 
+          <% if (theme.links && theme.links.length){ %>
+            <div class="sb-links">
+              <div class="links-title">链接</div>
+              <span class="sb-item-links">
+                <% theme.links.forEach(function(item){ %>
+                  <a href="<%- item.link %>" class="animsition-link" data-toggle="tooltip" data-placement="bottom" title="<%= item.description %>" target="_blank" rel="nofollow noopener noreferrer"><%= item.name %></a>
+                <% }); %>
+              </span>
+            </div>
+          <% } %>
+        </div>
+
+        <div class="web-links"> 
+          <% if (theme.projects && theme.projects.length){ %>
+            <div class="sb-links">
+              <div class="links-title">更多</div>
+              <span class="sb-item-links">
+                <% theme.projects.forEach(function(item){ %>
+                  <a href="<%- item.link %>" class="animsition-link" target="_blank" rel="nofollow noopener noreferrer"><%= item.name %></a>
+                <% }); %>
+              </span>
+            </div>
+          <% } %>
+        </div>
+
+        <div class="cc-license">
+          <a href="http://creativecommons.org/licenses/by-nc/4.0">
+            <img data-src="http://qcyoung.qiniudn.com/qcyoung/cc-by-nc.svg">
+          </a>
+        </div>
+
+        <div class="slider-action">
+          <span class="action-go"> ✧*｡٩(ˊωˋ*)و｡*✧ </span>
+        </div>
       </div>
     </div>
-  </div>
-
-  <div class="sb-rss">
-    <a href="/atom.xml">RSS</a>
-  </div>
-  
-  <div class="web-links"> 
-    <% if (theme.links && theme.links.length){ %>
-      <div class="sb-links">
-        <div class="links-title">链接</div>
-        <span class="sb-item-links">
-          <% theme.links.forEach(function(item){ %>
-            <a href="<%- item.link %>" class="animsition-link" data-toggle="tooltip" data-placement="bottom" title="<%= item.description %>" target="_blank" rel="nofollow noopener noreferrer"><%= item.name %></a>
-          <% }); %>
-        </span>
-      </div>
-    <% } %>
-  </div>
-
-  <div class="web-links"> 
-    <% if (theme.projects && theme.projects.length){ %>
-      <div class="sb-links">
-        <div class="links-title">更多</div>
-        <span class="sb-item-links">
-          <% theme.projects.forEach(function(item){ %>
-            <a href="<%- item.link %>" class="animsition-link" target="_blank" rel="nofollow noopener noreferrer"><%= item.name %></a>
-          <% }); %>
-        </span>
-      </div>
-    <% } %>
-  </div>
-
-  <div class="cc-license">
-    <a href="http://creativecommons.org/licenses/by-nc/4.0">
-      <img data-src="http://qcyoung.qiniudn.com/qcyoung/cc-by-nc.svg">
-    </a>
-  </div>
 </div>
     
 <!-- ============================ END Off-canvas navigation =========================== -->

@@ -4,7 +4,7 @@ subtitle:
 author: yangzj1992
 language: zh-Hans
 email: yangzj1992@qq.com #联系邮箱
-url: http://qcyoung.com
+url: http://www.qcyoung.com
 
 logo: http://qcyoung.qiniudn.com/qcyoung/TKL/logo.png
 logoc: http://qcyoung.qiniudn.com/qcyoung/TKL/oursbrun.png
@@ -49,37 +49,81 @@ links:
   link: https://opensourcecontributo.rs/user/yangzj1992
   description: GitHub contributions
 - name: Links
-  link: http://qcyoung.com/links
+  link: http://www.qcyoung.com/links
   description: Friend Sites
 - name: Life
-  link: http://qcyoung.com/categories/%E6%88%91%E7%9A%84%E7%94%9F%E6%B4%BB/
+  link: http://www.qcyoung.com/categories/%E6%88%91%E7%9A%84%E7%94%9F%E6%B4%BB/
   description: Work life
 
 friendlinks:
-- name: USTB
-  link: http://www.ustb.edu.cn/
-  description: 我的大学
-- name: 美菜网
-  link: http://meicai.cn/
-  description: First Job
-- name: Kieran
-  link: http://go.kieran.top/
-  description: 最初主题原创者
-- name: DIYgod
-  link: https://www.anotherhome.net/
-  description: Write the Code. Change the World.
-- name: Xcat Liu
-  link: http://blog.xcatliu.com/
-  description: A cat who writes code
-- name: 寿百年
-  link: http://www.pddjs.com/
-  description: pddjs
-- name: 朱嘉伟
-  link: http://buzhundong.com/
-  description: 单曲循环 | ΒΙΟG
-- name: 个人博客导航
-  link: http://blog.yiyeti.cc/hexo.html
-  description: 为个人博客爱好者打造的资源导航站
+  personal: 
+    - name: Kieran
+      link: http://go.kieran.top/
+      description: 最初主题原创者
+    - name: DIYgod
+      link: https://www.anotherhome.net/
+      description: Write the Code. Change the World.
+    - name: Xcat Liu
+      link: http://blog.xcatliu.com/
+      description: A cat who writes code
+    - name: 寿百年
+      link: http://www.pddjs.com/
+      description: pddjs
+    - name: 朱嘉伟
+      link: http://buzhundong.com/
+      description: 单曲循环 | ΒΙΟG
+    - name: 个人博客导航
+      link: http://blog.yiyeti.cc/hexo.html
+      description: 为个人博客爱好者打造的资源导航站
+    - name: Cube Drone
+      link: http://cube-drone.com/
+      description: Comics about Code
+    - name: 在路上
+      link: http://www.crifan.com/
+      description: 走别人没走过的路，让别人有路可走
+    - name: 十年踪迹的博客
+      link: https://www.h5jun.com/
+      description: 专注于前端开发
+    - name: 阮一峰的网络日志
+      link: http://www.ruanyifeng.com/blog/
+      description: 阮一峰的网络日志
+
+  organization:
+    - name: USTB
+      link: http://www.ustb.edu.cn/
+      description: 我的大学
+    - name: 美菜网
+      link: http://meicai.cn/
+      description: First Job
+    - name: AlloyTeam
+      link: http://www.alloyteam.com/
+      description: 腾讯全端 AlloyTeam 团队 Blog
+    - name: 「凹凸实验室」
+      link: https://aotu.io/index.html
+      description: 凹凸实验室 OPEN ORIENTED
+    - name: CSS-Tricks
+      link: https://css-tricks.com/
+      description: CSS Tips/Tricks/Techniques 
+    - name: FEX - FEX
+      link: http://fex.baidu.com/
+      description: FEX_百度前端研发部
+    - name: Taobao FED
+      link: http://taobaofed.org/
+      description: 用技术为体验提供无限可能
+    - name: 众成翻译
+      link: https://www.zcfy.cc/
+      description: 奇舞团维护的技术翻译社区
+    - name: 大搜车前端团队博客
+      link: http://f2e.souche.com/blog/
+      description: 相信技术改变世界，这里是我们的点滴思考和总结。
+
+
+
+
+
+
+
+
 
 
 #Project
@@ -89,7 +133,7 @@ projects:
 - name: 众成翻译
   link: http://zcfy.cc/@yangzj1992/article
 # - name: Resume
-  # link: http://qcyoung.com/project/resume
+  # link: http://www.qcyoung.com/project/resume
 
 #Analytics
 cnzz: true  

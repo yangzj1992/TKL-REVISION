@@ -1,25 +1,39 @@
 <%
 title = "友链";
 %>
-<% if (theme.friendlinks && theme.friendlinks.length){ %>
-  <section id="services">
-    <div class="container article-list">
-      <div class="row" style="text-align: center;">
-        <h3 style="padding: 20px 0">欢迎留言交换友链，希望你的博客能够偏技术向、有趣有物、时常更新即可。</h3>
+<section id="services">
+  <div class="container article-list">
+    <div class="row" style="text-align: center;">
+      <h3 style="padding: 20px 0">欢迎留言交换友链，希望你的博客能够偏技术向、有趣有物、时常更新即可。</h3>
+      <% if (theme.friendlinks.personal && theme.friendlinks.personal.length){ %>
+        <h2 style="margin-bottom: 20px;">个人站点</h2>
         <div class="row projects">
-          <% theme.friendlinks.forEach(function(item){ %>
-            <div class="p-item">
-              <div class="p-header">
-                <a href="<%- item.link %>"><h3><%= item.name %></h3></a>
-              </div>
-              <div class="p-body"><p><%= item.description %></p></div>
+        <% theme.friendlinks.personal.forEach(function(item){ %>
+          <div class="p-item">
+            <div class="p-header">
+              <a href="<%- item.link %>"><h3><%= item.name %></h3></a>
             </div>
-          <% }); %>
+            <div class="p-body"><p><%= item.description %></p></div>
+          </div>
+        <% }); %>
         </div>
-      </div>
+      <% } %>
+      <% if (theme.friendlinks.organization && theme.friendlinks.organization.length){ %>
+        <h2 style="margin-bottom: 20px;">优秀组织站点</h2>
+        <div class="row projects">
+        <% theme.friendlinks.organization.forEach(function(item){ %>
+          <div class="p-item">
+            <div class="p-header">
+              <a href="<%- item.link %>"><h3><%= item.name %></h3></a>
+            </div>
+            <div class="p-body"><p><%= item.description %></p></div>
+          </div>
+        <% }); %>
+        </div>
+      <% } %>
     </div>
-  </section>
-<% } %>
+  </div>
+</section>
 <section id="statement" class="statement">
   <div class="container text-center wow fadeInUp" data-wow-delay="0.5s">
     <div class="row">

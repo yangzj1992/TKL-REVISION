@@ -1,13 +1,14 @@
 import ('./../scss/index.scss') // The page is now styled
-import { Utils } from 'root/source/js/utils';
+import { Config } from 'root/source/js/config';
 import { Layer } from 'root/source/js/layer';
+import { Snowy } from 'root/source/js/snow';
 
 window.dispatch = function() {
   let url;
   let searchbox = $('#searchbox');
   let searchval = searchbox.val();
   if (searchval !== '') {
-    url = 'http://www.google.com/search?q=site:qcyoung.com/%20' + searchval;
+    url = `http://www.google.com/search?q=site:qcyoung.com/%20${searchval}`;
     if (navigator.userAgent.indexOf('iPad') > -1 || navigator.userAgent.indexOf('iPhone') > -1) {
       location.href = url;
     } else {
@@ -33,19 +34,9 @@ $(function () {
   const footerHeight = $('footer').outerHeight();
   let documentHeight = $(document).height();
   let gPushed = false;  // keydown 状态
-  let keyValue = {
-    '/?' : 191,
-    'g'  : 71,
-    'a'  : 65,
-    'c'  : 67,
-    't'  : 84,
-    's'  : 83
-  };
+  let keyValue = Config.keyValue;
 
-  let consoleInfo = {
-    info: '%c卧槽，你居然敢点开控制台看我的代码，这下我的屎代码无所遁形了 T _ T',
-    logo: '         _.-.  \n' + '       ,\'/ //\\ \n' + '      /// // /)\n' + '     /// // //|\n' + '    /// // /// \n' + '   /// // ///  \n' + '  (`: // ///   \n' + '   `;`: ///    \n' + '   / /  `\'      \n' + '  / /\n' + ' (_/  \n'
-  };
+  let consoleInfo = Config.consoleInfo;
   window.console && console.info && console.info(consoleInfo.logo); console.info(consoleInfo.info, 'color:#03a9f4');
 
   // tooltip初始化
@@ -104,15 +95,15 @@ $(function () {
   if (windowWidth > mobileWidth && $('.index-context').length) {
     let bgImg = new Image();
     bgImg.onload = function () {
-      let wallPaper = 'url(' + bgImg.src + ')';
+      let wallPaper = `url(${bgImg.src})`;
       $('.element-img').css('background-image', wallPaper);
       $('body').animate({'opacity': 1}, 500);
     };
     bgImg.onerror = function () {
       $('body').animate({'opacity': 1}, 500);
     };
-    bgImg.src = 'http://qcyoung.qiniudn.com/qcyoung/TKL/wall-' + Math.ceil(Math.random() * 558) + '.jpg';
-    // bgImg.src = 'http://img.ngacn.cc/attachments/mon_201702/28/-7Q2g-38h4ZgT3cS1hc-u0.jpg';
+    bgImg.src = `http://qcyoung.qiniudn.com/qcyoung/TKL/wall-${Math.ceil(Math.random() * 558)}.jpg`;
+    // bgImg.src = 'https://wallpapers.wallhaven.cc/wallpapers/full/wallhaven-30346.jpg';
   } else {
     $('body').animate({'opacity': 1}, 500);
   }
@@ -125,6 +116,8 @@ $(function () {
     sideImgs.each(function (index, el) {
       $(el).attr('src', $(el).attr('data-src'));
     });
+
+    
   });
 
   $('.post-article').delegate('.img_replaced', 'click', function (event) {
@@ -140,7 +133,7 @@ $(function () {
     Layer.wechatLayer();
   });
 
-  // 微信Window
+  // 赞赏Window
   $('.reward').on('click', function () {
     Layer.rewardLayer();
   });
@@ -166,8 +159,37 @@ $(function () {
   $('.fa-music').on('click', function () {
     window.open('http://qcyoung.xyz/yPlayer/');
   });
+
+  $('.slider-action .action-go').click(function(){
+    $(this).removeClass('shake');
+    $(this).offset($(this).offset())
+    $(this).addClass('shake');
+    sliderFlash(Math.ceil(Math.random() * 1))
+  })
+
+  function sliderFlash(n){
+    switch (n){
+      case 1:
+        snow();
+    }
+
+  }
+
+  function snow(){
+    let snowy = Snowy(Config.snow);
+
+    snowy.init();
+    if(!!document.createElement('canvas').getContext) {
+      var canvasObj = document.getElementById('slide-canvas');
+      
+      var canvasParent = canvasObj.parentNode;
+      canvasParent.removeChild(canvasObj);
+      canvasParent.appendChild(canvasObj);
+    }
+  }
+
   // Slidebars off-canvas menu
-  $.slidebars();
+  let mySlidebars = new $.slidebars();
 
   // 渲染导航栏样式
   function navRender () {
@@ -273,22 +295,7 @@ $(function () {
 
   window.onscroll = throttle(200, 500);
 
-  $('#toc').niceScroll({
-    smoothscroll: true, // scroll with ease movement
-    autohidemode: true,
-    zindex: '100', // change z-index for scrollbar div
-    scrollspeed: 60, // scrolling speed
-    mousescrollstep: 40, // mouse scrolling speed
-    gesturezoom: false, // 上缩放框激活时，间距输出/输入
-    horizrailenabled: false, // 管理水平滚动
-    cursorcolor: '#151515',
-    boxzoom: false, // enable zoom for box content
-    cursorborder: '0px solid #202020',
-    cursorborderradius: '8px',
-    cursorwidth: 4, // 9
-    enablemousewheel: true,
-    background: 'rgba(255,255,255,0.7)'
-  });
+  $('#toc').niceScroll(Config.niceScroll);
 
   // Functionailty constraints for mobile(wall opacity covering layer)
   if (!Modernizr.touch) {
