@@ -102,7 +102,7 @@ if (!debug) {
   );
   //清空文件夹
   config.plugins.push(
-    new CleanWebpackPlugin(['public'], {
+    new CleanWebpackPlugin(['public', 'dev'], {
       root: RootDir + '/source/build', // 根路径（绝对路径）
       verbose: true, // 控制台打印日志
       dry: false // 不清空任何文件，用于测试

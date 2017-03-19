@@ -102,8 +102,8 @@ $(function () {
     bgImg.onerror = function () {
       $('body').animate({'opacity': 1}, 500);
     };
-    bgImg.src = `http://qcyoung.qiniudn.com/qcyoung/TKL/wall-${Math.ceil(Math.random() * 558)}.jpg`;
-    // bgImg.src = 'https://wallpapers.wallhaven.cc/wallpapers/full/wallhaven-30346.jpg';
+    bgImg.src = `http://qcyoung.qiniudn.com/qcyoung/TKL/wall-${Math.ceil(Math.random() * 585)}.jpg`;
+    // bgImg.src = 'https://ww1.sinaimg.cn/large/006tNc79ly1fds83s13qtj31kw0p5tny.jpg';
   } else {
     $('body').animate({'opacity': 1}, 500);
   }
