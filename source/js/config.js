@@ -29,10 +29,10 @@ var Config = {
   },
   snow: {
     el: 'slide-canvas',
-    width: 360,
+    width: 320,
     height: $(window).height(),
     cell: 90,
-    maxCell: 200,
+    maxCell: 1000,
     line: [
       // {baseX: '50%',from: {X: -950,Y: 56},to: {X: -878,Y: 62}},
       // {baseX: '50%',from: {X: -878,Y: 62},to: {X: -835,Y: 55}},

@@ -19,7 +19,7 @@ function Snowy(options){
     this.move = true;
   }
   Snow.prototype.refresh = function (toUpper) {
-    let H = docEl.height,
+    let H = docEl.height - 2,
     prevReachX = ~~(this.x),
     nextReachX = ~~(this.x) + 1,
     thisReach = snowList.widthReach[prevReachX] || 0,

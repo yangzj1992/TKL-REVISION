@@ -213,6 +213,22 @@ html.sb-init.sb-active.sb-active-right .menu-icon .after {
     }
   }
 }
+
+@media (min-width: $screen-sm) {
+  .sb-slidebar{
+    width: 320px;
+  }
+}
+
+@media (max-width: $screen-sm) {
+  .sb-slidebar{
+    max-width: 320px;
+    .action-go{
+      display: none!important;
+    }
+  }
+}
+
 @keyframes faceshake {
   0% { transform: scale(1); }
   25% { transform: scale(1.05) rotate(5deg);}
@@ -228,3 +244,5 @@ html.sb-init.sb-active.sb-active-right .menu-icon .after {
   75% { transform: scale(1.05) rotate(-5deg)}
   100% { -webkit-transform: scale(1); }
 }
+
+

@@ -35,6 +35,7 @@
        -moz-transition: color 1s ease;
             transition: color 1s ease;
     position: relative;
+    opacity: 0.6;
     &:after{
       content:'';
       background-color: #151515;
@@ -43,12 +44,27 @@
       right: 0;
       bottom: 0;
     }
+    &:hover{
+      opacity: 1;
+      -webkit-transition: all 1s ease;
+         -moz-transition: all 1s ease;
+              transition: all 1s ease;
+    }
     &:hover:after{
       width: 100%;
       position: absolute;
       -webkit-transition: all 1s ease;
          -moz-transition: all 1s ease;
               transition: all 1s ease;
+    }
+  }
+  .home-text{
+    opacity: 0.6;
+    &:hover{
+      opacity: 1;
+      -webkit-transition: all 0.5s ease;
+         -moz-transition: all 0.5s ease;
+              transition: all 0.5s ease;
     }
   }
 }
