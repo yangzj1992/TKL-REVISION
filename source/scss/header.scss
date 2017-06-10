@@ -1,102 +1,91 @@
 .navbar {
-  position: fixed;
-  top: 0;
-
-  .nav {
-    width: 100%;
-    text-align: center;
-    height: 50px;
-
-    .welcome {
-      cursor: pointer;
+    position: fixed;
+    top: 0;
+    .nav {
+        width: 100%;
+        text-align: center;
+        height: 50px;
+        .welcome {
+            cursor: pointer;
+        }
+        >li {
+            display: inline-block;
+            >span {
+                font-family: $font-family-georgia;
+                font-style: italic;
+                margin-left: 4px;
+                margin-right: 3px;
+                text-transform: none;
+                position: relative;
+                top: -1px;
+            }
+            >a {
+                display: block;
+            }
+            >span,
+            >a>i {
+                font-size: 12px;
+            }
+            a:hover,
+            a:focus {
+                background-color: transparent;
+            }
+            &:last-child>a,
+            &:last-child {
+                border-right: none;
+            }
+        }
     }
-
-    > li {
-      float: none;
-      display: inline-block;
-
-      > span {
-        font-family: $font-family-georgia;
-        font-style: italic;
-        margin-left: 4px;
-        margin-right: 3px;
-        text-transform: none;
-        position: relative;
-        top: -1px;
-      }
-
-      > a {
-        display: block;
-      }
-
-      > span,
-      > a > i {
-        font-size: 12px;
-      }
-
-      a:hover,
-      a:focus {
-        background-color: transparent;
-      }
-
-      &:last-child > a,
-      &:last-child {
-        border-right: none;
-      }
+    .nav>li>a,
+    .navbar .nav li.nolink {
+        padding: 0 10px;
+        margin: 16px 0;
+        color: $NormalBlack;
+        font: 400 12px/14px 'Montserrat', "Open Sans", "Helvetica Neue", "Helvetica", "Hiragino Sans GB", "Microsoft YaHei", "Source Han Sans CN", "WenQuanYi Micro Hei", Arial, sans-serif;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        text-shadow: none;
+        border-right: 1px solid #aaa;
     }
-  }
-
-  .nav > li > a,
-  .navbar .nav li.nolink {
-    padding: 0 10px;
-    margin: 16px 0;
-    color: $NormalBlack;
-    font: 400 12px/14px 'Montserrat', "Open Sans", "Helvetica Neue", "Helvetica", "Hiragino Sans GB", "Microsoft YaHei", "Source Han Sans CN", "WenQuanYi Micro Hei", Arial, sans-serif;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    text-shadow: none;
-    border-right: 1px solid #aaa;
-  }
 }
 
 .navbar-inner {
-  background-color: transparent;
-  -webkit-transition: background-color 400ms linear;
-  -moz-transition: background-color 400ms linear;
-  -o-transition: background-color 400ms linear;
-  -ms-transition: background-color 400ms linear;
-  transition: background-color 400ms linear;
-  z-index: 10;
-  border: none;
+    background-color: transparent;
+    -webkit-transition: background-color 400ms linear;
+    -moz-transition: background-color 400ms linear;
+    -o-transition: background-color 400ms linear;
+    -ms-transition: background-color 400ms linear;
+    transition: background-color 400ms linear;
+    z-index: 10;
+    border: none;
 }
 
-.lightnav .navbar-inner.lightnav-alt .nav > li > a {
-  color: $NormalBlack;
+.lightnav .navbar-inner.lightnav-alt .nav>li>a {
+    color: $NormalBlack;
 }
+
 
 /* Changes nav background color to white on scroll */
+
 .navbar-inner.lightnav-alt {
-  background-color: rgba(255, 255, 255, .9);
+    background-color: rgba(255, 255, 255, .9);
 }
 
 @media (max-width: $screen-sm-max) {
-  .navbar-inner.lightnav-alt {
-    border-bottom: none;
-  }
-
-  .navbar-inner {
-    border-bottom: none !important;
-    padding: 0 !important;
-    height: 60px;
-  }
-
-  .navbar .nav {
-    .mobile-li {
-      display: inline-block;
+    .navbar-inner.lightnav-alt {
+        border-bottom: none;
     }
-
-    > li{
-      display: none;
+    .navbar-inner {
+        border-bottom: none !important;
+        padding: 0 !important;
+        height: 60px;
     }
-  }
+    .navbar .nav {
+        .mobile-li {
+            display: inline-block;
+        }
+        >li {
+            display: none;
+        }
+    }
 }

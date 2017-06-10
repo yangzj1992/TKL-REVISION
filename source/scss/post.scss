@@ -1,129 +1,117 @@
 .post-content {
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    margin-top: 20px;
-    font-family: $font-family-open-sans;
-    color: $NormalBlack;
-  }
-
-  h1 {
-    font-size: $font-size-h2;
-    font-weight: 700;
-    text-align: center;
-  }
-
-  h2 {
-    font-size: $font-size-h3;
-    line-height: 24px;
-    padding-left: 10px;
-    border-left: 4px solid $DeepGreen;
-    margin-top: 10px;
-  }
-
-  h3 {
-    line-height: 21px;
-    font-size: $font-size-h4;
-    margin-top: 14px;
-  }
-
-  h4 {
-    font-size: $font-size-h5;
-    color: $NormalBlack;
-  }
-
-  .post-tags {
-    color: $White;
-    background-color: $Gray;
-    padding: 2px 6px;
-    font-size: 12px;
-    margin-right: 4px;
-  }
-
-  .post-time,
-  .post-copyright {
-    color: $NormalGrey;
-    display: block;
-    font-size: 13px;
-    text-align: center;
-  }
-
-  .duoshuo,
-  .pagination {
-    width: 66%;
-    position: relative;
-    text-align: center;
-    left: 8.5%;
-  }
-
-  .nogutter {
-    padding: 10px 0;
-  }
-
-  .share-icon {
-    padding: 0 .2em;
-  }
-
-  .qrcode {
-    position: absolute;
-    z-index: 55;
-    bottom: 30px;
-    right: 80px;
-    height: 108px;
-    border: 1px solid #ebebeb;
-    padding: 5px;
-    text-align: center;
-    border-radius: $border-radius-base;
-    box-shadow: 1px 1px 2px #969696;
-    background-color: $White;
-  }
-
-  .post-article {
-    img {
-      position: relative;
-      left: 50%;
-      transform: translateX(-50%);
-      display: block;
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        margin-top: 20px;
+        font-family: $font-family-open-sans;
+        color: $NormalBlack;
     }
-    ol, ul{
-      padding-left: 18px;
+    h1 {
+        font-size: $font-size-h2;
+        font-weight: 700;
+        text-align: center;
     }
-  }
+    h2 {
+        font-size: $font-size-h3;
+        line-height: 24px;
+        padding-left: 10px;
+        border-left: 4px solid $DeepGreen;
+        margin-top: 10px;
+    }
+    h3 {
+        line-height: 21px;
+        font-size: $font-size-h4;
+        margin-top: 14px;
+    }
+    h4 {
+        font-size: $font-size-h5;
+        color: $NormalBlack;
+    }
+    .post-tags {
+        color: $White;
+        background-color: $Gray;
+        padding: 2px 6px;
+        font-size: 12px;
+        margin-right: 4px;
+    }
+    .post-time,
+    .post-copyright {
+        color: $NormalGrey;
+        display: block;
+        font-size: 13px;
+        text-align: center;
+    }
+    .duoshuo,
+    .pagination {
+        width: 66%;
+        position: relative;
+        text-align: center;
+        left: 8.5%;
+    }
+    .nogutter {
+        padding: 10px 0;
+    }
+    .share-icon {
+        padding: 0 .2em;
+    }
+    .qrcode {
+        position: absolute;
+        z-index: 55;
+        bottom: 30px;
+        right: 80px;
+        height: 108px;
+        border: 1px solid #ebebeb;
+        padding: 5px;
+        text-align: center;
+        border-radius: $border-radius-base;
+        box-shadow: 1px 1px 2px #969696;
+        background-color: $White;
+    }
+    .post-article {
+        img {
+            position: relative;
+            left: 50%;
+            transform: translateX(-50%);
+            display: block;
+        }
+        ol,
+        ul {
+            padding-left: 18px;
+        }
+    }
 }
 
 .duoshuo,
 .pagination,
 .nogutter {
-  width: 64%;
-  text-align: left;
-  margin: 0 auto;
+    width: 64%;
+    text-align: left;
+    margin: 0 auto;
 }
 
 .nogutter {
-  width: 100%;
+    width: 100%;
 }
 
 .summary,
 .post-content .nogutter {
-  width: 100%;
-  margin: auto;
+    width: 100%;
+    margin: auto;
 }
 
 .summary {
-  padding-bottom: 6px;
-
-  .share-box {
-    float: right;
-    position: relative;
-  }
-
-  .qrcode {
-    display: none;
-  }
-  .reward{
-    cursor: pointer;
-  }
+    padding-bottom: 6px;
+    .share-box {
+        float: right;
+        position: relative;
+    }
+    .qrcode {
+        display: none;
+    }
+    .reward {
+        cursor: pointer;
+    }
 }
