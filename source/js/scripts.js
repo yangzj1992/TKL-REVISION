@@ -106,6 +106,8 @@ $(function() {
         bgImg.src = `http://qcyoung.qiniudn.com/qcyoung/TKL/wall-${Math.ceil(Math.random() * 805)}.jpg`;
         // bgImg.src = 'https://images3.alphacoders.com/839/thumb-1920-839516.jpg';
         $('body').animate({ 'opacity': 1 }, 500);
+    } else if (!$('.index-context').length) {
+        $('body').animate({ 'opacity': 1 }, 500);
     }
 
     $('.navbar-toggle').on('click', function() {
