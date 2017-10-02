@@ -103,8 +103,8 @@ $(function() {
         bgImg.onerror = function() {
             $('body').animate({ 'opacity': 1 }, 500);
         };
-        bgImg.src = `http://qcyoung.qiniudn.com/qcyoung/TKL/wall-${Math.ceil(Math.random() * 805)}.jpg`;
-        // bgImg.src = 'https://images3.alphacoders.com/839/thumb-1920-839516.jpg';
+        bgImg.src = `http://qcyoung.qiniudn.com/qcyoung/TKL/wall-${Math.ceil(Math.random() * 848)}.jpg`;
+        // bgImg.src = 'https://ws3.sinaimg.cn/large/006tKfTcly1fif2rhug8kj31kw0w0wif.jpg';
         $('body').animate({ 'opacity': 1 }, 500);
     } else if (!$('.index-context').length) {
         $('body').animate({ 'opacity': 1 }, 500);
@@ -159,7 +159,7 @@ $(function() {
     });
 
     $('.fa-music').on('click', function() {
-        window.open('http://qcyoung.xyz/yPlayer/');
+        window.open('http://music.163.com/#/user/home?id=13876009');
     });
 
     $('.slider-action .action-go').click(function() {
@@ -212,9 +212,9 @@ $(function() {
                 } else {
                     break;
                 }
-            }
-            if (!$(postImgs[nowimg]).hasClass('img_replaced')) {
-                $(postImgs[nowimg]).attr('src', $(postImgs[nowimg]).attr('data-src')).addClass('img_replaced');
+                if (!$(postImgs[nowimg]).hasClass('img_replaced')) {
+                    $(postImgs[nowimg]).attr('src', $(postImgs[nowimg]).attr('data-src')).addClass('img_replaced');
+                }
             }
         }
     }
