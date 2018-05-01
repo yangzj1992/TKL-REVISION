@@ -103,8 +103,8 @@ $(function() {
         bgImg.onerror = function() {
             $('body').animate({ 'opacity': 1 }, 500);
         };
-        bgImg.src = `http://qcyoung.qiniudn.com/qcyoung/TKL/wall-${Math.ceil(Math.random() * 848)}.jpg`;
-        // bgImg.src = 'https://ws3.sinaimg.cn/large/006tKfTcly1fif2rhug8kj31kw0w0wif.jpg';
+        bgImg.src = `http://qcyoung.qiniudn.com/qcyoung/TKL/wall-${Math.ceil(Math.random() * 1075)}.jpg`;
+        // bgImg.src = '//wallpapers.wallhaven.cc/wallpapers/full/wallhaven-614115.jpg';
         $('body').animate({ 'opacity': 1 }, 500);
     } else if (!$('.index-context').length) {
         $('body').animate({ 'opacity': 1 }, 500);
