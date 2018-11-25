@@ -103,7 +103,7 @@ $(function() {
         bgImg.onerror = function() {
             $('body').animate({ 'opacity': 1 }, 500);
         };
-        bgImg.src = `https://yangzj1992-1251901721.cos.ap-beijing.myqcloud.com/images/TKL/wall-${Math.ceil(Math.random() * 1075)}.jpg`;
+        bgImg.src = `https://yangzj1992-1251901721.cos.ap-beijing.myqcloud.com/images/TKL/wall-${Math.ceil(Math.random() * 1205)}.jpg`;
         // bgImg.src = '//wallpapers.wallhaven.cc/wallpapers/full/wallhaven-614115.jpg';
         $('body').animate({ 'opacity': 1 }, 500);
     } else if (!$('.index-context').length) {
