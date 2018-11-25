@@ -35,7 +35,7 @@ var Layer = {
             shift: 2,
             shadeClose: true, // 开启遮罩关闭
             area: [windowWidth, windowHeight],
-            content: '<img src="http://qcyoung.qiniudn.com/qcyoung/wxpay.jpg" width="200px" height="200px"/><img src="http://qcyoung.qiniudn.com/qcyoung/alipay.jpg" width="200px" height="200px"/>'
+            content: '<img src="https://yangzj1992-1251901721.cos.ap-beijing.myqcloud.com/images/wxpay.jpg" width="200px" height="200px"/><img src="https://yangzj1992-1251901721.cos.ap-beijing.myqcloud.com/images/alipay.jpg" width="200px" height="200px"/>'
         });
     },
     wechatLayer: function() {
@@ -47,7 +47,7 @@ var Layer = {
             shift: 2,
             shadeClose: true, // 开启遮罩关闭
             area: [windowWidth, windowHeight],
-            content: '<img src="http://qcyoung.qiniudn.com/qcyoung/yangzj1992QRcode.jpg" width="200px" height="200px"/>'
+            content: '<img src="https://yangzj1992-1251901721.cos.ap-beijing.myqcloud.com/images/yangzj1992QRcode.jpg" width="200px" height="200px"/>'
         });
     }
 }

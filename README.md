@@ -31,10 +31,10 @@ This theme is base on Sass and jQuery and use gulp to build it. If u want to cha
 
 ### Screen
 Show
-![](http://qcyoung.qiniudn.com/qcyoung/TKL-REVISION-SHOW.png)
+![](https://yangzj1992-1251901721.cos.ap-beijing.myqcloud.com/images/TKL-REVISION-SHOW.png)
   
 Content
-![](http://qcyoung.qiniudn.com/qcyoung/TKL-REVISION-CONTENT.png)
+![](https://yangzj1992-1251901721.cos.ap-beijing.myqcloud.com/images/TKL-REVISION-CONTENT.png)
 
 Article
-![](http://qcyoung.qiniudn.com/qcyoung/TKL-REVISION-ARTICLE.png)
+![](https://yangzj1992-1251901721.cos.ap-beijing.myqcloud.com/images/TKL-REVISION-ARTICLE.png)
